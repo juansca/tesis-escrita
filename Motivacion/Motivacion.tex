@@ -1,53 +1,169 @@
+\input{../EncabezadoTesis}
+
+\begin{document}
+
 \chapter{Motivación}
 
-El Aprendizaje Automático (ML) es un enfoque empírico efectivo para
-regresiones y/o clasificaciones de sistemas no-lineales que pueden involucrar desde
-unos pocos hasta varios cientos de variables. El enfoque de ML requiere
-entrenamiento utilizando un conjunto de datos que sea representativo del conjunto
-de datos del problema. Se debe seleccionar un conjunto de datos que se utilizará,
-luego del entrenamiento del modelo, para validación del mismo.
-ML es ideal para aquellos problemas en donde el conocimiento teórico del mismo
-es incompleto o insuficiente, pero se cuenta con un gran conjunto de observaciones.
-ML ha mostrado ser de utilidad para un gran número de aplicaciones en Geociencias
-relacionadas a la tierra, oceanos y atmósfera, y en algoritmos de extracción
-de información bio-geofísica.
-Algunos de los algoritmos de ML más usados en aplicaciones relativas a
-Geociencias y Sensado Remoto (GRS) son las Redes Neuronales Artificiales (ANN),
-Support Vector Machines (SVM), Mapas Auto-organizados (SOM), Árboles de Decisión (DT),
-Random Forests y Algoritmos Genéticos. Su aplicación en problemas de GRS es
-relativamente nuevo y extremádamente prometedora. En particular, ANNs son
-usadas para clasifición pero también son usadas para la aplicación en pronósticos
-relativos a series de tiempo.
-De hecho, una exploración en la base bibliográfica Scopus devuelve más de 4000
-publicaciones que incluyen \textit{remote sensing} y \textit{neural network},
-311 de ellas en 2016. De ese total, el 45\% corresponde a
-\textit{Sciences of the Earth}, el 44\% a \textit{Computer Science} y el 35\% a
-\textit{Engineering}; con China, Estados Unidos, Italia e India como los paises
-con mayor producción científica en dichas áreas.
+\par El mosquito es uno de los vectores de enfermedades humanas más importantes
+en el mundo. En particular, el \textit{Aedes aegypti} es el principal vector
+de Dengue, Chikungunya, Zika y Fiebre Amarilla urbana [1].
+
+\par En América Latina, entre 1985 y 2012, el 95\% de los casos se concentraron en
+4 países: Perú (54\% de los casos), Bolivia (18\%), Brasil (16\%) y Colombia (7\%).
+Los otros paises que presentan condiciones muy favorables para la transimisión
+de fiebre amarilla son Argentina, Ecuador, Panamá y Venezuela
+Desde 2000 a 2013, más de 1.100 casos confirmados por laboratorio fueron
+reportados. Como vimos, Brasil y Perú fueron los paises que más casos reportaron.
 
 
-Los mosquitos
+\par En Argentina, ya para las primeras semanas del 2018, hubo casos confirmados
+de Dengue en Chaco, y durante el 2017, en base a las notificaciones al
+\textbf{Sistema Nacional de Vigilancia de Salud} del Ministerio de Salud de la Nación
+recibidas hasta el 30 de diciembre se registraron en el primer semestre del año brotes de
+Dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
+(Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
+por virus del Zika en 3 provincias (Chaco, Formosa y Salta).
+Desde la emergencia del virus del Zika en Argentina en el 2016 (Tucumán) y hasta
+la SE 47 de 2017 se registraron además un total de 7 casos confirmados de
+síndrome congénito asociados a virus del Zika en mujeres embarazadas (microcefalia en recién nacidos).
+------------ ACA ESTABA ----------------------------------
 
-Mosquitoes are the most important vectors of human diseases. In partic-
-ular, Aedes ægypti is the main vector for Chikungunya, Dengue, and Zika
-viruses. This is a peridomestic mosquito that is bred preferably in artificial
-containers [15], [16]. The incidence of Dengue has increased dramatically
-in the last decades, with a rising trend of outbreaks in South America in
-recent years, and Chikungunya and Zika are new threats spread by the same
-species of mosquito [17] , [18], [19]. The deployment of ovitraps is generally
-accepted as a valid method to provide useful data on the spatial and tempo-
-ral distribution of Aedes ægypti, allowing a reasonable estimation of vector
-261 activity [20].
-Landscape Epidemiology [21, 22] promotes the notion that satellite data
-from earth observation and geospatial technologies are essential tools [23] to
-address vector borne epidemiological problems. Using these ideas, several
-interdisciplinary studies were produced in latinoamerica focused in generat-
-ing spatial and temporal predictive risk models based on satellite derived
-environmental conditions [24, 25, 26, 27]. In particular in Argentine there
-are some interesting experiences on this issue, [28, 29, 30] deal with Dengue
-epidemics leading to operational tools [31]. At a global scope we can find
-interesting contributions [32, 33, 34] with also some operatives experiences
-[35]
+En Argentina en las semanas del 2018 ya hay casos confirmados de Dengue en Chaco,
+y durante el 2017 y en base a las notificaciones al
+\textbf{Sistema Nacional de Vigilancia de Salud} del Ministerio de Salud de la Nación
+recibidas hasta el 30 de diciembre se registraron en el primer semestre del año brotes de
+dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
+(Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
+por virus del Zika en 3 provincias (Chaco, Formosa y Salta).
+Desde la emergencia del virus del Zika en Argentina en el 2016 (Tucumán) y hasta
+la SE 47 de 2017 se registraron además un total de 7 casos confirmados de
+síndrome congénito asociados a virus del Zika en mujeres embarazadas (microcefalia en recién nacidos).
+
+\par En el caso de la Fiebre Amarilla, para la prevencion, existe una vacuna de
+virus atenuado que se considera eficaz, segura y se la utiliza hace más
+de 60 años para la inmunización activa de niños y adultos contra la infección
+por dicho virus. No es así el caso del Dengue, Chikungunya y Zika, para las
+cuales no existe una vacuna para la prevención.
+
+
+Los mosquitos son los vectores más importantes de enfermedades humanas en el
+mundo y, en particular, el Aedes aegypti es el principal vector de dengue,
+chikungunya, zika y fiebre amarilla urbana [1]. Como no hay vacunas para la
+mayoría de estos virus, y existe la posibilidad de introducción de otros [2],
+el control de vectores es la principal herramienta para mitigar la
+propagación de enfermedades. La cantidad de vectores, el virus circulante y la
+susceptibilidad humana son factores que influyen en la transmisión de estas
+enfermedades virales, estos factores poseen una asociación directa o indirecta
+con variables climáticas y ambientales tales como la temperatura, la lluvia,
+la vegetación, etc. En particular, en Argentina, \textit{Aedes aegypti} es el
+mosquito más relevante desde el punto de vista epidemiológico.
+Este mosquito se caracteriza por su presencia en el medio urbano, su preferencia
+de cría en contenedores artificiales [3] y la resistencia de sus huevos a la
+desecación. Para conocer parámetros sobre las distribuciones espaciales y temporales
+de \textit{Aedes aegypti}, se utilizan a menudo las Ovitrampas [4].
+Estos datos permiten el conocimiento de la actividad del vector, lo cual es importante para determinar cuándo y
+dónde aplicar acciones de control más efectivas [5], [6].
+
+
+
+
+En las Américas, entre 1985 y 2012, el 95\% de los casos se concentraron en
+4 países: Perú (54\% de los casos), Bolivia (18\%), Brasil (16\%) y Colombia (7\%).
+Los otros países en las Américas que presentan condiciones para la transmisión
+de fiebre amarilla son Argentina, Ecuador, Guyana, Guyana Francesa, Panamá,
+Paraguay, Suriname, Trinidad y Tobago y Venezuela.
+Desde 2000 a 2013, más de 1.100 casos confirmados por laboratorio fueron
+reportados en las Américas. Brasil y Perú fueron los países que más casos
+reportaron. En áreas urbanas, el Aedes aegypti es el mosquito vector de la
+fiebre amarilla. La fiebre amarilla selvática es transmitida por los mosquitos
+Haemagogus y Sabethes.
+
+La fiebre amarilla se puede prevenir con la vacuna de virus atenuado de fiebre
+amarilla, cepa 17D, que se considera eficaz y segura, y se la utiliza hace más
+de 60 años para la inmunización activa de niños y adultos contra la infección
+por el virus de la fiebre amarilla. Confiere inmunidad duradera, quizá para toda
+la vida. No es el caso del Dengue, Zika y Chikungunya, para las cuales no existen
+vacunas para el mismo objetivo.
+
+
+"[...] El escenario epidémico de Arbovirus como Dengue, Zika y Chikungunya es una
+realidad epidemiológica que vino para quedarse en Argentina que implica repensar
+y diseñar nuevos sistemas de alerta temprana, vigilancia epidemiológica y
+respuesta rápida desde lo local que se integren en un espacio intersectorial de
+coordinación, planificación e intervención pública nacional entre municipios,
+organizaciones de la sociedad civil, universidades y centros de estudios, y
+otros actores sociales claves con una necesaria rectoría del
+Ministerio de Salud de la Nación y el Consejo Federal de Salud.
+Argentina entro a un impasse en este nuevo periodo inter-epidémicos y realmente
+sigue sin tener acciones integradas e integrales para el abordaje de las
+Enfermedades Transmitidas por Mosquitos (ETM) en el país y se visualizan
+cambios en las estrategias y políticas", alerta Medicos del Mundo [citar].
+
+
+
+En Argentina en las semanas del 2018 ya hay casos confirmados de Dengue en Chaco,
+y durante el 2017 y en base a las notificaciones al
+\textbf{Sistema Nacional de Vigilancia de Salud} del MSN recibidas hasta el
+30 de diciembre (SE 52) se registraron en el primer semestre del año brotes de
+dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
+(Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
+por virus del Zika en 3 provincias (Chaco, Formosa y Salta).
+Desde la emergencia del virus del Zika en Argentina en el 2016 (Tucumán) y hasta
+la SE 47 de 2017 se registraron además un total de 7 casos confirmados de
+síndrome congénito asociados a virus del Zika en mujeres embarazadas (microcefalia en recién nacidos).
+
+
+
+Médicos del Mundo, viene advirtiendo que las acciones implementadas aleatoriamente
+de control vectorial y control químico tradicional no son efectivas ni eficaces
+para actual contexto epidémico en la región y el país.
+
+
+
+
+"Aunque las últimas epidemias del 2009 y 2016 de Dengue en Argentina fueron del
+serotipo DEN1, la circulación viral de los otros serotipos en la región de
+Cono Sur (Brasil, Paraguay y Bolivia) tanto DEN4, DEN2 y DEN3, hace que los
+periodos epidémicos de DEN se puedan modificar. Por otro lado, el escenario de
+Zika Virus es una realidad por su circulación en América Latina y Caribe con
+cuadros clínicos inéspecíficos pero con eventos asociados como el Síndrome de
+Guillaen Barré y microcefalia que implican problemas epidemiológicos
+poblacionales de incidencia como lo demostraron en Brasil, Colombia, Venezuela,
+República Dominicana, entre otros 47 países de la región donde se confirmaron
+casos de transmisión activa vectorial de Zika.
+Si sumamos ahora el brote epidémico de Fiebre Amarilla en Brasil con la
+posibilidad de reintroducir casos en el Cono Sur ya que las tasas de
+inmunizaciones para fiebre amarrilla existen brechas en varias ciudades de nuestro país",
+detalló Gonzalo Basile, Presidente Honor y Director General para
+América Latina y Caribe de Médicos del Mundo, e investigador de institutos de
+investigación en salud pública del Caribe y coordinación regional del Programa
+de Salud Internacional de CLACSO y de FLACSO República Dominicana.
+
+
+
+
+
+"Desde Médicos del Mundo venimos advirtiendo en lo regional que para el abordaje
+de las Arbovirosis hay que repensar nuevos marcos conceptuales y metodológicos
+sobre la Salud y la Epidemiología en las Ciudades por el tipo de urbanizaciones
+caóticas, inequitativas y con déficit en agua, gestión integral de residuos y
+saneamiento ambiental estructurales de enfermedades transmitidas por mosquitos.
+Y en segundo lugar, los determinantes vinculados a los patrones climáticos
+extremos que generan comportamientos nuevos de los vectores y transmisión de
+enfermedades especialmente como Zika, Dengue, Malaria, entre otras.
+No es posible continuar haciendo lo mismo que hace 40 años hacemos con Dengue en
+la región y esperar resultados diferentes. La transferencia individual de
+información y la "responsabilización" individual en los estilos de vida y
+comportamientos particulares de las personas está demostrado no son el camino
+para enfrentar escenarios epidemiológicos que seguirán complejizándose en el país
+y en América Latina y Caribe", concluyó Gonzalo Basile.
+
+
+
+
+
+Específicamente,
+
 Specifically, in a interinstitutional framework between the Argentinean
 National Space Agency (CONAE) and the Health Minister of Argentine,
 there have been initiatives to model the temporal evolution of mosquito pop-
@@ -75,97 +191,6 @@ community that deals with similar problems.
 
 
 
-Los mosquitos son los vectores más importantes de enfermedades humanas en el
-mundo y, en particular, el Aedes aegypti es el principal vector de dengue,
-chikungunya, zika y fiebre amarilla urbana [1]. Como no hay vacunas para la
-mayoría de estos virus, y existe la posibilidad de introducción de otros [2],
-el control de vectores es la principal herramienta para mitigar la
-propagación de enfermedades. La cantidad de vectores, el virus circulante y la
-susceptibilidad humana son factores que influyen en la transmisión de estas
-enfermedades virales, estos factores poseen una asociación directa o indirecta
-con variables climáticas y ambientales tales como la temperatura, la lluvia,
-la vegetación, etc. En particular, en Argentina, \textit{Aedes aegypti} es el
-mosquito más relevante desde el punto de vista epidemiológico.
-Este mosquito se caracteriza por su presencia en el medio urbano, su preferencia
-de cría en contenedores artificiales [3] y la resistencia de sus huevos a la
-desecación. Para conocer parámetros sobre las distribuciones espaciales y temporales
-de \textit{Aedes aegypti}, se utilizan a menudo las Ovitrampas [4].
-Estos datos permiten el conocimiento de la actividad del vector, lo cual es importante para determinar cuándo y
-dónde aplicar acciones de control más efectivas [5], [6].
 
-El concepto interdisciplinario de \textit{Epidemiología Panorámica} (EP)
-ha permitido generar algunos progresos en la epidemiología del dengue y otras
-enfermedades transmitidas por vectores y zoonóticas como el chagas, la
-malaria, la leishmaniasis y el hantavirus. Esta herramienta, EP, se centra en
-producir mapas de riesgo predictivos espaciales y temporales basados en
-características ambientales junto con datos de campo [7-14].
-Estos estudios en Latinoamérica, donde se utiliza la tecnología espacial en
-problemas epidemiológicos, están inspirados en trabajos pioneros llevados a cabo
-en EE. UU. y Europa [15-18].
-Con base en los trabajos citados en el párrafo anterior, en 2011, Argentina
-comenzó a desarrollar un proyecto operacional
-(Sistema de Alerta Temprana de Salud, HEWS), útil tanto para las autoridades de
-salud como para los investigadores.
 
-Básicamente, HEWS es un mapeo de riesgo
-dinámico del dengue para todas las ciudades del país. En este producto, cada
-ciudad es representada por un punto al que se le asigna un valor de riesgo para
-cada año, basado en tecnología geoespacial. El trabajo fue realizado en un
-contexto interdisciplinario e interinstitucional.
-
-La plataforma se desarrolló utilizando software de código abierto (OSS) para
-generar un servicio gratuito. En este sistema [13], el riesgo
-se evalúa en cuatro componentes que son: el entomológico,
-el viral, el componente relacionado con las actividades de
-control y finalmente el ambiental. Mientras que los tres
-primeros componentes se generan con el aporte de
-información de los agentes de salud que trabajan en cada
-ciudad, el cuarto se evalúa a partir de datos satelitales.
-Específicamente el componente ambiental, en la versión
-inicial del sistema, se evalúa con una probabilidad
-estacionaria de presencia de vectores (igual para todo el
-tiempo) más un componente relacionado con el número de
-ciclos virales, que son una función de la temperatura, y así
-es diferente para cada ciudad y para cada año. El mapa de
-probabilidad de presencia de especie (modelo de nicho) es
-claramente una gran simplificación y se puede mejorar en
-base a datos satelitales continuos del medio ambiente.
-Variables como precipitación y temperatura, han
-demostrado, con una variabilidad local, influenciar el
-desarrollo de mosquitos, su supervivencia y actividad de
-oviposición y por ende la abundancia de vectores. En
-particular trabajos previos como los de Estallo [8], [19]
-utilizan información satelital para estimar la evolución
-temporal de la abundancia de vectores. En 2017 German y
-colaboradores [20] desarrollan una metodología completa
-para generar modelos de manera automática y basada en
-información de libre acceso. En particular German [20]
-utiliza productos del sensor (MODIS) a bordo del satélite
-Terra y Aqua, pues es uno de los más adecuados para esta
-aplicación particular, debido a su resolución temporal,
-espectral y espacial. MODIS proporciona un conjunto de
-productos pre-procesados y de libre acceso [21].
-Específicamente, los productos de vegetación (índice de
-vegetación de diferencia normalizada) y temperatura
-(temperatura de la superficie terrestre) derivados de MODIS
-son ejemplos de variables de percepción remota utilizadas
-en aplicaciones de epidemiologia [13], [22] incorporadas en
-[20]. Otra variable ambiental obtenida de satélite que es
-relevante e incorporada, es el Índice de Agua de Diferencia
-Normalizada (NDWI) que evalúa de alguna forma el
-contenido de agua de la cubierta. Adicionalmente el trabajo
-de German incorpora una estimación de la precipitación
-desde el espacio a partir de las misiones (TRMM) y (GPM)
-[23].
-Estos modelos temporales antes citados [8], [19], [20] se
-basan en la generación de relaciones empíricas entre datos
-satelitales y los datos de campo (del vector). Esto significa
-que sólo pueden construirse modelos en lugares donde esté
-disponible la información de campo. En este marco, y con
-el objetivo final de mejorar la aplicación operativa
-presentada por Porcasi y colaboradores en 2012 [13], nos
-planteamos en este trabajo el objetivo específico de generar
-una metodología para espacializar los modelos temporales
-generados siguiendo la metodología de German 2018 [20],
-basados en el concepto de Distancia Ambiental
-Normalizada (NED).
+\end{document}

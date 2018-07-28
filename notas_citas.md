@@ -11,7 +11,14 @@ utilidad en algún momento. Es **IMPORTANTE** agregar el título, autores y algu
 descripción de por qué fue agregado.
 
 -------------------------------------
+Médicos del Mundo alerta sobre riesgos de fiebre amarilla en Brasil y escenarios de Dengue-Zika en Argentina
 
+http://www.mdm.org.ar/prensa/articulo/221/Mdicos-del-Mundo-alerta-sobre-riesgos-de-fiebre-amarilla-en-Brasil-y-escenarios-de-Dengue-Zika-en-Argentina
+
+Medicos del mundo
+http://www.mdm.org.ar/seccion/sobre_nosotros.html
+
+-------------------------------------
 ML has been shown to be useful for a large
 number of applications in Geosciences for land, oceans and atmosphere, and
 in bio-geophysical information extraction algorithms:
