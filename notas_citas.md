@@ -1,3 +1,9 @@
+# Notas varias
+- Geoserver
+- Pedir acceso de ssh y ftp para las imágenes [15 días]
+- GIS
+
+
 # Notas Citas
 
 Agregar los papers/trabajos candidatos a ser citados y/o que puedan resultar de
@@ -14,6 +20,7 @@ in bio-geophysical information extraction algorithms:
 chine learning and bias correction of MODIS aerosol optical depth,
 IEEE Geoscience and Remote Sensing Letters 6 (4) (2009) 694–698.
 doi:10.1109/LGRS.2009.2023605
+
   - M. E. Brown, D. J. Lary, A. Vrieling, D. Stathakis, H. Mussa, Neural
 networks as a tool for constructing continuous NDVI time series from
 AVHRR and MODIS, International Journal of Remote Sensing 29 (24)
@@ -46,7 +53,8 @@ lems is relatively new and extremely promising
   - D. J. Lary, A. H. Alavi, A. H. Gandomi, A. L. Walker, Machine learning
 in geosciences and remote sensing, Geoscience Frontiers 7 (1) (2016)
 3 – 10, special Issue: Progress of Machine Learning in Geosciences.
-doi:10.1016/j.gsf.2015.07.003
+doi:10.1016/j.gsf.2015.07.003  << **BAJADO** >>
+
   - J. Peña-Barragán, P. A. Gutiérrez, C. Hervás-Martı́nez, J. Six, R. E.
 Plant, F. López-Granados, Object-Based Image Classification of Sum-
 mer Crops with Machine Learning Methods, Remote Sensing 6 (6)
@@ -58,10 +66,12 @@ In particular, ANNs
 are widely used for classification but also for time series forecast
 
   - P. M. Atkinson, A. R. L. Tatnall, Introduction neural networks in remote
-sensing, International Journal of Remote Sensing 18 (4) (1997) 699–709.
+sensing, International Journal of Remote Sensing 18 (4) (1997) 699–709. <<**PEDIDO**>>
+
   - G. Zhang, M. Qi, Neural network forecasting for seasonal and trend time
 series, European Journal of Operational Research 160 (2) (2005) 501 –
 514. doi:10.1016/j.ejor.2003.08.037.
+
   - G. M. Foody, Supervised image classification by MLP and RBF neu-
 ral networks with and without an exhaustively defined set of classes,
 International Journal of Remote Sensing 25 (15) (2004) 3091–3104.
@@ -77,12 +87,12 @@ containers
 
   - J. Powell, W. Tabachnick, History of domestication and spread of aedes
 aegypti–a review, Memrias do Instituto Oswaldo Cruz 108 (2013) 11–17.
-doi:10.1590/0074-0276130395.
+doi:10.1590/0074-0276130395. <<**BAJADO**>>
 
   - A. Moncayo, Z. Fernandez, D. Ortiz, M. Diallo, A. Sall, S. Hartman,
 C. Davis, L. Coffey, C. Mathiot, R. Tesh, S. Weaver, Dengue emer-
 gence and adaptation to peridomestic mosquitoes, Emerging Infectious
-Diseases
+Diseases <<**PEDIDO**>>
 
 -----------------------------------------
 
@@ -94,13 +104,13 @@ species of mosquito
 
   - WHO, Dengue and severe dengue, Fact sheet no 117, Up-dated May
 2015 (2015).
-URL http://www.who.int/mediacentre/factsheets/fs117/en/
+URL http://www.who.int/mediacentre/factsheets/fs117/en/  <<**ES PAGINA**>>
 
   - WHO, Chikungunya, fact sheet no 327, updated may 2015 (2015).
-URL http://www.who.int/mediacentre/factsheets/fs327/en/
+URL http://www.who.int/mediacentre/factsheets/fs327/en/  <<**ES PAGINA**>>
 
   - WHO, Zika virus, fact sheet january 2016 (2015).
-URL http://www.who.int/mediacentre/factsheets/zika/en/
+URL http://www.who.int/mediacentre/factsheets/zika/en/  <<**ES PAGINA**>>
 
 
 ----------------------------------------
@@ -111,16 +121,16 @@ address vector borne epidemiological problems.
 
   - R. S. Ostfeld, G. E. Glass, F. Keesing, Spatial epidemiology: an emerg-
   ing (or re-emerging) discipline, Trends in Ecology & Evolution 20 (6)
-  (2005) 328 – 336. doi:10.1016/j.tree.2005.03.009
+  (2005) 328 – 336. doi:10.1016/j.tree.2005.03.009  <<**PEDIDO**>>
 
   - E. Pavlovky, Natural nidality of transmissible diseases with special ref-
 erence to the landscape epidemiology of zooanthroponoses, University
-of Illinois Press, Urbana
+of Illinois Press, Urbana  <<**PEDIDO**>>
 
   - S. Hay, An overview of remote sensing and geodesy for epidemiology and
 public health application, in: Remote Sensing and Geographical Infor-
 mation Systems in Epidemiology, Vol. 47 of Advances in Parasitology,
-Academic Press, 2000, pp. 1–35. doi:10.1016/S0065-308X(00)47005-3.
+Academic Press, 2000, pp. 1–35. doi:10.1016/S0065-308X(00)47005-3. <<**BAJADO**>>
 
 
 -----------------------------------------
@@ -133,18 +143,21 @@ environmental conditions
 
   - G. Parra-Enao, Sistemas de informacion geografica y sensores remotos.
 aplicaciones en enfermedades transmitidas por vectores, Rev CES Med
-24 (2) (2010) 75–90.
+24 (2) (2010) 75–90. <<**BAJADO**>>
+
   - D. Fuller, A. Troyo, O. Calderon-Arguedas, J. C. Beier, Dengue vec-
 tor (aedes aegypti) larval habitats in an urban environment of costa
 rica analysed with aster and quickbird imagery, International Journal of
-Remote Sensing 31 (1) (2010) 3–11. doi:10.1080/01431160902865756.
+Remote Sensing 31 (1) (2010) 3–11. doi:10.1080/01431160902865756. <<**BAJADO**>>
+
   - M. Moreno-Madrinn, W. Crosson, Correlating remote sensing data
 with the abundance of pupae of the dengue virus mosquito vector,
 aedes aegypti, in central mexico, ISPRS International Journal of Geo-
-Information 3 (2) (2014) 732–749.
+Information 3 (2) (2014) 732–749. <<**BAJADO**>>
+
   - S. Arboleda, N. Jaramillo-O, A. Peterson, Spatial and temporal dynam-
 ics of aedes aegypti larval sites in bello, colombia, Journal of Vector
-Ecology 37 (1) (2012) 37–48. doi:10.1111/j.1948-7134.2012.00198.x.
+Ecology 37 (1) (2012) 37–48. doi:10.1111/j.1948-7134.2012.00198.x. <<**BAJADO**>>
 
 
 
@@ -160,38 +173,49 @@ interesting contributions [32, 33, 34] with also some operatives experiences
   - C. Rotela, F. Fouque, M. Lamfri, P. Sabatier, V. Introini, M. Zaidenberg,
 C. Scavuzzo, Space-time analysis of the dengue spreading dynamics in
 the 2004 Tartagal outbreak, northern Argentina, Acta Tropica 103 (1)
-(2007) 1–13.
+(2007) 1–13. <<**BAJADO**>>
+
+  - Modeling dengue fever risk based on socioeconomic parameters, nationality and age groups: GIS and remote sensing based case study, panelHassan M.KhormiLalitKumar. <<**PEDIDO**>>
+
+
   - E. L. Estallo, F. F. Ludueña-Almeida, A. M. Visintin, C. M. Scavuzzo,
 M. V. Introini, M. Zaidenberg, W. R. Almirón, Prevention of dengue
 outbreaks through aedes aegypti oviposition activity forecasting method,
-Vector-Borne and Zoonotic Diseases 11 (5) (2011) 543–549.
+Vector-Borne and Zoonotic Diseases 11 (5) (2011) 543–549. <<**BAJADO**>>
+
+
   - M. O. Espinosa, D. Weinberg, C. H. Rotela, F. Polop, M. Abril, C. M.
 Scavuzzo, Temporal dynamics and spatial patterns of Aedes aegypti
 breeding sites, in the context of a dengue control program in Tartagal
-(Salta province, Argentina), PLoS Neglected Tropical Diseases 10 (5).
+(Salta province, Argentina), PLoS Neglected Tropical Diseases 10 (5). <<**BAJADO**>>
+
   - X. Porcasi, C. H. Rotela, M. V. Introini, N. Frutos, S. Lanfri, G. Peralta,
 E. A. De Elia, M. A. Lanfri, C. M. Scavuzzo, An operative dengue
 risk stratification system in Argentina based on geospatial technology,
-Geospatial Health 6 (3 SUPPL.) (2012) S31–S42.
+Geospatial Health 6 (3 SUPPL.) (2012) S31–S42. <<**BAJADO**>>
 
 
   - V. Herbreteau, G. Salem, M. Souris, J.-P. Hugot, J.-P. Gonzalez, Thirty
 years of use and improvement of remote sensing, applied to epidemiol-
 ogy: From early promises to lasting frustration, Health and Place 13 (2)
-(2007) 400–403. doi:10.1016/j.healthplace.2006.03.003.
+(2007) 400–403. doi:10.1016/j.healthplace.2006.03.003. <<**BAJADO**>>
+
+
   - S. Kalluri, P. Gilruth, D. Rogers, M. Szczur, Surveillance of
 arthropod vector-borne infectious diseases using remote sensing
-techniques:
-A review, PLOS Pathogens 3 (10) (2007) 1–11.
-doi:10.1371/journal.ppat.0030116.
+techniques: A review, PLOS Pathogens 3 (10) (2007) 1–11.
+doi:10.1371/journal.ppat.0030116. <<**BAJADO**>>
+
+
   - A. Buczak, P. Koshute, S. Babin, B. Feighner, S. Lewis, A data-driven
 epidemiological prediction method for dengue outbreaks using local and
 remote sensing data, BMC Medical Informatics and Decision Making
-12 (1) (2012) 124. doi:10.1186/1472-6947-12-124.
+12 (1) (2012) 124. doi:10.1186/1472-6947-12-124. <<**BAJADO**>>
+
   - L. Bowman, G. Tejeda, G. Coelho, L. Sulaiman, B. Gill, P. McCall,
 P. Olliaro, S. Ranzinger, L. Quang, R. Ramm, A. Kroeger, M. Petzold,
 Alarm variables for dengue outbreaks: A multi-centre study in asia and
-latin america, PLoS ONE 11 (6). doi:10.1371/journal.pone.0157971
+latin america, PLoS ONE 11 (6). doi:10.1371/journal.pone.0157971 <<**BAJADO**>>
 
 
 
@@ -215,16 +239,21 @@ Dengue risk system currently in operation
 M. A. Lamfri, M. V. Introini, M. Zaidenberg, W. R. Almirón, Effective-
 ness of normalized difference water index in modelling Aedes aegypti
 house index, International Journal of Remote Sensing 33 (13) (2012)
-4254–4265. doi:10.1080/01431161.2011.640962.
+4254–4265. doi:10.1080/01431161.2011.640962. <<**BAJADO**>>
+
+
   - E. L. Estallo, E. M. Benitez, M. A. Lanfri, C. M. Scavuzzo,
 W. R. Almirón, MODIS environmental data to assess Chikungunya,
 Dengue, and Zika diseases through Aedes (Stegomia) aegypti ovipo-
 sition activity estimation, IEEE Journal of Selected Topics in Ap-
 plied Earth Observations and Remote Sensing 9 (12) (2016) 5461–5466.
-doi:10.1109/JSTARS.2016.2604577.
+doi:10.1109/JSTARS.2016.2604577. <<**PEDIDO**>>
+
+
   - M. O. Espinosa, E. Alvarez Di Fino, M. Abril, M. A. Lanfri, M. V.
 Periago, C. M. Scavuzzo, Operational satellite based temporal modeling
-of aedes population, Sent to Geospatial Health 2017.
+of aedes population, Sent to Geospatial Health 2017. <<**PEDIDO**>>
+
   - C. Rotela, L. Lopez, M. Frı́as Céspedes, A. Lighezzolo, X. Porcasi,
 M. Lanfri, C. Scavuzzo, D. Gorla, Analytical report of the 2016 dengue
-outbreak in Córdoba city, Argentina, Geospatial Health 12.
+outbreak in Córdoba city, Argentina, Geospatial Health 12. <<**BAJADO**>>
