@@ -1,6 +1,16 @@
 ## Citas
 
 
+@article{nidality,
+  title={Natural nidality of transmissible diseases, with special reference to the landscape epidemiology of zooanthroponoses.},
+  author={Pavlovsky, Evgeny N and FK Jr, Pious and others},
+  journal={Natural nidality of transmissible diseases, with special reference to the landscape epidemiology of zooanthroponoses.},
+  year={1966},
+  publisher={Urbana (\& London): University of Illinois Press}
+}
+
+
+
 tag: rs_public_health
 An Overview of Remote Sensing and Geodesy for Epidemiology
 and Public Health Application
@@ -36,13 +46,9 @@ for dengue outbreaks using local and remote
 sensing data
 
 
-tag: pavloskiy
-Pavlovsky EN. Natural nidality of transmis-
-sable diseases with special reference to the
-landscape epidemiology of zooanthropono-
-ses. Urbana IL: University of Illinois press,
-1966
-
+tag: reisen_landscape
+Landscape Epidemiology
+of Vector-Borne Diseases
 
 
 tag: german_temporal
