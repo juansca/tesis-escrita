@@ -1,6 +1,66 @@
 ## Citas
 
 
+tag: porcasi_operative
+X. Porcasi, C. H. Rotela, M. V. Introini, N. Frutos, S. Lanfri, G. Peralta,
+E. A. De Elia, M. A. Lanfri, C. M. Scavuzzo, An operative dengue risk stratification system in Argentina based on geospatial technology,
+Geospatial Health 6 (3 SUPPL.) (2012) S31–S42.
+
+tag: rotela_space_time
+C. Rotela, F. Fouque, M. Lamfri, P. Sabatier, V. Introini, M. Zaidenberg,
+C. Scavuzzo, Space-time analysis of the dengue spreading dynamics in
+the 2004 Tartagal outbreak, northern Argentina, Acta Tropica 103 (1)
+(2007) 1–13.
+
+
+tag: estallo_prevention
+E. L. Estallo, F. F. Ludueña-Almeida, A. M. Visintin, C. M. Scavuzzo,
+M. V. Introini, M. Zaidenberg, W. R. Almirón, Prevention of dengue
+outbreaks through aedes aegypti oviposition activity forecasting method,
+Vector-Borne and Zoonotic Diseases 11 (5) (2011) 543–549.
+
+
+
+tag: enao_gis_y_sr
+G. Parra-Enao, Sistemas de informacion geografica y sensores remotos.
+aplicaciones en enfermedades transmitidas por vectores, Rev CES Med
+24 (2) (2010) 75–90.
+
+
+tag: fuller_costa_rica
+D. Fuller, A. Troyo, O. Calderon-Arguedas, J. C. Beier, Dengue vec-
+tor (aedes aegypti) larval habitats in an urban environment of costa
+rica analysed with aster and quickbird imagery, International Journal of
+Remote Sensing 31 (1) (2010) 3–11. doi:10.1080/01431160902865756.
+
+
+tag: madrin_correlating
+M. Moreno-Madrinn, W. Crosson, Correlating remote sensing data
+with the abundance of pupae of the dengue virus mosquito vector,
+aedes aegypti, in central mexico, ISPRS International Journal of Geo-
+Information 3 (2) (2014) 732–749.
+
+
+tag: arboleda_colombia
+S. Arboleda, N. Jaramillo-O, A. Peterson, Spatial and temporal dynam-
+ics of aedes aegypti larval sites in bello, colombia, Journal of Vector
+Ecology 37 (1) (2012) 37–48. doi:10.1111/j.1948-7134.2012.00198.x.
+
+
+
+tag: ostfeld_re_emerging
+R. S. Ostfeld, G. E. Glass, F. Keesing, Spatial epidemiology: an emerg-
+ing (or re-emerging) discipline, Trends in Ecology & Evolution 20 (6)
+(2005) 328 – 336. doi:10.1016/j.tree.2005.03.009.
+
+
+tag: hay_overview_rs
+S. Hay, An overview of remote sensing and geodesy for epidemiology and
+public health application, in: Remote Sensing and Geographical Infor-
+mation Systems in Epidemiology, Vol. 47 of Advances in Parasitology,
+Academic Press, 2000, pp. 1–35. doi:10.1016/S0065-308X(00)47005-3.
+
+
 @article{nidality,
   title={Natural nidality of transmissible diseases, with special reference to the landscape epidemiology of zooanthroponoses.},
   author={Pavlovsky, Evgeny N and FK Jr, Pious and others},
