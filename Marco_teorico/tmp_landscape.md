@@ -10,6 +10,10 @@
 }
 
 
+tag: landscape_connectivity
+Taylor, P. D., Fahrig, L., Henein, K. and Merriam, G. (1993). Connectivity is a vital element of landscape structure. Oikos. Vol. 68, Pg 571-572
+
+
 
 tag: rs_public_health
 An Overview of Remote Sensing and Geodesy for Epidemiology
@@ -49,6 +53,12 @@ sensing data
 tag: reisen_landscape
 Landscape Epidemiology
 of Vector-Borne Diseases
+
+
+tag: terra_aqua_modis
+A.J. Tatem , S.J. Goetz, S.I. Hay. “Terra and Aqua: new data for
+epidemiology and public health”. Int J Appl Earth Obs 6, 2004, pp.
+33-46
 
 
 tag: german_temporal
