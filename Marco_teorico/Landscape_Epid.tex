@@ -6,7 +6,6 @@
 
 \justifying
 
-\subsection{Teledetección}
 
 \par La \textit{Teledetección} se define como el proceso de adquirir
   información acerca de un objeto, área o fenómeno desde la distancia.
@@ -28,13 +27,13 @@
   en órbitas geoestacionarias\footnote{Están en altitudes entre 23000 y 40000 km,
   sobre la franja ecuatorial y viaja a la misma velocidad de rotación de la Tierra
   por lo que siempre están fijos sobre un punto determinado de la superficie terrestre},
-  o aquellos que pasan repetidamente por diferentes secciones de la Tierra mientras
-  rotan dado que están orbitando alrededor del planeta a altitudes menores.
+  u órbitas polares, aquellas que pasan repetidamente por diferentes áreas
+  de la Tierra mientras están orbitando alrededor del planeta a altitudes menores.
 
 
-\par Las tecnologías relacionadas al ámbito aeroespacial (CHAART) dieron lugar a programas
-  que integran estas tecnologías con, por ejemplo, la agricultura, salud pública,
-  geología y las ciencias forestales.
+\par Las tecnologías relacionadas al ámbito aeroespacial dieron lugar a programas
+  que integran estas tecnologías con,
+  por ejemplo, la agricultura, salud pública, geología y las ciencias forestales.
   A su vez, la información obtenida por dichos SR se puede aplicar a estudios
   entomológicos\footnote{De insectos}, debido a que ellos proveen gran cantidad
   y diversidad de información sobre la cobertura de la Tierra: características
@@ -48,7 +47,7 @@
 
 \par Con la acumulación de datos registrados por sensores remotos desde los años
   70 existen series temporales que permiten realizar varios tipos de análisis con
-  relevancia para la transmisión de la enfermedad de Chagas y otras
+  relevancia para la transmisión de la enfermedad de Dengue y otras
   ETV\footnote{Enfermedades de Transmisión Vectorial}.
   Entre ellas, series temporales de imágenes de mediana resolución espacial
   permiten analizar en perspectiva histórica los cambios de uso y cobertura del
@@ -58,11 +57,9 @@
   en el procesamiento de computadoras, la mejora en la adquisición de datos,
   la reducción de los costos de hardware y software y el desarrollo de tecnología
   GIS\footnote{Sistema de Información Geográfica} han llevado al lanzamiento
-  de programas que apuntan a integrar SR / GIS en aplicaciones de salud por CHAART
+  de programas que apuntan a integrar SR / GIS en aplicaciones de salud
   \cite{tesis_riesgo_viral, tesis_gonza, espinosa_temporal, rs_public_health}.
 
-
-\subsection{Epidemiología Panorámica}
 
 
 \par El uso de técnicas de Teledetección para mapear la distribución de vectores y el riesgo
@@ -76,7 +73,7 @@
   regresión logística y análisis discriminante, que dilucidan las asociaciones
   entre datos ambientales multivariados y los patrones de presencia o ausencia de
   vectores para así mapear los vectores o las enfermedades.
-  Estos métodos son capaces de predecir la probabilidad “a posteriori” de la
+  Estos métodos son capaces de predecir la probabilidad “\textit{a posteriori}” de la
   presencia de la variable dependiente (vector o enfermedad), a partir de un
   grupo de variables independientes (datos de clima y cobertura de la tierra) y de esta
   forma pueden ser usados para hacer mapas de riesgo a partir de bases de datos.
@@ -88,7 +85,11 @@
   \caption{La propagación y persistencia a través de paisajes heterogéneos}\label{fig:paisajes_h}
   \end{figure}
 
-\par Las condiciones ambientales que determinan la conectividad de los paisajes
+% la vision panotamira de los problemas de este tipo esta vinculada con la
+% el hecho de que dichos problemas dependen de un entorno no local
+\par Las condiciones ambientales que determinan la
+  conectividad \footnote{El grado en que el paisaje impide o facilita el movimiento
+  entre las zonas de recursos \cite{landscape_connectivity}} de los paisajes
   para la disperción pueden variar en las distintas regiones y dependen de cómo
   el patógeno se dispersa biológicamente (e.j: dado un patógeno portado por
   vectores, el movimiento del insecto) o abióticamente (e.j: flujos de viento o agua).
@@ -98,10 +99,11 @@
   sistemas, como las enfermedades zoonóticas de mamíferos terrestres, estos mismos
   cuerpos de agua pueden funcionar como barreras impidiendo el movimiento
   del huesped o del vector (97). Éstas condiciones se ven reflejadas en la
-  Figura \ref{fig:paisajes_h} de \cite{Landscape Epidemiology of Emerging Infectious...}. Notemos que en el caso de \textbf{a)}, la
+  Figura \ref{fig:paisajes_h} de \cite{Landscape Epidemiology of Emerging Infectious...}.
+  Notemos que en el caso de \textbf{a)}, la
   conectividad entre los sitios azules es mayor que la que se da entre éstos y
   los amarillos, y también entre ellos y los rojos, siendo que la distancia
-  Euclidea entre los azules. Ésto ocurre porque el sitio rojo está del otro lado
+  Euclidea entre los azules es mayor. Ésto ocurre porque el sitio rojo está del otro lado
   de la cordillera, la cual funciona como una barrera geográfica para la
   inoculación\footnote{Introducción de microorganismos vivos, muertos o atenuados,
   en un organismo de forma accidental o voluntaria.}, el huésped y/o la disperción
@@ -113,157 +115,110 @@
   más estrechamente conectados, a pesar de que están separados por una mayor
   distancia Euclidea que con otros, porque el sitio amarillo de abajo está localizado
   bajo una corriente que va desde el sitio amarillo de arriba.
-
-  \par La \textbf{\textit{Epidemiología Panorámica}} \cite{nidality, ostfeld_re_emerging}
-  está estrechamente relacionada
-  a su paralela ecológica, la Ecología Panorámica, una ciencia con inicios en los años
-  1930s que se dedica a estudiar las interacciones entre los ambientes y la
-  vegetación (122).
+% con un así se pega acá
+  \par La \textbf{\textit{Epidemiología Panorámica}}\cite{nidality, ostfeld_re_emerging}
+  (EP) está estrechamente relacionada a su paralela ecológica, la Ecología
+  Panorámica, una ciencia con inicios en los años 1930s que se dedica a estudiar
+  las interacciones entre los ambientes y la vegetación (122).
   Sin embargo, los paisajes son espacial y temporalmente dinámicos.
   En simultáneo con el nacimiento de la ecología panorámica como una ciencia,
   Pavlosky estipula el concepto de \textit{nidalidad}\footnote{Se define como
   el foco de la infección. Además, Pavlosky, establece que los focos de
   enfermedades a microescala están determinados por todo el ecosistema \cite{nidality}}
-  (o focalidad) de las enfermedades (86, 87), donde los patógenos son asociados
+  (o focalidad) de las enfermedades, donde los patógenos son asociados
   a paisajes (zonas) específicos. Un foco de infección contiene tres elementos
   críticos \cite{reisen_landscape}:
   \begin{enumerate}
     \item Vectores con capacidad de transmisión de la infección
     \item Vertebrados capaces de funcionar como reservorio de la infección
-    \item Anfitriones susceptibles, como humanos o animales domésticos
+    \item Huéspedes susceptibles, como humanos o animales domésticos
   \end{enumerate}
   El concepto de \textit{focalidad} mezclado con la ecología panorámica
   llevó al nacimiento de la ciencia contemporánea
-  \textbf{\textit{Epidemiología Panorámica}} (37), en la cual las enfermedades
+  \textbf{\textit{Epidemiología Panorámica}}, en la cual las enfermedades
   pueden ser asociadas a distintas características del paisaje o cómo
-  la configuración entre el vector, el huesped y el patógeno se intersecan
-  dada un clima permisivo para que ello suceda.
+  la configuración entre el vector, el huésped y el patógeno se intersecan
+  dado un clima permisivo para que ello suceda.
 
-\par Por definición, la \textit{Epidemiología Panorámica} integra conceptos y
+\par Por definición, la \textit{EP} integra conceptos y
   enfoques de la ecología vinculada a las enfermedades, con el análisis a
   macroescala de la ecología del paisaje. La intersección de estas perspectivas
   nos habilita a entender cómo es que la configuración espacial y las
   características de la composición del paisaje afectan a los procesos
   epidemiológicos a lo largo y ancho de las áreas geográficas que se
   extienden más allá de los procesos que operan localmente dentro de una sola comunidad.
-  Así, éste enfoque es más que simplemente establecer
+  Así, la \textit{EP} es más que simplemente establecer
   sectores en el territorio y examinar diferencias en condiciones locales de
   factores bióticos y abióticos entre distintos lugares; la clave es obtener
   información sobre la distribución geográfica de la enfermedad y comprender
   cómo las interrelaciones de los paisajes influencian las intereacciones entre
   individuos susceptibles e infectados.
 
-\par Dado lo ya mencionado, resulta natural que la \textit{Epidemiología Panorámica}
-  promueva la noción de que la información
-  satelital derivada de la observación de la Tierra y las tecnologías geoespaciales
-  son herramientas escenciales \cite{hay_overview_rs} para abordar los problemas
-  epidemiológicos relacionados a la transmisión de enfermedades por vectores.
-  Utilizando se llevaron a cabo numerosos estudios interdisciplinarios enfocados
-  en la generación de modelos, espaciales y temporales, orientados a predecir riesgo,
-  basándose en condiciones ambientales derivadas de información satelital
-  \cite{enao_gis_y_sr, fuller_costa_rica, madrin_correlating, arboleda_colombia}.
-  En particular, en Argentina algunas de la experiencias en esta dirección son
-  \cite{rotela_space_time, estallo_prevention, espinosa_temporal}. En ellas
-  se aborda el problema de la epidemia del Dengue brindando herramientas
-  operacionales \cite{porcasi_operative}.
-  A su vez, en el caso ya mencionado de German y colaboradores
+\par La EP ha sido aplicada en gran variedad de estudios sobre vectores de
+  enfermedades (28-37). A nivel global, se pueden encontrar contribuciones en esta área
+  [32, 33, 34] también con algunas experiencias de herramientas operativas [35].
+  A su vez, muchos estudios interdisciplinarios fueron llevados a cabo en
+  latinoamérica enfocados en la generación de modelos predictivos de riesgo,
+  espaciales y temporales, basados en condiciones ambientales derivadas de
+  información satelital [24, 25, 26, 27].
+  Por ejemplo, en México, Dumonteil y Gourbiere (38)
+  estudiaron la relación entre la distribución de la especie Triatoma dimidiata
+  y factores bioclimáticos, para de esta forma desarrollar un modelo predictivo de
+  la abundancia domiciliaria por esta especie y las tasas de infección
+  por T. cruzi. Estas predicciones se usaron para construir el primer mapa de
+  riesgo de transmisión en la península de Yucatán hallándose que la abundancia de T.
+  dimidiata se asocia de forma positiva (por análisis de regresión de Poisson)
+  con los cultivos, pastos, precipitación, humedad relativa y la temperatura
+  máxima. En particular, en Argentina existen varias experiencias en esta
+  dirección, [28, 29, 30] abordan el problema de la epidemia del Dengue dando
+  herramientas operacionales [31].
 
+\par Por ejemplo, en 2011, Argentina comenzó a desarrollar un proyecto operacional
+  (Sistema de Alerta Temprana de Salud, HEWS), útil tanto para las autoridades de
+  salud como para los investigadores.
+  Básicamente, HEWS es un mapeo de riesgo dinámico del dengue para todas las
+  ciudades del país. En este producto, cada ciudad es representada por un punto
+  al que se le asigna un valor de riesgo para cada año, basado en tecnología
+  geoespacial. El trabajo fue realizado en un contexto interdisciplinario e
+  interinstitucional. En este sistema [13], el riesgo se evalúa en cuatro componentes que son: el
+  entomológico, el viral, el componente relacionado con las actividades de
+  control y finalmente el ambiental. Mientras que los tres primeros componentes
+  se generan con el aporte de información de los agentes de salud que trabajan en cada
+  ciudad, el cuarto se evalúa a partir de datos satelitales.
+  Específicamente el componente ambiental, en la versión inicial del sistema, se
+  evalúa con una probabilidad estacionaria de presencia de vectores (igual para
+  todo el tiempo) más un componente relacionado con el número de ciclos virales,
+  que son una función de la temperatura, y así es diferente para cada ciudad y
+  para cada año. El mapa de probabilidad de presencia de especie (modelo de nicho)
+  es claramente una gran simplificación y se puede mejorar en base a datos
+  satelitales continuos del medio ambiente. Variables como precipitación y
+  temperatura, han demostrado, con una variabilidad local, influenciar el
+  desarrollo de mosquitos, su supervivencia y actividad de
+  oviposición\footnote{Proceso de implantación o difusión de huevos plenamente
+  desarrollados a partir del cuerpo de la hembra} y por ende la abundancia de vectores.
 
-Los SR han sido aplicados en gran variedad de estudios sobre vectores de
-enfermedades (28-37). Por ejemplo, en México, Dumonteil y Gourbiere (38)
-estudiaron la relación entre la distribución de la especie Triatoma dimidiata
-y factores bioclimáticos, para de esta forma desarrollar un modelo predictivo de
-la abundancia domiciliaria por esta especie y las tasas de infección
-por T. cruzi. Estas predicciones se usaron para construir el primer mapa de
-riesgo de transmisión en la península de Yucatán hallándose que la abundancia de T.
-dimidiata se asocia de forma positiva (por análisis de regresión de Poisson)
-con los cultivos, pastos, precipitación, humedad relativa y la temperatura
-máxima. [poner ejemplo de trabajos en Argentina]
-
--------------------------------------------
-
-
-
-----------------------------------------
-
-El concepto interdisciplinario de \textit{Epidemiología Panorámica} (EP)
-ha permitido generar algunos progresos en la epidemiología del dengue y otras
-enfermedades transmitidas por vectores y zoonóticas como el chagas, la
-malaria, la leishmaniasis y el hantavirus. Esta herramienta, EP, se centra en
-producir mapas de riesgo predictivos espaciales y temporales basados en
-características ambientales junto con datos de campo [7-14].
-Estos estudios en Latinoamérica, donde se utiliza la tecnología espacial en
-problemas epidemiológicos, están inspirados en trabajos pioneros llevados a cabo
-en EE. UU. y Europa [15-18].
-Con base en los trabajos citados en el párrafo anterior, en 2011, Argentina
-comenzó a desarrollar un proyecto operacional
-(Sistema de Alerta Temprana de Salud, HEWS), útil tanto para las autoridades de
-salud como para los investigadores.
-
-
-Básicamente, HEWS es un mapeo de riesgo dinámico del dengue para todas las
-ciudades del país. En este producto, cada ciudad es representada por un punto
-al que se le asigna un valor de riesgo para cada año, basado en tecnología
-geoespacial. El trabajo fue realizado en un contexto interdisciplinario e
-interinstitucional.
-
-En este sistema [13], el riesgo se evalúa en cuatro componentes que son: el
-entomológico, el viral, el componente relacionado con las actividades de
-control y finalmente el ambiental. Mientras que los tres primeros componentes
-se generan con el aporte de información de los agentes de salud que trabajan en cada
-ciudad, el cuarto se evalúa a partir de datos satelitales.
-
-Específicamente el componente ambiental, en la versión inicial del sistema, se
-evalúa con una probabilidad estacionaria de presencia de vectores (igual para
-todo el tiempo) más un componente relacionado con el número de ciclos virales,
-que son una función de la temperatura, y así es diferente para cada ciudad y
-para cada año. El mapa de probabilidad de presencia de especie (modelo de nicho)
-es claramente una gran simplificación y se puede mejorar en base a datos
-satelitales continuos del medio ambiente. Variables como precipitación y
-temperatura, han demostrado, con una variabilidad local, influenciar el
-desarrollo de mosquitos, su supervivencia y actividad de oviposición y por ende
-la abundancia de vectores.
-
-
---------------------------------
-
-
-En particular trabajos previos como los de Estallo [8], [19] utilizan información
-satelital para estimar la evolución temporal de la abundancia de vectores.
-En 2017 German y colaboradores [20] desarrollan una metodología completa
-para generar modelos de manera automática y basada en información de libre
-acceso. En particular German [20] utiliza productos del sensor (MODIS) a bordo
-del satélite Terra y Aqua, pues es uno de los más adecuados para esta
-aplicación particular, debido a su resolución temporal, espectral y espacial.
-MODIS proporciona un conjunto de productos pre-procesados y de libre acceso [21].
-Específicamente, los productos de vegetación (índice de vegetación de diferencia
-normalizada) y temperatura (temperatura de la superficie terrestre) derivados
-de MODIS son ejemplos de variables de percepción remota utilizadas
-en aplicaciones de epidemiologia [13], [22] incorporadas en [20]. Otra variable
-ambiental obtenida de satélite que es relevante e incorporada, es el
-\textit{Índice de Agua de Diferencia Normalizada} (NDWI) que evalúa de alguna
-forma el contenido de agua de la cubierta. Adicionalmente el trabajo de German
-incorpora una estimación de la precipitación desde el espacio a partir de las
-misiones (TRMM) y (GPM) [23].
-
-
-
---------------------------------------------------------------------------
-
-
-
------------------------------------------
-
-
-
-
-
-Implementar el enfoque panorámico es una tarea no trivial. Los enfoques
-panorámicos que incorporan complejidad espacio-temporal a los sistemas
-epidemiológicos requieren un cuidado al establecer relaciones entre las
-observaciones moleculares y microbianas de la distribución de las enfermedades
-a través de mediciones de las condiciones bióticas y abióticas
-correspondientes (y circundantes) (7).
-
+\par Otro ejemplo a destacar en la utilización de éstas técnicas en Argentina es
+  el trabajo de German y colaboradores \cite{german_temporal}, en 2017.
+  En él desarrollan una metodología completa
+  para generar modelos de manera automática y basada en información de libre
+  acceso. En particular German \cite{german_temporal} utiliza productos del sensor (MODIS) a bordo
+  del satélite Terra y Aqua, pues es uno de los más adecuados para esta
+  aplicación particular, debido a su resolución temporal, espectral y espacial.
+  MODIS proporciona un conjunto de productos pre-procesados y de libre acceso \cite{terra_aqua_modis}.
+  Específicamente, los productos de vegetación (índice de vegetación de diferencia
+  normalizada) y temperatura (temperatura de la superficie terrestre) derivados
+  de MODIS son ejemplos de variables de percepción remota utilizadas
+  en aplicaciones de epidemiologia [13], [22] incorporadas en [20]. Otra variable
+  ambiental obtenida de satélite que es relevante e incorporada, es el
+  \textit{Índice de Agua de Diferencia Normalizada} (NDWI) que evalúa de alguna
+  forma el contenido de agua de la cubierta. Adicionalmente el trabajo de German
+  incorpora una estimación de la precipitación desde el espacio a partir de las
+  misiones (TRMM) y (GPM) [23].
+  Utilizando los datos mencionados como variables independientes,
+  desarrollaron modelos temporales de pronóstico de oviposición de \textit{Aedes Aegypti}
+  usando un método lineal multivariado. En su trabajo, mencionan que
+  realizaron muchos métodos con distintos períodos de tiempo y se llegó a
+  construir uno con una buena capacidad de
+  predicción ($R^{2} = 0.7 $ utilizando 11 variables ambientales independientes en total)
 
 \end{document}
