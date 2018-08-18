@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\subsection{Machine Learning}
+\section{Machine Learning}
 
 El Aprendizaje Automático (ML) es un enfoque empírico efectivo para
 regresiones y/o clasificaciones de sistemas no-lineales que pueden involucrar desde
@@ -28,5 +28,99 @@ publicaciones que incluyen \textit{remote sensing} y \textit{neural network},
 \textit{Sciences of the Earth}, el 44\% a \textit{Computer Science} y el 35\% a
 \textit{Engineering}; con China, Estados Unidos, Italia e India como los paises
 con mayor producción científica en dichas áreas.
+
+
+\subsection{Scikit-learn}
+Éste proyecto inició en el 2007 como un proyecto del Google Summer Scool por David
+Cournapeau. Más tarde ese año, Matthieu Brucher comenzó a trabajar en éste proyecto
+como parte de su tesis. En 2010 Fabian Pedrafosa, Gael Varoquaux, Alexandre
+Gramfort y Vincent Michel del INRIA \footnote{Institut National de Recherche
+en Informatique et en Automatique} tomaron el liderazgo del proyecto y lo liberaron
+al público por primera vez, el 1ro de Febrero de 2010. Desde entonces, salieron muchos
+\textit{releases} siguiendo ciclos de 3 meses, y una gran comunidad internacional
+ha estado liderando el desarrollo desde entonces.
+
+Scikit-learn es un módulo de Python de libre acceso para Aprendizaje Automático
+construido sobre \textit{SciPy}\footnote{AGREGAR QUÉ ES}. Es una herramienta
+sencilla y efectiva para minería de datos y análisis de datos. Dado que está bajo
+licencia BSD\footnote{PONER QUÉ ES}, esta librería puede ser utilizada tanto
+para uso personal como comercial.
+
+Con scikit-learn, los usuarios pueden realizar una gran variedad de tareas
+que van desde selección de modelos, clustering, y preprocesamiento entre otras.
+La librería provee un completo conjunto de tareas que permiten una
+implementación completa de la solución de un problema
+de Aprendizaje Automático.
+
+Scikit-learn tiene una muy extensiva utilización. Se está utilizando por
+grandes compañias en diferentes industrias desde streaming de música, hasta
+recomendadores de hoteles, entre otras. Esto da la pauta de que los usuarios pueden
+integrar algoritmos implementados con este módulo a sus propias aplicaciones.
+
+Otra de las grandes bondades de la herramienta es que se asegura que tanto usuarios
+antiguos como nuevos puedan obtener la asistencia que necesitan para integrar
+el módulo de Aprendizaje Automático a sus propias plataformas. Ésta es la razón
+que justifica el alto nivel de detalle en su documentación oficial.
+
+
+
+\subsection{Métodos Lineales}
+
+\subsubsection{Regresión lineal utilizando el método ordinario de Mínimos Cuadrados}
+
+\subsubsection{Regresión lineal utilizando el método Ridge}
+
+
+\subsection{Árboles de Decisión}
+Los Árboles de Decisión (DTs) son métodos no paramétrico de aprendizaje supervisado
+utilizados tanto para problemas de clasificación como de regresión.
+La meta es crear un modelo que prediga el valor de una variable objetivo aprendiendo
+simples reglas de desición inferidas a partir de las características de los datos
+de entrenamientos.
+
+El algoritmo de Árbol de Decisión construye modelos de clasificación o regresión
+utilizando una estructura de árbol. Éste divide el conjunto de datos en pequeños
+subconjuntos mientras que, al mismo tiempo, un árbol de decisión es incrementalmente
+construido. El resultado final es un árbol con nodos de decisión y nodos hojas.
+Un nodo de decisión tiene dos o más ramas , cada una representando valores para
+el atributo examinado. Un nodo hoja representa una decisión dentro del
+objetivo numérico. Los árboles de decisión pueden manejar tanto datos
+categóricos como numéricos.
+
+\pagebreak
+\subsubsection{Fundamentos matemáticos}
+Dados los vectores de entrenamiento $x_{i} \in R^{n}$, $i = 1,..,l$ y un vector
+de etiquetas $y \in R^{l}$, un árbol de decisión particiona recursivamente el
+espacio de modo que las muestras con la misma etiqueta se agrupen juntas.
+
+Supongamos que los datos en el nodo $m$ es representada por $Q$. Para cada
+candidato se divide $\theta = (j, t_{m})$ donde $j$ es una característica y
+un humbral $t_{m}$, particionando los datos en conjuntos $Q_{izq}(\theta)$ y
+$Q_{der}(\theta)$ donde:
+\begin{center}
+  \begin{align}
+    Q_{izq}(\theta) &= (x, y) | x_{j} \leq t_m \\
+    Q_{der}(\theta) &= Q - Q_{izq}(\theta)
+  \end{align}
+\end{center}
+La impureza en $m$ es calculada usando la función de impureza $H()$, la elección
+de ésta depende de la tarea que se quiera realizar.
+En el caso de una regresión, entonces para el nodo $m$, representando una
+región $R_{m}$ con una cantidad $N_{m}$ observaciones, los criterios
+para minimizar en cuanto a la determinación de ubicaciones para divisiones
+futuras son el \textbf{Error Cuadrático Medio}, que minimiza el error $L2$ usando
+valores promedios en los nodos terminales, y el \textbf{Error Absoluto Medio}, que minimiza
+el error $L1$ usando el valor de la mediana estadística en los nodos terminales.
+
+Error Cuadrático Medio:
+
+\begin{center}
+  \begin{align}
+    c_{m} &= \frac{1}{N_{m}} \sum_{i \leq N_{m}}^{} y_{i} \\
+    H(X_{m}) &= \frac{1}{N_{m}} \sum_{i \leq N_{m}}^{} (y_{i} - c_{m})^{2}
+  \end{align}
+\end{center}
+
+
 
 \end{document}

@@ -54,7 +54,7 @@ de tecnisismos  hasta la actualidad.
 - Hablar un poco de machine learning en aplicaciones sociales.
 - Hablar de machine learning en Geociencias
 ------------- parte técnica ----------
-- Scikit learn
+- Scikit learn ✓
 - Desarrollar más en profundidad:
   - Regresión Lineal:
         - común ✓
@@ -67,6 +67,44 @@ de tecnisismos  hasta la actualidad.
 - Irace
 
 
+
+### SciKit learn
+
+This project was started in 2007 as a Google Summer of Code project by David Cournapeau. Later that year, Matthieu
+Brucher started work on this project as part of his thesis.
+In 2010 Fabian Pedregosa, Gael Varoquaux, Alexandre Gramfort and Vincent Michel of INRIA took leadership of the
+project and made the first public release, February the 1st 2010. Since then, several releases have appeared following
+a ~3 month cycle, and a thriving international community has been leading the development
+
+------
+
+
+scikit-learn is a free-to-use machine learning module for Python built on SciPy. It is a straightforward and effective tool for data mining and data analysis. Because it is released with a BSD license, it can be used for both personal and commercial reasons.
+
+With scikit-learn, users are able to conduct a variety of tasks under different categories like model selection, clustering, preprocessing, and more. The module provides the means to complete implementations.
+
+Moreover, scikit-learn has an extensive use. It is being utilized by big companies in different industries like music streaming, hotel bookings, and more. This means that users can integrate algorithms in the platform to their own applications.
+
+
+Free Platform
+
+Because scikit-learn is released with a BSD license, it can be used for free by everyone. This license has minimal restrictions; therefore, users can utilize it to design their applications and platforms with little worry over limitations.
+
+Industrial Use
+
+scikit-learn is a helpful platform that can predict consumer behavior, identify abusive actions in the cloud, create neuroimages, and more. It is being used extensively by commercial and research organizations around the world, a testament to its ease of use and overall advantage.
+
+Collaborative Library
+
+scikit-learn began as a one-man mission but now it is being built by numerous authors from INRIA spearheaded by Fabian Pedregosa and individual contributors who are not attached to teams or organizations. This makes the module a well-updated one, releasing updates several times a year. Users can also look forward to assistance from an international community, in case they have queries or if they hit snags in development using the module.
+
+Ease of Use
+
+Commercial entities and research organizations alike have employed scikit-learn in their processes. They all agree that the module is easy-to-use, thereby allowing them to perform a multitude of processes with nary a problem.
+
+API Documentation
+
+scikit-learn ensures that users old and new alike get the assistance they need in integrating the machine learning module into their own platforms. That is why a documentation detailing the use of its API exists that users can access anytime on the website. This makes certain developers can implement machine learning algorithms offered by the tool seamlessly.
 
 ### Multilayer Perceptron
 http://scikit-learn.org/stable/modules/neural_networks_supervised.html#mathematical-formulation
