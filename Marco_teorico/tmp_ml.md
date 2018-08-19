@@ -3,6 +3,16 @@
 
 Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SVR/
 
+@article{random_forest,
+  title={Random forests},
+  author={Breiman, Leo},
+  journal={Machine learning},
+  volume={45},
+  number={1},
+  pages={5--32},
+  year={2001},
+  publisher={Springer}
+}
 
 
 @article{scikit-learn,
@@ -54,16 +64,16 @@ de tecnisismos  hasta la actualidad.
 - Hablar un poco de machine learning en aplicaciones sociales.
 - Hablar de machine learning en Geociencias
 ------------- parte técnica ----------
-- Scikit learn ✓
+- Scikit learn ✓✓
 - Desarrollar más en profundidad:
   - Regresión Lineal:
         - común ✓
         - ridge ✓
   - SVR ✓
   - Multilayer perceptron ✓
-  - KNN ✓
-  - DTR ✓
-  - Random Forest ✓
+  - KNN ✓✓
+  - DTR ✓✓
+  - Random Forest ✓✓
 - Irace
 
 

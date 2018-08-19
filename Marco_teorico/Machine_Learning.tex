@@ -1,5 +1,4 @@
 \input{../EncabezadoTesis}
-
 \begin{document}
 
 \section{Machine Learning}
@@ -72,54 +71,139 @@ que justifica el alto nivel de detalle en su documentación oficial.
 
 
 \subsection{Árboles de Decisión}
-Los Árboles de Decisión (DTs) son métodos no paramétrico de aprendizaje supervisado
+Los Árboles de Decisión (DTs) son métodos no paramétricos de aprendizaje supervisado
 utilizados tanto para problemas de clasificación como de regresión.
 La meta es crear un modelo que prediga el valor de una variable objetivo aprendiendo
 simples reglas de desición inferidas a partir de las características de los datos
 de entrenamientos.
 
 El algoritmo de Árbol de Decisión construye modelos de clasificación o regresión
-utilizando una estructura de árbol. Éste divide el conjunto de datos en pequeños
+utilizando una estructura arbórea. Éste divide el conjunto de datos en pequeños
 subconjuntos mientras que, al mismo tiempo, un árbol de decisión es incrementalmente
 construido. El resultado final es un árbol con nodos de decisión y nodos hojas.
-Un nodo de decisión tiene dos o más ramas , cada una representando valores para
+Un nodo de decisión tiene dos o más ramas, cada una representando valores para
 el atributo examinado. Un nodo hoja representa una decisión dentro del
 objetivo numérico. Los árboles de decisión pueden manejar tanto datos
 categóricos como numéricos.
 
-\pagebreak
-\subsubsection{Fundamentos matemáticos}
-Dados los vectores de entrenamiento $x_{i} \in R^{n}$, $i = 1,..,l$ y un vector
-de etiquetas $y \in R^{l}$, un árbol de decisión particiona recursivamente el
-espacio de modo que las muestras con la misma etiqueta se agrupen juntas.
+Más formalmente, dados los vectores de entrenamiento $x_{i} \in R^{n}$, $i = 1,..,l$
+y un vector de etiquetas $y \in R^{l}$, un árbol de decisión particiona
+recursivamente el espacio de modo que las muestras con la misma etiqueta se agrupen juntas.
 
-Supongamos que los datos en el nodo $m$ es representada por $Q$. Para cada
+Supongamos que los datos en el nodo $m$ son representados por $Q$. Para cada
 candidato se divide $\theta = (j, t_{m})$ donde $j$ es una característica y
-un humbral $t_{m}$, particionando los datos en conjuntos $Q_{izq}(\theta)$ y
+$t_{m}$ es un humbral, particionando los datos en conjuntos $Q_{izq}(\theta)$ y
 $Q_{der}(\theta)$ donde:
-\begin{center}
-  \begin{align}
-    Q_{izq}(\theta) &= (x, y) | x_{j} \leq t_m \\
-    Q_{der}(\theta) &= Q - Q_{izq}(\theta)
-  \end{align}
-\end{center}
+\begin{align}
+  Q_{izq}(\theta) &= (x, y) | x_{j} \leq t_m \\
+  Q_{der}(\theta) &= Q - Q_{izq}(\theta)
+\end{align}
 La impureza en $m$ es calculada usando la función de impureza $H()$, la elección
 de ésta depende de la tarea que se quiera realizar.
-En el caso de una regresión, entonces para el nodo $m$, representando una
+En el caso de una regresión, para el nodo $m$, representando una
 región $R_{m}$ con una cantidad $N_{m}$ observaciones, los criterios
 para minimizar en cuanto a la determinación de ubicaciones para divisiones
-futuras son el \textbf{Error Cuadrático Medio}, que minimiza el error $L2$ usando
+futuras suelen ser el \textbf{Error Cuadrático Medio}, que minimiza el error $L2$ usando
 valores promedios en los nodos terminales, y el \textbf{Error Absoluto Medio}, que minimiza
 el error $L1$ usando el valor de la mediana estadística en los nodos terminales.
+Luego, la función de impureza es
+\begin{align}
+  G(Q, \theta) = \frac{n_{izq}}{N_{m}} \ H(Q_{izq}(\theta)) + \frac{n_{der}}{N_{m}} \ H(Q_{der}(\theta))
+\end{align}
+y seleccionar los parámetros que minimicen la impureza
+\begin{align}
+  \theta^{*} = argmin_{\theta} \ G(Q, \theta)
+\end{align}
+Luego seguir partiendo $Q_{izq}$ y $Q_{der}$ hasta que se alcance la profundidad
+máxima permitida del árbol, $N_{m} < min_{muestras}$ o bien $N_{m} = 1$
 
-Error Cuadrático Medio:
 
-\begin{center}
-  \begin{align}
-    c_{m} &= \frac{1}{N_{m}} \sum_{i \leq N_{m}}^{} y_{i} \\
-    H(X_{m}) &= \frac{1}{N_{m}} \sum_{i \leq N_{m}}^{} (y_{i} - c_{m})^{2}
-  \end{align}
-\end{center}
+\subsection{Random Forest}
+
+Random Forest es un método de aprendizaje que utiliza ensamblado y se
+usa para llevar a cabo tareas tanto de clasificación como de regresión.
+La idea es construir una variedad de árboles de decisión en tiempo de entrenamiento
+y devolver la clase que se corresponda con la moda estadística de las clases
+(para clasifición) o bien el promedio (para regresión) de los árboles individuales.
+
+Existen varios algoritmos de Random Forest, describiremos formalmente el desarrollado
+por Breiman \cite{random_forest}. Sea $\mathcal{D}_{n} = \ \{ (X_{1}, Y_{1}), \ ..., \ (X_{n}, Y_{n})\}$
+un conjunto de variables aleatorias independientes e idénticamente distribuídas (i.i.d.)
+pertenecientes al conjunto $[0,1]^{d} \ \times \ \Re $ con $d \geq 2$, con la misma distribución que
+un par genérico $(X,Y)$ satisfaciendo que $\mathbbm{E}Y^{2} < \infty$. Además,
+sea $r()$ la función de regresión que se busca estimar.
+Un Random Forest es un predictor que consiste de una colección aleatoria base
+de árboles de regresión, $\{ r_{n}(x, \theta_{m}, \mathcal{D}_{n}), m \ > \ 1 \}$, donde
+$\theta_{1},\ \theta_{2},\ ...$ son salidas i.i.d. de una variable aleatoria
+$\theta$. Éstos árboles aleatorios son combinados para formar la estimación
+de la regresión:
+\begin{align}
+  \overline{r}(X,\ \mathcal{D}_{n})\ =\ \mathbbm{E}_{\theta}[r_{n}(X,\ \theta,\ \mathcal{D}_{n})]
+\end{align}
+donde $\mathbbm{E}_{\theta}$ denota la esperanza con respecto al parámetro aleatorio
+condicionadamente por $X$ y el conjunto de datos $\mathcal{D}_{n}$. Notemos que
+dicha esperanza es evualuada por el método de Monte Carlo, esto es, generando
+$M$ árboles aleatorios, y tomando el promedio de los resultados. La variable
+de aleatoriedad $\theta$ es usada para determinar cómo se van a realizar los
+sucesivos cortes cuando se construyen los árboles individuales, como una selección
+de la coordenada a dividir y la posición de la división.
+
+Cada árbol aleatorio es construido de la siguiente manera: todos los nodos
+del árbol son asociados a celdas rectangulares tales que en cada etapa de
+construcción del árbol, el conjunto de celdas asociadas a las hojas del árbol
+forman una partición de $[0, 1]^{d}$. La raíz del árbol es exactamente $[0, 1]^{d}$.
+Luego, el siguiente procedimiento es repetido una cantidad $\lceil \log_{2}k_{n} \rceil$ veces
+donde $k_{n}$ es un parámetro determinístico, fijado por el usuario, posiblemente
+dependiente del valor de $n$.
+
+\begin{enumerate}
+  \item En cada nodo, se selecciona una coordenada de $X = (X^{(1)}, \ ...,\ X^{(d)})$
+        donde la característica j-ésima tiene una probabilidad de $p_{nj} \in (0,1)$
+        de ser elegida.
+  \item En cada nodo, una vez que la coordenada es seleccionada, la división es
+        en el punto intermedio del lado elegido.
+\end{enumerate}
+Cada árbol aleatorio $r_{n}(X, \theta)$ devuelve el promedio sobre todos los
+$Y_{i}$ para los cuales los vectores correspondientes $X_{i}$ caen en la misma
+celda de la partición aleatoria que $X$.
+
+
+\subsection{K-Vecinos más cercanos (KNN)}
+El principio detrás de los métodos de vecinos más cercanos es encontrar un
+número predefinido de las muestras de entrenamiento más cercanas en distancia
+al nuevo punto, y predecir su valor a partir de ellos.
+El número de muestras pueder ser una constante definida por el usuario, o
+variar basada en la densidad local de los puntos. La distancia puede, en genral,
+ser cualquier métrica aunque la distancia Euclídea es la elección más común.
+
+Las predicciones son hechas para un nuevo punto $x$, buscando a través de el conjunto
+de entrenamiento completo las $K$ instancias más cercanas (los vecinos) y computar
+la variable de retorno utilizando la información de esos K puntos. Para el caso
+de la regresión suele ser el promedio de cada variable de retorno.
+
+\begin{align}
+  \overline{y}(x) = 1/k * \sum_{j \in knn(x)} y_{j}
+\end{align}
+
+
+
+\subsection{Support Vector Machine (SVM)}
+
+Una SVM construye un hiperplano o un conjunto de hiperplanos en un espacio
+de muy alta, o infinta, dimensionalidad. Éstos pueden ser usados tanto para
+tareas de regresión como de clasifición. Intuitivamente, una buena separación
+se consigue por el hiperplano que tenga la mayor distancia 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
