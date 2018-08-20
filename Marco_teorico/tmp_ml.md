@@ -43,10 +43,28 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
 }
 
 
-@MISC{svm_tutorial,
+@MISC{svr_tutorial,
     author = {Alex J. Smola and Bernhard Schölkopf},
     title = {A tutorial on support vector regression },
     year = {2004}
+}
+
+
+@inproceedings{first_svm,
+ author = {Boser, Bernhard E. and Guyon, Isabelle M. and Vapnik, Vladimir N.},
+ title = {A Training Algorithm for Optimal Margin Classifiers},
+ booktitle = {Proceedings of the Fifth Annual Workshop on Computational Learning Theory},
+ series = {COLT '92},
+ year = {1992},
+ isbn = {0-89791-497-X},
+ location = {Pittsburgh, Pennsylvania, USA},
+ pages = {144--152},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/130385.130401},
+ doi = {10.1145/130385.130401},
+ acmid = {130401},
+ publisher = {ACM},
+ address = {New York, NY, USA},
 }
 
 
@@ -69,7 +87,7 @@ de tecnisismos  hasta la actualidad.
   - Regresión Lineal:
         - común ✓
         - ridge ✓
-  - SVR ✓
+  - SVR ✓✓
   - Multilayer perceptron ✓
   - KNN ✓✓
   - DTR ✓✓
@@ -118,6 +136,12 @@ scikit-learn ensures that users old and new alike get the assistance they need i
 
 ### Multilayer Perceptron
 http://scikit-learn.org/stable/modules/neural_networks_supervised.html#mathematical-formulation
+
+A multilayer perceptron (MLP) is a class of feedforward artificial neural network. An MLP consists of at least three layers of nodes. Except for the input nodes, each node is a neuron that uses a nonlinear activation function. MLP utilizes a supervised learning technique called backpropagation for training.[1][2] Its multiple layers and non-linear activation distinguish MLP from a linear perceptron. It can distinguish data that is not linearly separable.[3]
+
+Multi-layer Perceptron (MLP) is a supervised learning algorithm that learns a function f(\cdot): R^m \rightarrow R^o by training on a dataset, where m is the number of dimensions for input and o is the number of dimensions for output. Given a set of features X = {x_1, x_2, ..., x_m} and a target y, it can learn a non-linear function approximator for either classification or regression. It is different from logistic regression, in that between the input and the output layer, there can be one or more non-linear layers, called hidden layers. Figure 1 shows a one hidden layer MLP with scalar output.
+
+The leftmost layer, known as the input layer, consists of a set of neurons \{x_i | x_1, x_2, ..., x_m\} representing the input features. Each neuron in the hidden layer transforms the values from the previous layer with a weighted linear summation w_1x_1 + w_2x_2 + ... + w_mx_m, followed by a non-linear activation function g(\cdot):R \rightarrow R - like the hyperbolic tan function. The output layer receives the values from the last hidden layer and transforms them into output values.
 
 ### Decision Tree
 Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.

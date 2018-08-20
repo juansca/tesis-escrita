@@ -127,14 +127,14 @@ y devolver la clase que se corresponda con la moda estadística de las clases
 (para clasifición) o bien el promedio (para regresión) de los árboles individuales.
 
 Existen varios algoritmos de Random Forest, describiremos formalmente el desarrollado
-por Breiman \cite{random_forest}. Sea $\mathcal{D}_{n} = \ \{ (X_{1}, Y_{1}), \ ..., \ (X_{n}, Y_{n})\}$
+por Breiman \cite{random_forest}. Sea $\mathcal{D}_{n} = \ \{ (X_{1}, Y_{1}), \ \dots, \ (X_{n}, Y_{n})\}$
 un conjunto de variables aleatorias independientes e idénticamente distribuídas (i.i.d.)
 pertenecientes al conjunto $[0,1]^{d} \ \times \ \Re $ con $d \geq 2$, con la misma distribución que
 un par genérico $(X,Y)$ satisfaciendo que $\mathbbm{E}Y^{2} < \infty$. Además,
 sea $r()$ la función de regresión que se busca estimar.
 Un Random Forest es un predictor que consiste de una colección aleatoria base
 de árboles de regresión, $\{ r_{n}(x, \theta_{m}, \mathcal{D}_{n}), m \ > \ 1 \}$, donde
-$\theta_{1},\ \theta_{2},\ ...$ son salidas i.i.d. de una variable aleatoria
+$\theta_{1},\ \theta_{2},\ \dots$ son salidas i.i.d. de una variable aleatoria
 $\theta$. Éstos árboles aleatorios son combinados para formar la estimación
 de la regresión:
 \begin{align}
@@ -157,7 +157,7 @@ donde $k_{n}$ es un parámetro determinístico, fijado por el usuario, posibleme
 dependiente del valor de $n$.
 
 \begin{enumerate}
-  \item En cada nodo, se selecciona una coordenada de $X = (X^{(1)}, \ ...,\ X^{(d)})$
+  \item En cada nodo, se selecciona una coordenada de $X = (X^{(1)}, \ \dots,\ X^{(d)})$
         donde la característica j-ésima tiene una probabilidad de $p_{nj} \in (0,1)$
         de ser elegida.
   \item En cada nodo, una vez que la coordenada es seleccionada, la división es
@@ -189,22 +189,94 @@ de la regresión suele ser el promedio de cada variable de retorno.
 
 \subsection{Support Vector Machine (SVM)}
 
-Una SVM construye un hiperplano o un conjunto de hiperplanos en un espacio
-de muy alta, o infinta, dimensionalidad. Éstos pueden ser usados tanto para
-tareas de regresión como de clasifición. Intuitivamente, una buena separación
-se consigue por el hiperplano que tenga la mayor distancia 
+  \begin{figure}
+  \centering%
+  \includegraphics[width=0.5\textwidth]{images/svm_hiperplane}%
+  \caption{La propagación y persistencia a través de paisajes heterogéneos}\label{fig:svm}
+  \end{figure}
+
+  Una SVM \cite{first_svm} construye un hiperplano o un conjunto de hiperplanos en un espacio
+  de muy alta, o infinta, dimensionalidad. Éstos pueden ser usados tanto para
+  tareas de regresión como de clasifición. Intuitivamente, una buena separación
+  se consigue por el hiperplano que tenga la mayor distancia a los puntos de
+  entrenamiento más cercanos de alguna clase, como bien se ve en la
+  Figura \ref{fig:svm}, dado que en general
+  a más grande sea esa distancia más pequeño será el error de generalización del
+  modelo.
+
+  Una Support Vector Regression VEEER (SVR) es una veloz y precisa forma de
+  interpolación de conjuntos de datos. Es útil cuando se quiere aproximar sobre
+  un dominio conocido una función costosa de calcular. Aprende rápidamente y
+  se puede mejorar sistemáticamente.
+
+  SVR es una generalización de la SVM a problemas de regresión. Tecnicamente,
+  se puede decir que es un algoritmo de aprendizaje supervisado. Éste
+  requiere de un conjunto de datos de entrenamiento,
+  $\mathcal{T} = (\vec{X}, \vec{Y})$, que cubre el dominio de interés acompañado
+  de las soluciones en dicho dominio. El trabajo de la SVM es aproximar la función
+  definida por el conjnuto de entrenamiento, $F(\vec{X}) = \vec{Y}$. En general,
+  en las SVM, los vectores $\vec{X}$ son utilizados para definir el hiperplano que
+  separa las distintas soluciones posibles. En problemas de regresión, estos
+  vectores son utilizados para realizar una regresión lineal, los que estén
+  más cerca del punto de prueba se los llama \textit{vectores de soporte}.
+
+  Daremos una idea más detallada de los fundamentos matemáticos detrás de una
+  SVR \cite{svr_tutorial}:
+
+  Dados los vectores de entrenamiento $x_{i} \in \mathbb{R}^{p}$ con $i = 1, \dots ,n$
+  y un vector $y \in \mathbb{R}$ el $\epsilon$-SVR resuelve el siguiente problema
+  primario:
+
+  \begin{align}
+    \min\limits_{w, b, \zeta, \zeta^{*}} \frac{1}{2} w^{T} w + C \sum_{i = 1}^{n} \zeta_{i}
+  \end{align}
+  con las restricciones de:
 
 
+  \begin{math}
+    y_{i} - w^{T} \phi(x_{i}) - b \leq \epsilon + \zeta_{i}, \\
+    w^{T} \phi(x_{i}) + b - y_{i} \leq \epsilon + \zeta^{*}_{i}, \\
+          \zeta^{*}_{i}, \zeta_{i} \geq 0 \\
+    para\ i\ =\ 1,\ \dots, n
+  \end{math}
+
+  Mientras que el problema dual a resolver es:
+
+  \begin{align}
+    \min\limits{\alpha, \alpha^{*}} \frac{1}{2} (\alpha - \alpha^{*})^{T}
+    Q(\alpha - \alpha^{*}) + \epsilon e^{T} (\alpha + \alpha^{*}) -
+    y^{T} (\alpha - \alpha^{*})
+  \end{align}
+  con las restricciones de:
+
+  \begin{math}
+    e^{T} (\alpha - \alpha^{*}) = 0, \\
+    0 \geq \alpha, \alpha^{*} \leq C \\
+    para\ i\ =\ 1, \dots, n
+  \end{math}
+
+  Donde $e$ es un vector con todos sus componentes poseen el valor $1$, $C > 0$
+  es la cota superior, $Q$ es una matriz semidefinida
+  positiva\footnote{Una matriz, $M$, es semidefinida positiva si $x^{*}Mx \leq 0$
+  $\forall x \in \mathbb{R}^{n}$} de tamaño $n \times n$,
+  $Q_{ij} \equiv K(x_{i}, x_{j}) = \phi(x_{i}^{T})\phi(x_{j})$ es el núcleo
+  (kernel, en inglés). Aquí, los vectores de entrenamiento están siendo mapeados
+  un espacio de gran (probablemente infinita) dimensionalidad por la función
+  $\phi$.
+  Luego, la función de decisión es:
+  \begin{align}
+    \sum_{i = 1}^{n} (\alpha - \alpha^{*})K(x_{i}, x) + \rho
+  \end{align}
+
+\subsection{Perceptron Multicapa (MLP)}
 
 
-
-
-
-
-
-
-
-
+\subsubsection{Fundamentos Matemáticos}
+Dados ejemplos de entrenamiento $(x_{1}, y_{1}), \dots, (x_{n}, y_{n})$
+donde $x_{i} \in \mathbb{R}^{n}$ y $y_{i} \in \{0,1\}$, un MLP de una capa oculta
+de una neurona aprende una función $f(x) = W_{2}g(W_{1}^{T} x + b_{1}) + b_{2}$
+donde $W_{1} \in \mathbb{R}^{m}$ y $W_{2}, b_{1}, b_{2} \in \mathbb{R}$ son
+parametros del modelo.
 
 
 \end{document}
