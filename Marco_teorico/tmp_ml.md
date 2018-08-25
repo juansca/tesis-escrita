@@ -15,6 +15,18 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
 }
 
 
+@article{monte_carlo,
+  title={The monte carlo method},
+  author={Metropolis, Nicholas and Ulam, Stanislaw},
+  journal={Journal of the American statistical association},
+  volume={44},
+  number={247},
+  pages={335--341},
+  year={1949},
+  publisher={Taylor \& Francis}
+}
+
+
 @article{scikit-learn,
  title={Scikit-learn: Machine Learning in {P}ython},
  author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
@@ -27,6 +39,22 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
  year={2011}
 }
 
+@article{sklearn_review,
+  title={API design for machine learning software: experiences from the scikit-learn project},
+  author={Buitinck, Lars and Louppe, Gilles and Blondel, Mathieu and Pedregosa, Fabian and Mueller, Andreas and Grisel, Olivier and Niculae, Vlad and Prettenhofer, Peter and Gramfort, Alexandre and Grobler, Jaques and others},
+  journal={arXiv preprint arXiv:1309.0238},
+  year={2013}
+}
+
+
+@Misc{scipy,
+  author = {Eric Jones and Travis Oliphant and Pearu Peterson and others},
+  title = {{SciPy}: Open source scientific tools for {Python}},
+  year = {2001--},
+  url = "http://www.scipy.org/",
+  note = {[Online; accessed <today>]}
+}
+
 
 @incollection{backpropagation,
   title={Theory of the backpropagation neural network},
@@ -35,6 +63,46 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
   pages={65--93},
   year={1992},
   publisher={Elsevier}
+}
+
+@ARTICLE{mlp_intro1,
+author={D. W. Ruck and S. K. Rogers and M. Kabrisky and M. E. Oxley and B. W. Suter},
+journal={IEEE Transactions on Neural Networks},
+title={The multilayer perceptron as an approximation to a Bayes optimal discriminant function},
+year={1990},
+volume={1},
+number={4},
+pages={296-298},
+keywords={neural nets;probability;multiple class problems;neural networks;multilayer perceptron;Bayes optimal discriminant function;classifier;backpropagation;two-class problem;probability;unit activation function;Multilayer perceptrons;Probability density function;Backpropagation;Pattern recognition;Bayesian methods;Books;Image analysis;Multi-layer neural network;Neural networks},
+doi={10.1109/72.80266},
+ISSN={1045-9227},
+month={Dec},}
+
+
+@article{mlp_intro2,
+author = {Nazzal, Jamal and M. El-Emary, Ibrahim and A. Najim, Salam},
+year = {2008},
+month = {01},
+pages = {},
+title = {Multilayer Perceptron Neural Network (MLPs) For Analyzing the Properties of Jordan Oil Shale},
+volume = {5},
+booktitle = {World Applied Sciences Journal}
+}
+
+
+
+@article{decision_tree_regression,
+title = "Decision tree regression for soft classification of remote sensing data",
+journal = "Remote Sensing of Environment",
+volume = "97",
+number = "3",
+pages = "322 - 336",
+year = "2005",
+issn = "0034-4257",
+doi = "https://doi.org/10.1016/j.rse.2005.05.008",
+url = "http://www.sciencedirect.com/science/article/pii/S0034425705001604",
+author = "Min Xu and Pakorn Watanachaturaporn and Pramod K. Varshney and Manoj K. Arora",
+keywords = "Non-parametric classification, Decision tree regression, Soft classification, Classification accuracy"
 }
 
 
@@ -56,6 +124,25 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
     author = {Alex J. Smola and Bernhard Schölkopf},
     title = {A tutorial on support vector regression },
     year = {2004}
+}
+
+@article{review_svr,
+  title={Support vector regression},
+  author={Basak, Debasish and Pal, Srimanta and Patranabis, Dipak Chandra},
+  journal={Neural Information Processing-Letters and Reviews},
+  volume={11},
+  number={10},
+  pages={203--224},
+  year={2007}
+}
+
+
+@inproceedings{support_vector_regression,
+  title={Support vector regression machines},
+  author={Drucker, Harris and Burges, Christopher JC and Kaufman, Linda and Smola, Alex J and Vapnik, Vladimir},
+  booktitle={Advances in neural information processing systems},
+  pages={155--161},
+  year={1997}
 }
 
 
