@@ -269,14 +269,33 @@ de la regresión suele ser el promedio de cada variable de retorno.
   \end{align}
 
 \subsection{Perceptron Multicapa (MLP)}
-
+Un \textbf{Perceptron Multicapa} (MLP) un tipo de red neuronal artificial (ANN)
+\textit{feedforward}. Éste es un algoritmo de aprendizaje supervisado que
+aprende una función a partir de un conjunto de datos de entrenamiento y puede ser
+utilizada tanto para tareas de regresión como de clasificación haciendo uso, entre
+otras cosas, de una técnica de aprendizaje supervisado llamada
+\textit{propagación hacia atrás}\cite{backpropagation} (backpropagation, en inglés).
+El MLP consiste de al menos tres capas: una de entrada, una de salida y,
+como mínimo, una
+capa oculta\footnote{Una capa de neuronas artificiales que toman un conjunto
+de entradas ponderadas y producen una salida a través de una función de activación.}.
+Este tipo de arquitectura logra distinguir relaciones entre los datos que no sean
+linearmente separables.
 
 \subsubsection{Fundamentos Matemáticos}
-Dados ejemplos de entrenamiento $(x_{1}, y_{1}), \dots, (x_{n}, y_{n})$
-donde $x_{i} \in \mathbb{R}^{n}$ y $y_{i} \in \{0,1\}$, un MLP de una capa oculta
-de una neurona aprende una función $f(x) = W_{2}g(W_{1}^{T} x + b_{1}) + b_{2}$
-donde $W_{1} \in \mathbb{R}^{m}$ y $W_{2}, b_{1}, b_{2} \in \mathbb{R}$ son
-parametros del modelo.
+  Dados ejemplos de entrenamiento $(x_{1}, y_{1}), \dots, (x_{n}, y_{n})$
+  donde $x_{i} \in \mathbb{R}^{n}$ y $y_{i} \in \{0,1\}$, un MLP de una capa oculta
+  de una neurona aprende una función $f(x) = W_{2}g(W_{1}^{T} x + b_{1}) + b_{2}$
+  donde $W_{1} \in \mathbb{R}^{m}$ y $W_{2}, b_{1}, b_{2} \in \mathbb{R}$ son
+  parámetros del modelo. $W_{1}, W_{2}$ representan de la capa de entrada y la
+  capa oculta, respectivamente. $b_{1}, b_{2}$ representan el sesgo agregado a
+  la capa oculta y la capa de salida, respectivamente. La función
+  $g(): \mathbb{R} \rightarrow \mathbb{R}$ es la función de activación, la cual
+  es definida por defecto como la tangente hiperbólica. Está dada por,
+
+\begin{align}
+  g(z) =
+\end{align}
 
 
 \end{document}

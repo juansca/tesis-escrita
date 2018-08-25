@@ -28,6 +28,15 @@ Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SV
 }
 
 
+@incollection{backpropagation,
+  title={Theory of the backpropagation neural network},
+  author={Hecht-Nielsen, Robert},
+  booktitle={Neural networks for perception},
+  pages={65--93},
+  year={1992},
+  publisher={Elsevier}
+}
+
 
 @inproceedings{sklearn_api,
   author    = {Lars Buitinck and Gilles Louppe and Mathieu Blondel and
