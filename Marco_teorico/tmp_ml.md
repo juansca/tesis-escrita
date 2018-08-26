@@ -1,6 +1,66 @@
 ## Citas
 
 
+@book{mitchell_learn,
+ author = {Mitchell, Thomas M.},
+ title = {Machine Learning},
+ year = {1997},
+ isbn = {0070428077, 9780070428072},
+ edition = {1},
+ publisher = {McGraw-Hill, Inc.},
+ address = {New York, NY, USA},
+}
+
+@book{test_val,
+ author = {Russell, Stuart and Norvig, Peter},
+ title = {Artificial Intelligence: A Modern Approach},
+ year = {2009},
+ isbn = {0136042597, 9780136042594},
+ edition = {3rd},
+ publisher = {Prentice Hall Press},
+ address = {Upper Saddle River, NJ, USA},
+}
+
+@article{semi_supervised,
+  title={Semi-supervised learning (chapelle, o. et al., eds.; 2006)[book reviews]},
+  author={Chapelle, Olivier and Scholkopf, Bernhard and Zien, Alexander},
+  journal={IEEE Transactions on Neural Networks},
+  volume={20},
+  number={3},
+  pages={542--542},
+  year={2009},
+  publisher={IEEE}
+}
+
+
+@inproceedings{supervised_learning,
+ author = {Caruana, Rich and Niculescu-Mizil, Alexandru},
+ title = {An Empirical Comparison of Supervised Learning Algorithms},
+ booktitle = {Proceedings of the 23rd International Conference on Machine Learning},
+ series = {ICML '06},
+ year = {2006},
+ isbn = {1-59593-383-2},
+ location = {Pittsburgh, Pennsylvania, USA},
+ pages = {161--168},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1143844.1143865},
+ doi = {10.1145/1143844.1143865},
+ acmid = {1143865},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+
+@incollection{unsupervised_learning,
+  title={Unsupervised learning},
+  author={Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+  booktitle={The elements of statistical learning},
+  pages={485--585},
+  year={2009},
+  publisher={Springer}
+}
+
+
 Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SVR/
 
 @article{random_forest,
