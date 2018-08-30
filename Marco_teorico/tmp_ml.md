@@ -61,6 +61,203 @@
 }
 
 
+
+@article{nutrition_prediction,
+title = "Personalized Nutrition by Prediction of Glycemic Responses",
+journal = "Cell",
+volume = "163",
+number = "5",
+pages = "1079 - 1094",
+year = "2015",
+issn = "0092-8674",
+doi = "https://doi.org/10.1016/j.cell.2015.11.001",
+url = "http://www.sciencedirect.com/science/article/pii/S0092867415014816",
+author = "David Zeevi and Tal Korem and Niv Zmora and David Israeli and Daphna Rothschild and Adina Weinberger and Orly Ben-Yacov and Dar Lador and Tali Avnit-Sagi and Maya Lotan-Pompan and Jotham Suez and Jemal Ali Mahdi and Elad Matot and Gal Malka and Noa Kosower and Michal Rein and Gili Zilberman-Schapira and Lenka Dohnalová and Meirav Pevsner-Fischer and Rony Bikovsky and Zamir Halpern and Eran Elinav and Eran Segal"
+}
+
+
+@ARTICLE{bigdata_health,
+author={Murdoch, T.B. and Detsky, A.S.},
+title={The inevitable application of big data to health care},
+journal={JAMA - Journal of the American Medical Association},
+year={2013},
+volume={309},
+number={13},
+pages={1351-1352},
+doi={10.1001/jama.2013.393},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84875646817&doi=10.1001%2fjama.2013.393&partnerID=40&md5=513ce0af6da26a159f681a7d6275de35},
+affiliation={Division of Gastroenterology, University of Calgary, Calgary, AB, Canada; Institute for Health Policy, Management and Evaluation, University of Toronto, Toronto, ON, Canada; Department of Medicine, University of Toronto, Toronto, ON, Canada; Department of Medicine, Mount Sinai Hospital, University Health Network, Toronto, ON, Canada},
+document_type={Short Survey},
+}
+
+
+
+@ARTICLE{age_estimation,
+author={Guo, G. and Fu, Y. and Dyer, C.R. and Huang, T.S.},
+title={Image-based human age estimation by manifold learning and locally adjusted robust regression},
+journal={IEEE Transactions on Image Processing},
+year={2008},
+volume={17},
+number={7},
+pages={1178-1188},
+doi={10.1109/TIP.2008.924280},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-45949109037&doi=10.1109%2fTIP.2008.924280&partnerID=40&md5=47d7fb84f0cba8990eec8009a0280371},
+publisher={Institute of Electrical and Electronics Engineers Inc.},
+document_type={Article},
+}
+
+
+
+
+@ARTICLE{children,
+author={Subramanian, S. and Huq, S. and Yatsunenko, T. and Haque, R. and Mahfuz, M. and Alam, M.A. and Benezra, A. and Destefano, J. and Meier, M.F. and Muegge, B.D. and Barratt, M.J. and VanArendonk, L.G. and Zhang, Q. and Province, M.A. and Petri Jr., W.A. and Ahmed, T. and Gordon, J.I.},
+title={Persistent gut microbiota immaturity in malnourished Bangladeshi children},
+journal={Nature},
+year={2014},
+volume={510},
+number={7505},
+pages={417-421},
+doi={10.1038/nature13421},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84903134830&doi=10.1038%2fnature13421&partnerID=40&md5=b80faf449f8a740efe700c3a23d001a2},
+publisher={Nature Publishing Group},
+document_type={Article},
+}
+
+
+tag: twitt_nlp
+“How Old Do You Think I Am?”: A Study of Language and Age in Twitter
+
+
+@ARTICLE{cardellino,
+author={Cardellino, C. and Villata, S. and Alemany, L.A. and Cabrio, E.},
+title={Information extraction with active learning: A case study in legal text},
+journal={Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+year={2015},
+volume={9042},
+pages={483-494},
+doi={10.1007/978-3-319-18117-2_36},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84942540484&doi=10.1007%2f978-3-319-18117-2_36&partnerID=40&md5=9d5242674dbd86099f3cf7c31c4fc09d},
+publisher={Springer Verlag},
+document_type={Conference Paper},
+source={Scopus},
+}
+
+
+@ARTICLE{svm_semantic,
+author={Pradhan, S. and Hacioglu, K. and Krugler, V. and Ward, W. and Martin, J.H. and Jurafsky, D.},
+title={Support vector learning for semantic argument classification},
+journal={Machine Learning},
+year={2005},
+volume={60},
+number={1-3},
+pages={11-39},
+doi={10.1007/s10994-005-0912-2},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-24044446171&doi=10.1007%2fs10994-005-0912-2&partnerID=40&md5=db5637ecfaff3c0e3a2c06e0bdcf4372},
+document_type={Article},
+source={Scopus},
+}
+
+
+
+@ARTICLE{face_detection,
+author={Rowley, H.A. and Baluja, S. and Kanade, T.},
+title={Neural network-based face detection},
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+year={1998},
+volume={20},
+number={1},
+pages={23-38},
+doi={10.1109/34.655647},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-0031672526&doi=10.1109%2f34.655647&partnerID=40&md5=70cfce30dd2c4050fd027482f583c406},
+document_type={Article},
+source={Scopus},
+}
+
+
+
+@ARTICLE{corner_detection,
+author={Rosten, E. and Drummond, T.},
+title={Machine learning for high-speed corner detection},
+journal={Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+year={2006},
+volume={3951 LNCS},
+pages={430-443},
+doi={10.1007/11744023_34},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-33745824633&doi=10.1007%2f11744023_34&partnerID=40&md5=178391f439a421001a9ef1a35c84c11b},
+publisher={Springer Verlag},
+document_type={Conference Paper},
+source={Scopus},
+}
+
+
+@ARTICLE{handwritting,
+author={Plamondon, R. and Srihari, S.N.},
+title={On-line and off-line handwriting recognition: A comprehensive survey},
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+year={2000},
+volume={22},
+number={1},
+pages={63-84},
+doi={10.1109/34.824821},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-0033640745&doi=10.1109%2f34.824821&partnerID=40&md5=6c2277daa5e17d7fefb4b87c0d96ae5d},
+publisher={IEEE, Los Alamitos, CA, United States},
+document_type={Article},
+source={Scopus},
+}
+
+
+
+@ARTICLE{solar_irradiation,
+author={Salcedo-Sanz, S. and Casanova-Mateo, C. and Muñoz-Marí, J. and Camps-Valls, G.},
+title={Prediction of daily global solar irradiation using temporal Gaussian processes},
+journal={IEEE Geoscience and Remote Sensing Letters},
+year={2014},
+volume={11},
+number={11},
+pages={1936-1940},
+doi={10.1109/LGRS.2014.2314315},
+art_number={6803858},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84901819940&doi=10.1109%2fLGRS.2014.2314315&partnerID=40&md5=419337472dc8cb4c3684661ae9b754b7},
+publisher={Institute of Electrical and Electronics Engineers Inc.},
+document_type={Article},
+source={Scopus},
+}
+
+
+
+@ARTICLE{ml_grs,
+author={Lary, D.J. and Alavi, A.H. and Gandomi, A.H. and Walker, A.L.},
+title={Machine learning in geosciences and remote sensing},
+journal={Geoscience Frontiers},
+year={2016},
+volume={7},
+number={1},
+pages={3-10},
+doi={10.1016/j.gsf.2015.07.003},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84955438526&doi=10.1016%2fj.gsf.2015.07.003&partnerID=40&md5=f07ce6527f2d2e01b076fcddae9c5f55},
+publisher={Elsevier},
+document_type={Article},
+source={Scopus},
+}
+
+
+
+@ARTICLE{modeling_mineral,
+author={Carranza, E.J.M. and Laborte, A.G.},
+title={Data-Driven Predictive Modeling of Mineral Prospectivity Using Random Forests: A Case Study in Catanduanes Island (Philippines)},
+journal={Natural Resources Research},
+year={2016},
+volume={25},
+number={1},
+pages={35-50},
+doi={10.1007/s11053-015-9268-x},
+url={https://www.scopus.com/inward/record.uri?eid=2-s2.0-84958884955&doi=10.1007%2fs11053-015-9268-x&partnerID=40&md5=46dbbd8ed57746e9c037035491837cd0},
+publisher={Springer New York LLC},
+document_type={Article},
+source={Scopus},
+}
+
+
 Buen material de SVM: http://mcminis1.github.io/blog/2014/05/10/intuition-for-SVR/
 
 @article{random_forest,
@@ -230,6 +427,19 @@ Goldberger, Arthur S. (1964). "Classical Linear Regression". Econometric Theory.
 
 tag: knnr
 Altman, N. S. (1992). "An introduction to kernel and nearest-neighbor nonparametric regression". The American Statistician. 46 (3): 175–185. doi:10.1080/00031305.1992.10475879.
+
+
+@article{ridge,
+  title={Ridge regression: Biased estimation for nonorthogonal problems},
+  author={Hoerl, Arthur E and Kennard, Robert W},
+  journal={Technometrics},
+  volume={12},
+  number={1},
+  pages={55--67},
+  year={1970},
+  publisher={Taylor \& Francis Group}
+}
+
 
 ## Ideas
 
