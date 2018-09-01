@@ -27,7 +27,7 @@
   en órbitas geoestacionarias\footnote{Están en altitudes entre 23000 y 40000 km,
   sobre la franja ecuatorial y viaja a la misma velocidad de rotación de la Tierra
   por lo que siempre están fijos sobre un punto determinado de la superficie terrestre},
-  u órbitas polares, aquellas que pasan repetidamente por diferentes áreas
+  u órbitas polares, los cuales pasan repetidamente por diferentes áreas
   de la Tierra mientras están orbitando alrededor del planeta a altitudes menores.
 
 
@@ -48,7 +48,7 @@
 \par Con la acumulación de datos registrados por sensores remotos desde los años
   70 existen series temporales que permiten realizar varios tipos de análisis con
   relevancia para la transmisión de la enfermedad de Dengue y otras
-  ETV\footnote{Enfermedades de Transmisión Vectorial}.
+  enfermedades de transmisión vectorial.
   Entre ellas, series temporales de imágenes de mediana resolución espacial
   permiten analizar en perspectiva histórica los cambios de uso y cobertura del
   terreno, proceso que habitualmente tiene vinculación con cambios en la
@@ -56,7 +56,7 @@
   A su vez, el deterioro de las condiciones de salud en el mundo, el avance significativo
   en el procesamiento de computadoras, la mejora en la adquisición de datos,
   la reducción de los costos de hardware y software y el desarrollo de tecnología
-  GIS\footnote{Sistema de Información Geográfica} han llevado al lanzamiento
+  de Sistemas de Información Geográfica (GIS) han llevado al lanzamiento
   de programas que apuntan a integrar SR / GIS en aplicaciones de salud
   \cite{tesis_riesgo_viral, tesis_gonza, espinosa_temporal, rs_public_health}.
 
@@ -64,10 +64,12 @@
 
 \par El uso de técnicas de Teledetección para mapear la distribución de vectores y el riesgo
   de enfermedades ha tenido una gran evolución durante las últimas dos
-  décadas (13). La complejidad de las técnicas va desde el uso de simples
+  décadas. La complejidad de las técnicas va desde el uso de simples
   correlaciones entre las firmas espectrales de diferentes coberturas, usos del
-  suelo y abundancia de especies (26,27) hasta técnicas complejas que integran variables
-  ambientales obtenidas de satélites con la biología de los vectores (13).
+  suelo y abundancia de especies \cite{spectral_spatial, potencial_use} hasta
+  técnicas complejas que integran variables
+  ambientales obtenidas de satélites con la biología de los vectores
+  \cite{ndwi_erffectiveness, malaria_impact}.
   Estas técnicas se usan para desarrollar modelos predictivos de riesgo,
   los cuales principalmente se realizan a través de técnicas estadísticas de
   regresión logística y análisis discriminante, que dilucidan las asociaciones
@@ -79,26 +81,23 @@
   forma pueden ser usados para hacer mapas de riesgo a partir de bases de datos.
 
 
-  \begin{figure}
-  \centering%
-  \includegraphics[width=1\textwidth]{images/paisajes_heterogeneos}%
-  \caption{La propagación y persistencia a través de paisajes heterogéneos}\label{fig:paisajes_h}
-  \end{figure}
-
 % la vision panotamira de los problemas de este tipo esta vinculada con la
 % el hecho de que dichos problemas dependen de un entorno no local
-\par Las condiciones ambientales que determinan la
-  conectividad \footnote{El grado en que el paisaje impide o facilita el movimiento
-  entre las zonas de recursos \cite{landscape_connectivity}} de los paisajes
+\par Cabe aclarar que la visión panorámica de los problemas de este tipo está
+  vinculada con el hecho de que dependen de un entorno no local. Es por esta
+  razón que resulta importante hablar acerca de la \textit{conectividad}
+  \footnote{El grado en que el paisaje impide o facilita el movimiento
+  entre las zonas de recursos \cite{landscape_connectivity}} de los paisajes.
+  Las condiciones ambientales que determinan dicha conectividad
   para la disperción pueden variar en las distintas regiones y dependen de cómo
   el patógeno se dispersa biológicamente (e.j: dado un patógeno portado por
   vectores, el movimiento del insecto) o abióticamente (e.j: flujos de viento o agua).
   Por ejemplo, rios y corrientes pueden actuar como corredores de disperción que
   fomentan la propagación de la infección a través de paisajes heterogéneos
-  para patógenos de plantas transmitidos por el agua (53), mientras que en otros
+  para patógenos de plantas transmitidos por el agua, mientras que en otros
   sistemas, como las enfermedades zoonóticas de mamíferos terrestres, estos mismos
   cuerpos de agua pueden funcionar como barreras impidiendo el movimiento
-  del huesped o del vector (97). Éstas condiciones se ven reflejadas en la
+  del huesped o del vector. Éstas condiciones se ven reflejadas en la
   Figura \ref{fig:paisajes_h} de \cite{Landscape Epidemiology of Emerging Infectious...}.
   Notemos que en el caso de \textbf{a)}, la
   conectividad entre los sitios azules es mayor que la que se da entre éstos y
@@ -115,11 +114,18 @@
   más estrechamente conectados, a pesar de que están separados por una mayor
   distancia Euclidea que con otros, porque el sitio amarillo de abajo está localizado
   bajo una corriente que va desde el sitio amarillo de arriba.
+
+  \begin{figure}
+  \centering%
+  \includegraphics[width=1\textwidth]{images/paisajes_heterogeneos}%
+  \caption{La propagación y persistencia a través de paisajes heterogéneos}\label{fig:paisajes_h}
+  \end{figure}
+
 % con un así se pega acá
-  \par La \textbf{\textit{Epidemiología Panorámica}}\cite{nidality, ostfeld_re_emerging}
+  \par Así, la \textbf{\textit{Epidemiología Panorámica}}\cite{nidality, ostfeld_re_emerging}
   (EP) está estrechamente relacionada a su paralela ecológica, la Ecología
   Panorámica, una ciencia con inicios en los años 1930s que se dedica a estudiar
-  las interacciones entre los ambientes y la vegetación (122).
+  las interacciones entre los ambientes y la vegetación \cite{landscape_ecology}.
   Sin embargo, los paisajes son espacial y temporalmente dinámicos.
   En simultáneo con el nacimiento de la ecología panorámica como una ciencia,
   Pavlosky estipula el concepto de \textit{nidalidad}\footnote{Se define como
@@ -151,7 +157,7 @@
   sectores en el territorio y examinar diferencias en condiciones locales de
   factores bióticos y abióticos entre distintos lugares; la clave es obtener
   información sobre la distribución geográfica de la enfermedad y comprender
-  cómo las interrelaciones de los paisajes influencian las intereacciones entre
+  cómo las interrelaciones de los paisajes influencian las interacciones entre
   individuos susceptibles e infectados.
 
 \par La EP ha sido aplicada en gran variedad de estudios sobre vectores de
@@ -217,7 +223,7 @@
   Utilizando los datos mencionados como variables independientes,
   desarrollaron modelos temporales de pronóstico de oviposición de \textit{Aedes Aegypti}
   usando un método lineal multivariado. En su trabajo, mencionan que
-  realizaron muchos métodos con distintos períodos de tiempo y se llegó a
+  realizaron muchos métodos con distintos períodos de tiempo y que se llegó a
   construir uno con una buena capacidad de
   predicción ($R^{2} = 0.7 $ utilizando 11 variables ambientales independientes en total)
 

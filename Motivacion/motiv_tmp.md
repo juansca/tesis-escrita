@@ -22,6 +22,8 @@ diseases in the Americas, 2000-2016”. Vector Borne Zoon. Dis. 16:
 2016, pp. 295─301.
 
 
+[http://www.mdm.org.ar/prensa/articulo/221/Mdicos-del-Mundo-alerta-sobre-riesgos-de-fiebre-amarilla-en-Brasil-y-escenarios-de-Dengue-Zika-en-Argentina\#.W1yUa6zV-AU.link]
+
 
 @article{analisis_cordoba,
   title={Analytical report of the 2016 dengue outbreak in C{\'o}rdoba city, Argentina},

@@ -124,6 +124,50 @@ epidemiology and public health”. Int J Appl Earth Obs 6, 2004, pp.
 tag: german_temporal
 Exploring Satellite Based temporal forecast modelling of Aedes aegypti
 oviposition from an operational perspective
+
+
+
+tag: spectral_spatial
+Wood BL, Beck LR, Washino RK, Palchick SM,
+Sebesta D. Spectral and spatial characteriza-
+tion of rice field mosquito habitat. Int J Remo-
+te Sens 1991; 12: 621–626
+
+
+tag: potencial_use
+Sithiprasasna  R,  Lee  WJ,  Ugsang  DM,  Linthi-
+cum KJ. Identification and characterization of
+larval and adult anopheline mosquito habitats
+in the Republic of Korea: potential use of re-
+motely sensed data to estimate mosquito dis-
+tributions. Int J of Health Geogr 2005;4:17.
+
+
+tag: malaria_impact
+Mouchet  JS,  Manguin  J,  Sircoulon  S,  Laven-
+ture O, Faye AW, Onapa P, et al. Evolution of
+malaria in Africa for the past 40 years: Impact
+of  climatic  and  human  factors.  J  Am  Mosq
+Control Assoc 1998;14: 121-130
+
+
+tag: ndwi_erffectiveness
+Effectiveness of normalized difference water index in modelling
+Aedes aegypti house index
+
+
+
+@article{landscape_ecology,
+  title={Some general principles of landscape and regional ecology},
+  author={Forman, Richard TT},
+  journal={Landscape ecology},
+  volume={10},
+  number={3},
+  pages={133--142},
+  year={1995},
+  publisher={Springer}
+}
+
 ==============================================
 
 Landscape Epidemiology [21, 22] promotes the notion that satellite data
