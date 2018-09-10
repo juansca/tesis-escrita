@@ -682,3 +682,67 @@ A. C. Gomes, Medidas dos niveis de infestacao urbana para aedes (ste-
 gomyia) aegypti e aedes (stegomyia) albopictus em Programa de Vigi-
 lancia Entomológica, Informe Epidemiológico do Sus 7 (1998) 49 – 57.
 doi:10.5123/S0104-16731998000300006.
+
+
+
+tag: rs_invertebrate
+S. I. Hay, M. J. Packer, D. J. Rogers, Review article the impact of
+remote sensing on the study and control of invertebrate intermediate
+hosts and vectors for disease, International Journal of Remote Sensing
+18 (14) (1997) 2899–2930.
+
+
+tag: gao_ndwi
+B. Gao, NDWI–A normalized difference water index for remote sensing
+of vegetation liquid water from space, Remote Sensing of Environment
+58 (3) (1996) 257 – 266. doi:10.1016/S0034-4257(96)00067-3.
+
+
+
+tag: infectious_diseases
+S. Kalluri, P. Gilruth, D. Rogers, M. Szczur, Surveillance of
+arthropod vector-borne infectious diseases using remote sensing
+techniques:
+A review, PLOS Pathogens 3 (10) (2007) 1–11.
+doi:10.1371/journal.ppat.0030116.
+
+
+tag: surface_temp
+L. F. Peres, C. C. DaCamara, Land surface temperature and emissivity
+estimation based on the two-temperature method: sensitivity analysis
+using simulated MSG/SEVIRI data, Remote Sensing of Environment
+91 (3) (2004) 377 – 389. doi:10.1016/j.rse.2004.03.011.
+
+
+tag: temp_algorithm
+Z. Wan, MODIS land-surface temperature algorithm theoretical basis
+document (LST ATBD), Institute of Computational Earth System Sci-
+ence.
+
+
+tag: lst_surface
+Z. Wan, Y. Zhang, Q. Zhang, Z.-L. Li, Quality assessment and
+validation of the MODIS global land surface temperature, In-
+ternational Journal of Remote Sensing 25 (1) (2004) 261–274.
+doi:10.1080/0143116031000116417.
+
+
+tag: trmm_mision
+C. Kummerow, W. Barnes, T. Kozu, J. Shiue, J. Simpson, The
+Tropical Rainfall Measuring Mission (TRMM) sensor package, Jour-
+nal of Atmospheric and Oceanic Technology 15 (3) (1998) 809–817.
+doi:10.1175/1520-0426(1998)015¡0809:TTRMMT¿2.0.CO;2.
+
+
+tag: models_predicting
+E. Estallo, M. Lamfri, C. Scavuzzo, F. Almeida, M. Introini, M. Zaiden-
+berg, W. Almiron, Models for predicting aedes aegypti larval in-
+dices based on satellite images and climatic variables, Journal of the American Mosquito Control Association 24 (3) (2008) 368–376.
+doi:10.2987/5705.1.
+
+
+tag: dynamics_of_dengue
+E. L. Estallo, A. E. Carbajo, M. G. Grech, M. Frı́as-Céspedes, L. López,
+M. A. Lanfri, F. F. Ludueña Almeida, W. R. Almirón, Spatio-temporal
+dynamics of dengue 2009 outbreak in Córdoba city, Argentina, Acta
+Tropica 136 (1) (2014) 129–136.

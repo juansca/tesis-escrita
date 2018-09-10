@@ -70,3 +70,48 @@ from the MODIS MOD13Q1 satellite product (composed of 16 days) with
 a 250 m spatial resolution. The vegetation conditions are included because
 it is related also with the temperature, humidity and precipitation [36, 41],
 relevant variables for the mosquito population evolution.
+
+
+
+
+
+In addition, we include the Normalized Difference Water Index (NDWI),
+which is related to the liquid water and humidity content in both soil and
+vegetation. It is calculated from the same MODIS product using Gao’s def-
+inition [42] of NDWI from the bands provided by the MOD13Q1 product,
+corresponding to MIR and NIR reflectance N DW I = (ρ N IR −ρ M IR )/(ρ N IR +
+ρ M IR )10 4 . MODIS products require the 10 4 factor since they are stored, for
+computational economy, as integer numbers.
+
+
+
+
+We also used Land Surface Temperature (LST) from MODIS because it
+is an approximation of the environmental temperature [33, 43, 44]. For this,
+the MOD11A2 satellite product was chosen. It has 1 km spatial resolution
+and is an average of clear-sky LST’s values during an 8-day period. This
+product includes daytime and nighttime LST’s representing, in some sense,
+the maximum and minimum temperatures [45]
+
+
+Local precipitation is obtained from the Tropical Rainfall Measuring Mis-
+sion (TRMM) [46]. This is a joint mission of NASA and the Japan Aerospace
+Exploration Agency launched in 1997 to study rainfall for weather and climate research. The satellite uses several instruments including radar, microwave imaging, and lightning sensors, to detect rainfall. TRMM was out of fuel on 2014, even though it continued providing data until June 2015.
+After that, other products were published to assure continuity in the information based in a new space mission called GPM (https://earthdata.
+nasa.gov/trmm-to-gpm).
+
+
+
+Two areas of 85 ha were defined around the city and then the mean values,
+for all the satellite derived variables, were calculated . The first area is
+located within the city (Urban Area) and the second one encompasses the
+native vegetation surrounding the city (Rural Area) following the approach
+from (author?) [47, 48, 38]. The choice was made under the hypothesis
+that selecting a zone outside the city would represent well the environmental
+conditions (NDWI, NDVI, LST). The same idea was used in previous studies
+in several cities. These observations and the larval indexes are likely to be
+closely related. In this way, the external or rural area should be randomly
+selected from areas of native vegetation close enough to the city, representing
+the natural environment conditions. In this specific case this rural region is
+selected in the north-east of the city. It has a similar altitude to the city and
+mostly native forest. It can be see in Figure 2.

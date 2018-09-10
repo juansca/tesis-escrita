@@ -82,8 +82,60 @@
     de \textbf{MODIS} y productos \textbf{TRMM/GPM}.
 
   \par Los índices de vegetación global proveen productos espaciales y
-    temporales consistentes
+    temporales consistentes sobre la cobertura verdosa de la vegetación,
+    propiedades del área foliar y el nivel de clorofil. Estos indices son
+    derivados de la reflectancia atmosférica
+    corregida en las bandas infrarroja (MIR) e infrarroja cercana (NIR).
+    En este caso se utiliza el \textbf{NDVI} de producto satelital
+    de MODIS, \textit{MOD13Q1}, (compuesto de 16 días) con una resolución espacial de
+    \SI{250}{\meter}.
+    Las condiciones de vegetación son incluidas junto con la temperatura,
+    humedad y precipitación, son variables relevantes para la evolución de la
+    población de mosquitos \cite{ndwi_erffectiveness, rs_invertebrate}.
 
+  \par A su vez, se incluyé el Indice de Agua de Diferencia Normalizada
+    (\textbf{NDWI}), que está vinculado al contenido de agua líquida y humedad
+    tanto en la vegetación como en estructuras sólidas.
+    Es calculada a partir del mismo producto MODIS usando la definición de
+    \textit{Gao} \cite{gao_ndwi} del NDWI desde las bandas provistas por
+    el producto \textit{MOD13Q1}, correspondiente a la reflectancia de MIR y NIR:
+    $NDWI =  (\rho_{NIR} - \rho_{MIR}) / (\rho_{NIR}  + \rho_{MIR} ) \times 10^4$
+    Los productos MODIS, en general, necesitan el factor $10^{4}$ para ser guardados,
+    por eficiencia computacional, como números enteros.
+
+  \par En este trabajo, adicionalmente, utilizamos la Temperatura De la Superficie
+    Terrestre (\textbf{LST}) de MODIS dado que es una aproximación de la
+    temperatura ambiental \cite{infectious_diseases, surface_temp, temp_algorithm}.
+    Para esto, se eligió el producto satelital \textit{MOD11A2}. Tiene una
+    resolución espacial de \SI{1}{\kilo\meter} y un promedio de valores de
+    LST de cielo-abierto durante un periodo de 8 días. Éste producto incluye
+    LST de la noche y el día para así de alguna manera representar
+    temperaturas mínimas y máximas \cite{lst_surface}.
+
+  \par La precipitación local es obtenida de la Misión Tropical de Medida de Lluvia
+    (\textbf{TRMM}) \cite{trmm_mision}. Ésta es una misión conjunta entre la
+    NASA y la Agencia Aeroespacial de Exploración de Japón lanzada en 1997
+    para el estudio de las lluvias y así realizar investigaciones sobre el
+    clima. Para detectar la lluvia, el satélite utiliza muchos instrumentos
+    incluyendo radar, imagenes de microondas y sensores de rayos. TRMM, a pesar
+    de que se quedó sin combustible en 2014, siguió transmitiendo datos hasta
+    Junio del 2015.
+    Luego de eso, otros productos basados en una nueva misión espacial llamada
+    GPM (https://earthdata.nasa.gov/trmm-to-gpm), fueron publicados para
+    asegurar la continuidad de estos trabajos.
+
+
+  \par Dos áreas de \SI{85}{\hectare} fueron definidas alrededor de la ciudad
+  y se calcularon los valores medios para todas las variables derivadas de
+  satelite. Siguiendo el enfoque de
+  \cite{models_predicting, dynamics_of_dengue, temporal_modeling},
+  la primer área se encuentra ubicada dentro de la ciudad
+  (Área Urbana) y la segunda abarca la vegetacion nativa que rodea la ciudad
+  (Área Rural). Ésta elección fue tomada bajo la hipótesis de que seleccionar
+  una zona fuera de la ciudad representaría bien las condiciones ambientales
+  (NDWI, NDVI, LST). La misma idea fue utilizada en estudios previos muy
+  relacionados. Es probable que estas observaciones y los indices de larvas
+  estén estrechamente relacionadas.   
 
 
 
