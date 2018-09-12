@@ -115,3 +115,75 @@ selected from areas of native vegetation close enough to the city, representing
 the natural environment conditions. In this specific case this rural region is
 selected in the north-east of the city. It has a similar altitude to the city and
 mostly native forest. It can be see in Figure 2.
+
+
+
+
+
+
+The procedure to build the temporal series of remote sensed variables
+is outlined in Figure 3. The images were downloaded from NASA (http:
+//e4ftl01.cr.usgs.gov) and imported into GRASS 7.1. The mean for
+each of the previously defined two areas was calculated for every date. All
+these average values and their dates were exported to a table in the R soft-
+ware, which is used to build the complete temporal series. The data were
+interpolated in order to obtain values for all the sampling dates (a value for
+every epidemiological week).
+
+
+
+
+All the variables are considered with three weeks lags from the original
+time series, to represent Non synchronous influences, corresponding to one,
+two and three time lapses.
+
+
+
+
+
+The first step consisted in analyzing the forty environmental variables and eggs collected in each week by means of a correlation matrix and the p-values that measure their significance. This led to discarding thirty-five variables. Lagged variables were preferred because of their potential ability
+to forecast. The following variables were chosen: NDVI rural lag 1, NDWI
+rural lag 1, LST day rural lag 3, LST night rural lag 1, and TRMM lag 3.
+All the variables are then normalised using z-scores.
+
+
+
+
+
+Figure 4 presents the environmental variables along with the oviposition data as a heatmap. This format promotes the visualization of the temporal
+evolution, the correlation pattern between variables, and the lags effect.
+
+
+
+
+
+With the data described in previous section, we implemented two linear
+models (Simple and Ridge) and four non-linear models (Support Vector Ma-
+chine, ANN multi-layer Perceptron, Decision Tree, K-Nearest Neighbor) to
+model the oviposition in each week. All the models use the same set of 5
+environmental variables
+
+
+
+In all the cases we generated the models with 80 % of the dataset and
+retained the remaining 20 % of the temporal series (almost one year) as an
+independent set to corroborate the temporal prediction capacity of the tools
+(we use the last 20 % from our dataset). This splitting selection is the most
+used in the ML literature [49].
+
+
+
+Cross validation [50, 49] was used in order to decrease the dependency of
+the evaluation results on a particular selection of training set and validation
+set pair. In particular, a time series split cross validation procedure was
+used to evaluate the models http://scikit-learn.org/stable/modules/
+cross_validation.html. Other cross validation techniques like K-folds are
+not suitable for time series data, i.e., when the ordering of the data is relevant.
+
+
+
+
+In the following we describe the techniques used to model the oviposition
+z-score as a function of the remotely sensed environmental variables. All
+the models were implemented using functions from the sklearn library, freely
+available in Python.

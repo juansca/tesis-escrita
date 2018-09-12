@@ -746,3 +746,17 @@ E. L. Estallo, A. E. Carbajo, M. G. Grech, M. Frı́as-Céspedes, L. López,
 M. A. Lanfri, F. F. Ludueña Almeida, W. R. Almirón, Spatio-temporal
 dynamics of dengue 2009 outbreak in Córdoba city, Argentina, Acta
 Tropica 136 (1) (2014) 129–136.
+
+
+
+tag: ml_rainfall
+S. Cramer, M. Kampouridis, A. A. Freitas, A. K. Alexandridis, An ex-
+tensive evaluation of seven machine learning methods for rainfall predic-
+tion in weather derivatives, Expert Systems with Applications 85 (2017)
+169–181.
+
+
+tag: cross_validation
+R. R. Picard, R. D. Cook, Cross-validation of regression models, Jour-
+nal of the American Statistical Association 79 (387) (1984) 575–583.
+doi:10.1080/01621459.1984.10478083.

@@ -121,21 +121,106 @@
     de que se quedó sin combustible en 2014, siguió transmitiendo datos hasta
     Junio del 2015.
     Luego de eso, otros productos basados en una nueva misión espacial llamada
-    GPM (https://earthdata.nasa.gov/trmm-to-gpm), fueron publicados para
+    GPM (\url{https://earthdata.nasa.gov/trmm-to-gpm}), fueron publicados para
     asegurar la continuidad de estos trabajos.
 
 
   \par Dos áreas de \SI{85}{\hectare} fueron definidas alrededor de la ciudad
-  y se calcularon los valores medios para todas las variables derivadas de
-  satelite. Siguiendo el enfoque de
-  \cite{models_predicting, dynamics_of_dengue, temporal_modeling},
-  la primer área se encuentra ubicada dentro de la ciudad
-  (Área Urbana) y la segunda abarca la vegetacion nativa que rodea la ciudad
-  (Área Rural). Ésta elección fue tomada bajo la hipótesis de que seleccionar
-  una zona fuera de la ciudad representaría bien las condiciones ambientales
-  (NDWI, NDVI, LST). La misma idea fue utilizada en estudios previos muy
-  relacionados. Es probable que estas observaciones y los indices de larvas
-  estén estrechamente relacionadas.   
+    y se calcularon los valores medios para todas las variables derivadas de
+    satelite. Siguiendo el enfoque de
+    \cite{models_predicting, dynamics_of_dengue, temporal_modeling},
+    la primer área se encuentra ubicada dentro de la ciudad
+    (Área Urbana) y la segunda abarca la vegetacion nativa que rodea la ciudad
+    (Área Rural). Ésta elección fue tomada bajo la hipótesis de que seleccionar
+    una zona fuera de la ciudad representaría bien las condiciones ambientales
+    (NDWI, NDVI, LST). La misma idea fue utilizada en estudios previos muy
+    relacionados. Es probable que estas observaciones y los indices de larvas
+    estén estrechamente relacionadas. En ese sentido es que el área rural o
+    externe fue seleccionada aleatoriamente de aquellas con vegetación suficientemente
+    cercana a la ciudad, representando condiciones ambientales naturales.
+    En este caso específico esta región rural es seleccionada en el
+    noreste de la ciudad; tiene una altitud similar a la ciudad y mayormente
+    bosque nativo. Se puede observar en la Figura \ref{fig:zones}.
+    \begin{figure}
+    \centering%
+    \includegraphics[width=0.6\textwidth]{images/zones}%
+    \caption{Areas rural y urbana seleccionadas para extraer las variables ambientales}\label{fig:zones}
+    \end{figure}
+
+
+  \par El procedimiento de construir las series temporales a partir de variables
+    provenientes del sensado remoto se describen en la Figura \ref{fig:sistema}.
+    Las imagenes son obtenidas de la NASA (\url{http://e4ftl01.cr.usgs.gov}) e
+    importadas en \textbf{GRASS 7.1}. Para cada una de las áreas anteriormente
+    definidas se calcula la media de cada día. Cada uno de estos valores
+    promedio y sos díás son exportadas a una tabla en el software \textbf{R},
+    donde es utilizada para construir las series temporales completas.
+    Los datos son interpolados para obtener valores para cada uno de los
+    días de muestra (un valor para cada semana epidemiológica).
+    \begin{figure}
+    \centering%
+    \includegraphics[width=0.4\textwidth]{images/sistema}%
+    \caption{Sistema de procesamiento de productos satelitales}\label{fig:sistema}
+    \end{figure}
+
+  \par Todas las variables son consideradas con tres semanas de \textit{lag}
+  teniendo en cuenta las series temporales originales, para representar las
+  influencias asincrónicas, correspondientemente con uno, dos o tres
+  lapsos de tiempo.
+
+  \par El primer paso consistió en analizar las cuarenta variables ambientales
+    y los huevos recolectados cada semana por medio de una matriz de correlación
+    y los valores \textbf{p} que miden su significancia. Ésto llevó a descartar
+    treinta y cinco variables. Se prefieren las variables con \textit{lag} dada
+    su potencial habilidad de pronóstico. Las siguiente variables fueron
+    seleccionadas: NDVI rural \textit{lag} 1, NDWI rural \textit{lag} 1, LST rural dia \textit{lag} 3,
+    LST rural noche \textit{lag} 1 y TRMM \textit{lag} 3. Luego, todas las
+    variables fueron normalizadas utilizando el \textbf{\textit{z-score}}.
+
+  \par La Figura \ref{fig:heatmap} presenta las variables ambientales junto
+    con la oviposición en un mapa de calor (\textit{heatmap}). Este formato
+    permite una visualización en la evolución temporal, de los
+    patrones de correlación entre las variables y el efecto de \textit{lag}.
+
+    \begin{figure}
+    \centering%
+    \includegraphics[width=1\textwidth]{images/heatmap}%
+    \caption{Sistema de procesamiento de productos satelitales}\label{fig:heatmap}
+    \end{figure}
+
+
+
+\section{Modelado}
+
+  \par Con el conjunto de datos descripto en la sección anterior, se implementaron
+    dos modelos lineales (tradicional y \textit{Ridge}) y cuatro modelos
+    no-lineales (\textit{Support Vector Machine}, ANN Perceptron Multicapa,
+    Árbol de Decisión, K-vecinos más cercanos) para modelar la oviposición
+    para cada semana. Para todos los modelos se utilizó el mismo conjunto de
+    5 variables ambientales como \textit{features}.
+
+  \par En todos los casos se entrenaron los modelos con 80\% del conjunto de
+    datos y se utilizó el 20\% restante de la serie temporal (alrededor de un año)
+    como un conjunto independiente para validar la capacidad de predicción temporal
+    de las herramientas (se usó el 20\% más "nuevo" del conjunto). Ésta elección
+    de porcentajes de división es la más utilizada en la literatura de ML \cite{ml_rainfall}.
+
+  \par Se utilizó \textbf{Validación Cruzada}
+    (\textit{Cross Validation}) \cite{cross_validation, ml_rainfall} con el
+    objetivo de reducir la dependencia de los resultados en una selección particular
+    del par de conjuntos de entrenamiento y validación. En particular, para
+    evaluar los modelos, se utilizó un procedimiento de validación cruzada
+    particular para problemas que involucran series temporales
+    \url{http://scikit-learn.org/stable/modules/cross_validation.html}.
+    Otras técnicas de validación cruzada como \textit{K-folds} no son
+    adecuadas para los datos que se corresponden con series temporales, i.e,
+    cuando el orden en el conjunto de datos es importante.
+
+    \par A continuación se describiran las técnicas utilizadas para modelar
+    el \textit{z-score} de la oviposición como una función variables ambientales
+    extraidas de sensores remotos. Todos los modelos fueron implementados utilizando
+    funciones de la librería \textbf{\textit{scikit-learn}}, disponible
+    gratuitamente para el lenguaje \textbf{Python}.
 
 
 
