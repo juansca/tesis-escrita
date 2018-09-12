@@ -187,3 +187,13 @@ In the following we describe the techniques used to model the oviposition
 z-score as a function of the remotely sensed environmental variables. All
 the models were implemented using functions from the sklearn library, freely
 available in Python.
+
+
+
+
+
+Previous experiences on the modeling of epidemiological applications us-
+ing remotely sensed environmental variables report good results with this
+approach [51, 37, 52]. We used simple linear and ridge regressions, the latter
+with Tikhonov regularization with cross-validation. Note that Ridge regres-
+sion is often referred to as “weight decay” in the ML literature.

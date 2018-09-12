@@ -760,3 +760,19 @@ tag: cross_validation
 R. R. Picard, R. D. Cook, Cross-validation of regression models, Jour-
 nal of the American Statistical Association 79 (387) (1984) 575–583.
 doi:10.1080/01621459.1984.10478083.
+
+
+
+
+tag: akodon_modeling
+V. Andreo, C. Provensal, M. Scavuzzo, M. Lamfri, J. Polop, Environ-
+mental factors and population fluctuations of Akodon azarae (Muridae:
+Sigmodontinae) in central Argentina, Austral Ecology 34 (2) (2009) 132–
+142. doi:10.1111/j.1442-9993.2008.01889.x.
+
+
+
+tag: multilinear_apli
+P. K. Ra, M. S. Nathawat, M. Onagh, Application of multiple linear
+regression model through GIS and remote sensing for malaria mapping
+in Varanasi district, India, Health Sci. J. 6 (4) (2012) 731–749.
