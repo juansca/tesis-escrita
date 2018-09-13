@@ -776,3 +776,10 @@ tag: multilinear_apli
 P. K. Ra, M. S. Nathawat, M. Onagh, Application of multiple linear
 regression model through GIS and remote sensing for malaria mapping
 in Varanasi district, India, Health Sci. J. 6 (4) (2012) 731–749.
+
+
+
+tag: irace
+M. López-Ibáñez, J. Dubois-Lacoste, L. Pérez Cáceres, M. Birattari,
+T. Stützle, The irace package: Iterated racing for automatic algorithm
+configuration, Operations Research Perspectives 3 (2016) 43–58.

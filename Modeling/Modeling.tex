@@ -25,7 +25,7 @@
     de modelado y predicción de oviposición con algoritmos de Aprendizaje
     Automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
     implementados, sin mayores desarrollos sobre lo existente y con un ajuste de
-    hyperparámetros minimo. De ésta manera se busca la asimilación de estas
+    hiperparámetros minimo. De ésta manera se busca la asimilación de estas
     técnicas a toda la comunidad que se ocupa de problemas similares.
 
 
@@ -225,7 +225,7 @@
 
     \subsection{Requerimientos, arquitectura y detalles de código}
 
-    \subsection{Regresiones Lineales}
+    \subsection{Modelos lineales}
 
       \par Experiencias previas en aplicaciones epidemiológicas de
         modelado utilizando variables ambientales obtenidas de sensores
@@ -237,6 +237,46 @@
         regresión \textit{Ridge}, en la literatura de ML, se la suele denominar
         como "decaimiento de peso" (\textit{weight decay}).
 
+  \subsection{Modelos no-lineales}
+
+    \par A diferencia de los modelos lineales, los no-lineales son capaces de
+      capturar relaciones funcionales más complejas entre los datos, con el costo
+      de una complejidad computacional más grande y una carga mucho mayor para el
+      usuario que debe realizar un trabajo más fino de ajuste del modelo (la
+      selección de hiperparámetros, entre otras).
+
+    \par Tipicamente, una regresión en el ámbito del aprendizaje automático
+      incluye cuatro pasos fundamentales:
+      \begin{itemize}
+        \item Análisis del conjunto de datos: implica extraer variables de interés, quitar redundacia y valores que generen
+              ruido, etc
+        \item Arquitectura: Selección del algoritmo y de los hiperparámetros como
+              la cantidad de capas y neuronas en una ANN, el número de vecinos en
+              el algoritmo de K-vecinos más cercanos, etc.
+        \item La etapa de entrenamiento-validación: los parámetros del modelo
+              se ajustan y se realizan técnicas de validación de dicho modelo para
+              medir el desempeño del modelo para generalizar a nuevos datos.
+        \item Utilizar el modelo con datos nuevos.
+      \end{itemize}
+      Éstos pasos se implementaron utiliizando, mayormente, funciones disponibles
+      en la librería \textit{scikit-learn} ya mencionada.
+
+    \par La configuración o selección del conjunto óptimo de hiperparámetros
+      en este tipo de modelos no-lineales es un problema complejo. Ésto
+      podría realizarse a mano utilizando herramientas semi automáticas. Lo primero
+      no es buena práctica dado que podría generar un sesgo sobre los valores
+      obtenidos y, además, el gran número de posibles combinaciones requeriría
+      mucho tiempo del usuario en ésta tarea, aún así hay ocasiones en las
+      que se utiliza esta metodología.
+
+    \par Para realizar el ajuste de hiperparámetros, en este trabajo para la
+      utilizó el paquete \textbf{\textit{IRace}}
+      (\textit{Iterated Racing for Automatic Algorithm Configuration}) \cite{irace}.
+      Ésta herramienta realiza un procedimiento iterativo capaz de encontrar
+      automáticamente la configuración de hiperparámetros más apropiada
+      dadas las instancias de datos generadas para esta etapa.
+      Ésta está disponible gratuitamente para el lenguaje \textbf{R} en
+      \url{http://iridia.ulb.ac.be/irace/}.
 
 \begin{center}
 \begin{threeparttable}

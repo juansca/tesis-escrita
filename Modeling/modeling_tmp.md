@@ -197,3 +197,34 @@ ing remotely sensed environmental variables report good results with this
 approach [51, 37, 52]. We used simple linear and ridge regressions, the latter
 with Tikhonov regularization with cross-validation. Note that Ridge regres-
 sion is often referred to as “weight decay” in the ML literature.
+
+
+
+
+
+Nonlinear models are able to capture more complex functional relations
+among the data, at the expense of computational complexity and some burden on the user that has to fine tune more parameters than in linear models.
+
+
+
+Typically, machine learning regression includes three steps: architecture,
+e.g. the number of layers and neurons in an artificial neural network or the number of neighbours in the K-Nearest Neighbor algorithm, the training-
+validation (where the coefficients are adjusted and the performance is eval-
+uated), and then the use of the model with new data. These steps were
+implemented with functions available in the sklearn package already men-
+tioned.
+
+
+
+The configuration or selection of the optimal set of parameters in this
+kind of nonlinear models is a complex issue and could be handcrafted or obtained using semi automatic tools.
+
+
+
+
+We used the iRace (Iterated Racing for Automatic Algorithm Configura-
+tion) package [53] for automatic parameter tuning. This tool is an iterative
+procedure capable of automatically finding the most appropriate parameter
+configurations given the input data instances of the optimization problem. It
+is implemented in R and is freely available at http://iridia.ulb.ac.be/
+irace/.
