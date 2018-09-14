@@ -228,3 +228,58 @@ procedure capable of automatically finding the most appropriate parameter
 configurations given the input data instances of the optimization problem. It
 is implemented in R and is freely available at http://iridia.ulb.ac.be/
 irace/.
+
+
+In order to avoid overfitting, a problem when dealing small data sets,
+the tuning was performed automatically with data from a different city:
+Clorinda.
+
+
+
+Support Vector Machines are a class of supervised techniques that build
+either linear or nonlinear decision rules and regression models. We used the
+SVR from SVM module. This method implements Epsilon-Support Vector
+Regression, with penalty C = 0.887453, and RBF kernel coefficient gamma
+= 0.015561 as tuning parameters.
+
+
+
+
+
+Neural Networks are built by a massive number of simple processing units
+highly interconnected. They can be trained to provide universal function ap-
+proximators. We used the MLPRegressor method from the neural_network
+module. This method implements the Multilayer Perceptron regressor by
+optimizing the squared loss by either LBFGS or stochastic gradient descent.
+We tuned the following parameters: alpha (the regularization quadratic term,
+set to 0.070921), three layers with three neurons each proved being a suitable
+and parsimonious architecture for our problem. The activation is done by
+the rectified linear unit function f (x) = max{0, x}
+
+
+
+
+
+
+We used the K-NeighborsRegressor module. This method infers a re-
+gression based on k-nearest neighbors. The target is predicted by local inter-
+polation of the targets in the neighborhood in the training set. The original
+data are decomposed with principal components, and only the first five are
+used. The tuning parameters choices were four neighbors, uniform weight,
+Chebyshev metric and brute force.
+
+
+
+
+
+
+Decision Trees are classification rules built incrementally, from which a regression model can be learned. We used the DecisionTreeRegressor
+method from the tree module. Again, we used PCA but retained only the
+two first components. The other parameters were the splitting rule (“best”),
+the maximum depth of the tree (three levels), and the minimum number of
+samples required to split an internal node (five).
+
+
+The choice of numbers of PCA components for the two last methods was
+based on trial-and-error, seeking for the smallest subset that produced good
+results.

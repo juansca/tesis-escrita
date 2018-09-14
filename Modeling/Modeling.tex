@@ -278,6 +278,76 @@
       Ésta está disponible gratuitamente para el lenguaje \textbf{R} en
       \url{http://iridia.ulb.ac.be/irace/}.
 
+    \par Para evitar el sobre-entrenamiento (\textit{overfitting}), el ajute
+      fue hecho automáticamente con datos de otras ciudades: Clorinda, Iguazú
+      y Pampa.
+
+
+    \subsubsection{\textit{Support Vector Regressor} (SVR)}
+      \par Las \textit{Support Vector MAchines} son una clase de técnica supervisada
+        que construyen tanto reglas de decisiones lineales como no-lineales
+        y modelos de regresión. En este caso se utilizó el algoritmo \textbf{SVR}
+        del modulo \textbf{SVR}. Éste método implementa una regresión
+        \textit{Epsilon-Support Vector}. Luego de la etapa de ajuste de
+        hiperparámetros, el valor para la penalidad es de $C = 0.887453$, y
+        el núcleo de función de base radial (RBF) con un valor de
+        $gamma = 0.015561$.
+
+
+    \subsubsection{\textit{Perceptron Multicapa} (MLP)}
+      \par Las redes neuronales son contruidas a partir de una gran cantidad
+        de unidades sencillas altamente conectadas entre si. Ellas pueden
+        ser entrenadas para generar aproximadores universales de funciones.
+        Se utilizó la clase \textbf{MLPRegressor} del módulo \textbf{neural\_network}.
+        Ésta clase implementa una técnica de regresión utilizando un MLP. Para
+        ello optimiza el error cuadrático utilizando el \textit{LBFGS} y
+        el descenso estocástico por grandiente.
+        Luego de la etapa de ajuste, se obtuvo un valor para el término
+        de regularización cuadrática de $alpha = 0.070921$, y un total de
+        tres capas y con tres neuronas cada unas completan la arquitectura
+        del modelo. La activación es hecha por la función lineal
+        rectificada $f(x) = max\{0, x\}$.
+
+
+    \subsubsection{Regresión de K-Vecinos Más Cercanos (KNNR)}
+      \par Se utilizó la clase \textbf{K-NeighborsRegressor}. Este método
+        infiere una regresión basada en los k-vecinos más cercanos. El
+        objetivo es predicho por una interpolación local de los objetivos
+        en el entorno de vecinos del conjunto de datos de entrenamiento.
+        El cojunto de datos original se descompuso utilizando componentes
+        principales (\textit{PCA}), sólo cinco fueron usados. Luego de la etapa
+        de ajuste, se obtuvo que el número de vecinos sea $n\_neighbors = 4$,
+        la función de pesos utilizada en predicción que resultó generar mejor
+        desempeño fue $weights = uniform$, la métrica utilizada para medir la
+        distancia fue $metric = Chebyshev$ y el algoritmo que nuestro modelo
+        utiliza para calcular los vecinos más cercanos resultó ser
+        $algorithm = ``brute"$.
+
+    \subsubsection{Regresión de Árboles de Decisión (DTR)}
+      \par Los árboles de decisión son reglas de clasificación construidas de
+      forma incremental, a partir de las cuales se puede aprender un modelo
+      de regresión. En este trabajo se utilizó la clase \textbf{DecisionTreeRegressor}
+      del módulo \textbf{tree}. Nuevamente, se utilizó \textit{PCA} pero, esta
+      vez, se conservaron sólo los dos primeros componentes. Además, luego de
+      dicha etapa se concluye que la regla de división sea $splitter = ``best"$,
+      el valor máximo para la profundida del árbol $max_depth = 3$ y el mínimo
+      valor de muestras requeridas para dividir un nodo interno es
+      $min\_samples\_leaf = 5$.
+
+      \par La elección del número de componentes en el \textit{PCA} para los
+      dos últimos métodos fue basada en prueba y error, buscando por el
+      subconjunto más pequeño que produzca buenos resultados.
+
+
+  \section{Resultados}
+    \begin{figure}
+    \centering%
+    \includegraphics[width=1\textwidth]{images/RidgeVsTime}%
+    \caption{\textit{z-score} observado }\label{fig:ridge_vs_time}
+    \end{figure}
+
+    \par La Figura \ref{fig:ridge_vs_time} muestra
+
 \begin{center}
 \begin{threeparttable}
 \centering%
