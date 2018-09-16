@@ -283,3 +283,112 @@ samples required to split an internal node (five).
 The choice of numbers of PCA components for the two last methods was
 based on trial-and-error, seeking for the smallest subset that produced good
 results.
+
+
+
+
+Fig. 5 shows the results of the classical multivariate linear and Ridge
+models. These results are in conformity with previous studies. Both
+linear regressors produce very close results preventing, thus, the use of
+the latter due to its higher computational cost.
+
+
+
+Linear regressors do not follow the peaks of the observed data, and
+tend to underestimate the smallest values
+
+
+
+
+Fig. 6 shows the observed data and the result of the Support Vector
+Regression (SVR) procedure. The latter fails to model the peaks of the former, but produces a relatively good fit in the bulk of the data.
+
+
+
+Fig. 7 shows the results of fitting the observed data with the Mul-
+tilayer Perceptron (MLP) technique. The fit is very good, although the
+model overestimates the data around the 25th week of the study, and
+underestimates them around the last peak.
+
+
+
+
+
+Fig. 8 shows the results produced by the KNN procedure. Also, this
+is a very good model although it fails to follow the two largest peaks.
+The first, around the 125th week is underestimated, and the second,
+which is close to the 180th week, is overestimated.
+
+Fig. 9 shows the result of applying the Decision Tree Regressor. The structure of this technique produces flat outputs which, nevertheless, follow closely the observed data. It is important to remember that in all
+previous figures the last 40 weeks are not used to build the models,
+therefore they are completely predicted.
+
+
+
+Table 1 presents a summary of the observed and fitted data: the
+minimum (Min) and maximum (Max) values, the first (q 1/4 ) and third
+(q 3/4 ) quartiles, the median (q 1/2 ) and the mean.
+
+
+
+Table 1 reveals the following facts:
+
+\item Linear and Ridge regressions exaggerate the minima, as they produce values which are approximately the double of the observed ones.
+\item The Multilayer Perceptron exaggerates the maximum by about \SI{10}{\percent}, while the other models underestimate it. Notice that the Support Vector Regression flattens the maximum by a factor of about \num{3.6}.
+\item The mean and median of the observed data differ noticeably, suggesting that they are significantly skewed to the left.
+\item The closest median value to the observed one is produced by K-Nearest Neighbors, which also leads to a very close mean value.
+
+
+
+
+Fig. 10 shows the observed and predicted data as a scatterplot. This
+figure reveals that none of the models is able to follow the largest ob-
+served values, and that the Linear, Ridge and Support Vector Regres-
+sions are the least apt for this task, while the Multilayer Perceptron is
+the closest one. We also notice that this last model is the most prone to
+overestimating the data. Notice that underestimation is, from the ap-
+plication viewpoint, more dangerous than overestimation, as the former leads to a false negative indicator that may lead to not firing preventive measures in cases when they are needed.
+
+
+
+
+In the following we analyze the residuals. Fig. 11(a) and (b) show,
+respectively, the histograms and boxplots of the errors produced by
+each model. The errors produced by KNN are the most concentrated
+around zero, followed by MLP. The two errors most spread are due to
+the linear regressions. This is an indication that the models obtained
+using simple linear techniques are the worst among the ones considered
+here.
+
+
+
+Table 2 presents quality measures of the models here considered:
+Pearson correlation coefficients between the observed and fitted values,
+using the complete data set (Corr11) and the 20% (CorrL20) left for
+validation; and the Mean Square Error of the complete data set (MSE)
+and of the validation data (MSEL20). Following Cramer et al. (2017),
+we also include the mean Score obtained from the cross validation and
+its standard deviation.
+
+
+
+
+
+Requerimientos
+
+
+This operative system is based on user requirements that were stated after several meetings between health decision makers at
+both the national and provincial levels. It was agreed that the system should:
+(i) be able to support both multiple diseases and multiple scales of risk;
+(ii) estimate the risk stratification by applying a multifactor approach at the national level for all the localities;
+(iii) also produce risk cartography at the urban level;
+(iv) facilitate decision making;
+(v) update environmental conditions based on remotely sensed data;
+(vi) integrate information such as viral circulation, urbanization, entomological field data and population parameters;
+(vii) be expandable in order to cover others regional countries without significant change;
+(viii) make information and maps accessible via the Internet (SIG Web based user interface);
+(ix) be developed at low cost (open-source preferable);
+(x) be free of charge for all end users;
+(xi) be operative (running) steadily by an expected life time of >5 years;
+(xii) be user friendly in order to interact with non-informatic specalist staff in the provinces; and
+(xiii) aim at eventually involve the whole country.

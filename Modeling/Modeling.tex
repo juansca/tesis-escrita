@@ -11,17 +11,18 @@
     sensores remotos. Estos trabajos utilizaron series de algunos años y fueron
     basadas en un pequeño número de variables satelitales \cite{ndwi_erffectiveness, modis_data}.
     En un esfuerzo para mejorar esto, \cite{temporal_modeling}, construyeron modelos
-    basados en una gran cantidad de variables de varios sensores de cuatro años.
+    de series temporales de cuatro años, basados en una gran cantidad de variables
+    de varios sensores.
     Aún así, todos estos trabajos asumieron modelos lineales multivariados.
 
   \par Este trabajo representa una mejoría sobre dicho escenario. Comparamos
     Support Vector Machines (SVM), Redes Neuronales Artificiales (ANN),
     K-vecinos más cercanos (KNN) y un tipo de árbol de decisión orientado a
     regresión, sumados a dos modelos de regresión lineal. Con ésto, se
-    obtiene una metodología operaciónes que contribuye al sistema de riesgo
+    obtiene una metodología operacional que contribuye al sistema de riesgo
     de Dengue actualmente en operación \cite{porcasi_operative, analisis_cordoba}.
 
-  \par Se explora, encontraste con los trabajos previos mencionados, la habilidad
+  \par Se explora, en contraste con los trabajos previos mencionados, la habilidad
     de modelado y predicción de oviposición con algoritmos de Aprendizaje
     Automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
     implementados, sin mayores desarrollos sobre lo existente y con un ajuste de
@@ -32,14 +33,14 @@
 \section{Materiales}
 
 \subsection{Datos de estudio y Datos de Campo}
-  \begin{figure}
+  \begin{figure}[hbt]
   \centering%
   \includegraphics[width=0.6\textwidth]{images/tartagal}%
   \caption{Área de Estudio}\label{fig:tartagal}
   \end{figure}
 
   \par El estudio presentado fue desarrollado en la ciudad de Tartagal
-    (con 79900 habitantes) en el noroeste de Argentina
+    (con 79.900 habitantes) en el noroeste de Argentina
     (\ang{22;32;}~S, \ang{63;49;}~O, \SI{450}{\meter} sobre el nivel del mar),
     en la provincia de Salta. El sitio está entre 50 y 100 kms de la frontera
     entre Argentina y Bolivia, como se puede apreciar en la Figura \ref{fig:tartagal}
@@ -57,7 +58,7 @@
   \par La población de vectores es medida monitoreando la actividad de oviposición.
     Es medida usando ovitrampas colocadas en casas aleatoriamente seleccionadas
     en el área urbana de la ciudad. El período de monitoreo utilizado en este
-    estudio fue de Agosto de 2012 hasta Julio de 2016 sobre 50 cassas. Dos
+    estudio fue de Agosto de 2012 hasta Julio de 2016 sobre 50 casas. Dos
     ovitrampas fueron colocadas en cada una: una dentro y otra fuera de la casa,
     en el patio trasero en un lugar con sombra y a nivel del suelo, siguiendo
     las instrucciones de la OMS \cite{peridomestic}. Las ovitrampas son contenedores
@@ -75,7 +76,7 @@
 
 \subsection{Variables Ambientales}
 
-  \par Siguiendo la idea de construir modelos predicticos de la población de
+  \par Siguiendo la idea de construir modelos predictivos de la población de
     vectores basados en variables ambientales derivadas de satelites, pero con una
     perspectiva operacional basada en trabajos previos, se obtuvieron representaciones
     de vegetación, humedad, temperatura y lluvia operacionalmente disponibles
@@ -83,7 +84,7 @@
 
   \par Los índices de vegetación global proveen productos espaciales y
     temporales consistentes sobre la cobertura verdosa de la vegetación,
-    propiedades del área foliar y el nivel de clorofil. Estos indices son
+    propiedades del área foliar y el nivel de clorofila. Estos indices son
     derivados de la reflectancia atmosférica
     corregida en las bandas infrarroja (MIR) e infrarroja cercana (NIR).
     En este caso se utiliza el \textbf{NDVI} de producto satelital
@@ -93,7 +94,7 @@
     humedad y precipitación, son variables relevantes para la evolución de la
     población de mosquitos \cite{ndwi_erffectiveness, rs_invertebrate}.
 
-  \par A su vez, se incluyé el Indice de Agua de Diferencia Normalizada
+  \par A su vez, se incluye el Indice de Agua de Diferencia Normalizada
     (\textbf{NDWI}), que está vinculado al contenido de agua líquida y humedad
     tanto en la vegetación como en estructuras sólidas.
     Es calculada a partir del mismo producto MODIS usando la definición de
@@ -141,7 +142,7 @@
     En este caso específico esta región rural es seleccionada en el
     noreste de la ciudad; tiene una altitud similar a la ciudad y mayormente
     bosque nativo. Se puede observar en la Figura \ref{fig:zones}.
-    \begin{figure}
+    \begin{figure}[hbt]
     \centering%
     \includegraphics[width=0.6\textwidth]{images/zones}%
     \caption{Areas rural y urbana seleccionadas para extraer las variables ambientales}\label{fig:zones}
@@ -157,9 +158,9 @@
     donde es utilizada para construir las series temporales completas.
     Los datos son interpolados para obtener valores para cada uno de los
     días de muestra (un valor para cada semana epidemiológica).
-    \begin{figure}
+    \begin{figure}[hbt]
     \centering%
-    \includegraphics[width=0.4\textwidth]{images/sistema}%
+    \includegraphics[width=0.6\textwidth]{images/sistema}%
     \caption{Sistema de procesamiento de productos satelitales}\label{fig:sistema}
     \end{figure}
 
@@ -182,7 +183,7 @@
     permite una visualización en la evolución temporal, de los
     patrones de correlación entre las variables y el efecto de \textit{lag}.
 
-    \begin{figure}
+    \begin{figure}[hbt]
     \centering%
     \includegraphics[width=1\textwidth]{images/heatmap}%
     \caption{Sistema de procesamiento de productos satelitales}\label{fig:heatmap}
@@ -224,6 +225,13 @@
 
 
     \subsection{Requerimientos, arquitectura y detalles de código}
+
+      \subsubsection{Requerimientos}
+
+      \subsubsection{Arquitectura}
+
+      \subsubsection{Detalles de código}
+    
 
     \subsection{Modelos lineales}
 
@@ -286,8 +294,8 @@
     \subsubsection{\textit{Support Vector Regressor} (SVR)}
       \par Las \textit{Support Vector MAchines} son una clase de técnica supervisada
         que construyen tanto reglas de decisiones lineales como no-lineales
-        y modelos de regresión. En este caso se utilizó el algoritmo \textbf{SVR}
-        del modulo \textbf{SVR}. Éste método implementa una regresión
+        y modelos de regresión. En este caso se utilizó el algoritmo \verb|SVR|
+        del módulo \verb|SVM|. Éste método implementa una regresión
         \textit{Epsilon-Support Vector}. Luego de la etapa de ajuste de
         hiperparámetros, el valor para la penalidad es de $C = 0.887453$, y
         el núcleo de función de base radial (RBF) con un valor de
@@ -298,7 +306,7 @@
       \par Las redes neuronales son contruidas a partir de una gran cantidad
         de unidades sencillas altamente conectadas entre si. Ellas pueden
         ser entrenadas para generar aproximadores universales de funciones.
-        Se utilizó la clase \textbf{MLPRegressor} del módulo \textbf{neural\_network}.
+        Se utilizó la clase \verb|MLPRegressor| del módulo \verb|neural\_network|.
         Ésta clase implementa una técnica de regresión utilizando un MLP. Para
         ello optimiza el error cuadrático utilizando el \textit{LBFGS} y
         el descenso estocástico por grandiente.
@@ -310,7 +318,7 @@
 
 
     \subsubsection{Regresión de K-Vecinos Más Cercanos (KNNR)}
-      \par Se utilizó la clase \textbf{K-NeighborsRegressor}. Este método
+      \par Se utilizó la clase \verb|K-NeighborsRegressor|. Este método
         infiere una regresión basada en los k-vecinos más cercanos. El
         objetivo es predicho por una interpolación local de los objetivos
         en el entorno de vecinos del conjunto de datos de entrenamiento.
@@ -326,8 +334,8 @@
     \subsubsection{Regresión de Árboles de Decisión (DTR)}
       \par Los árboles de decisión son reglas de clasificación construidas de
       forma incremental, a partir de las cuales se puede aprender un modelo
-      de regresión. En este trabajo se utilizó la clase \textbf{DecisionTreeRegressor}
-      del módulo \textbf{tree}. Nuevamente, se utilizó \textit{PCA} pero, esta
+      de regresión. En este trabajo se utilizó la clase \verb|K-NeighborsRegressor|
+      del módulo \verb|tree|. Nuevamente, se utilizó \textit{PCA} pero, esta
       vez, se conservaron sólo los dos primeros componentes. Además, luego de
       dicha etapa se concluye que la regla de división sea $splitter = ``best"$,
       el valor máximo para la profundida del árbol $max_depth = 3$ y el mínimo
@@ -340,31 +348,216 @@
 
 
   \section{Resultados}
-    \begin{figure}
+    \begin{figure}[hbt]
     \centering%
     \includegraphics[width=1\textwidth]{images/RidgeVsTime}%
-    \caption{\textit{z-score} observado }\label{fig:ridge_vs_time}
+    \caption{\textit{Z-score} observado, regresiones lineales tradicional y
+             \textit{Ridge}}\label{fig:ridge_vs_time}
     \end{figure}
 
-    \par La Figura \ref{fig:ridge_vs_time} muestra
+    \par La Figura \ref{fig:ridge_vs_time} muestra los resultados tanto del
+      modelo lineal clásico como el \textit{Ridge}. Estos resultados concuerdan
+      con estudios previos. Ambos regresores lineales producen resultados muy
+      similares, por lo que resulta evidente que es preferible utilizar el
+      primero debido al menor costo computacional que requiere.
+      \begin{figure}[hbt]
+      \centering%
+      \includegraphics[width=0.9\textwidth]{images/RidgeVsTime}%
+      \caption{\textit{Z-score} observado, regresiones lineales tradicional y
+               \textit{Ridge}}\label{fig:ridge_vs_time}
+      \end{figure}
 
-\begin{center}
-\begin{threeparttable}
-\centering%
-\caption{Participaci\'{o}n de las energ\'{\i}as renovables en el suministro
-total de energ\'{\i}a primaria \cite{AG02i}.}\label{EMundo1}
-\begin{tabular}{|l|c|c|}\hline
-&\multicolumn{2}{c|}{Participaci\'{o}n en el suministro de energ\'{\i}a primaria /\% (Mtoe)\;$\tnote{1}$}\\\cline{2-3}%
-\arr{Region}&Energ\'{\i}as renovables &Participaci\'{o}n de la biomasa\\\hline%
-Latinoam\'{e}rica&28,9 (140)&62,4 (87,4)\\\hline%
-\:Colombia&27,7 (7,6)&54,4 (4,1)\\\hline%
-Alemania&3,8 (13,2)&65,8 (8,7)\\\hline%
-Mundial&13,1 (1404,0)&79,4 (1114,8)\\\hline
-\end{tabular}
-\begin{tablenotes}
-\item[1] \footnotesize{1 kg oe=10000 kcal=41,868 MJ}
-\end{tablenotes}
-\end{threeparttable}
-\end{center}
+    \par Los regresores lineales no se adecúan a los picos de los datos
+    observados, y tienden a subestimar los valor más pequeños.
+
+    \par La Figura \ref{fig:svr} muestra los datos observados y el resultado
+      del procedimiento de regresión por \textit{SVR}. Éste último no modela los
+      picos de los primeros, pero si produce un ajuste relativamente bueno
+      en la mayor parte de los datos.
+      \begin{figure}[hbt]
+      \centering%
+      \includegraphics[width=0.9\textwidth]{images/svr}%
+      \caption{\textit{Z-score} observado y regresión SVR}\label{fig:svr}
+      \end{figure}
+
+
+    \par La Figura \ref{fig:mlp} muestra los resultados del ajuste de
+    los datos observados utilizando la técnica de \textit{MLP}. Dicho ajuste es muy
+    bueno, aunque el modelo sobreestima los datos alrededor de la semana 25
+    del estudio, y los subestima alrededor del último pico.
+      \begin{figure}[hbt]
+      \centering%
+      \includegraphics[width=0.9\textwidth]{images/mlp}%
+      \caption{\textit{Z-score} observado y regresión MLP}\label{fig:mlp}
+      \end{figure}
+
+
+  \par La Figura \ref{fig:knn} muestra los resultados producidos por el procedimiento
+    de \textit{KNN}. Se observa que, también, este modelo es muy bueno aunque
+    falla siguiendo a los dos picos más altos. El primero, alrededor de la semana
+    125 es subestimado, y el segundo, que está cerca de la semana 180, es
+    sobreestimado.
+
+    \begin{figure}[hbt]
+    \centering%
+    \includegraphics[width=0.9\textwidth]{images/knn}%
+    \caption{\textit{Z-score} observado y regresión KNN}\label{fig:knn}
+    \end{figure}
+
+
+  \par La Figura \ref{fig:dtr} muestra el resultado de aplicar \textit{DTR}.
+    La estructura de este procedimiento produce salidas
+    planas que, sin embargo, siguen de cerca los datos observados.
+    Es importante recordar que en todas las figuras anteriores, las últimas
+    40 semanas no fueron utilizadas para construir los modelos, por lo que
+    han sido completamente predichas.
+
+    \begin{figure}[hbt]
+    \centering%
+    \includegraphics[width=0.9\textwidth]{images/dtr}%
+    \caption{\textit{Z-score} observado y regresión DTR}\label{fig:dtr}
+    \end{figure}
+
+
+
+  \par La tabla \ref{Tab:Summary} presenta un resumen de los datos obsevados
+    y los ajustados: los valores minimos (Min) y los máximos (Max), el
+    primer ($q_{1/4}$) y tercer cuartil ($q_{3/4}$), la mediana ($q_{2/4}$)
+    y la media.
+
+  \begin{table}[hbt]
+  \centering
+  \caption{Resumen de los datos observados y los ajustados}\label{Tab:Summary}
+  \begin{tabular}{*7{r}}
+  \toprule
+  &Min	&$q_{1/4}$	&$q_{1/2}$	&Media	&$q_{3/4}$	&Max\\ \cmidrule(lr){2-7}
+  Observado	&$-0.863$	&$-0.742$	&$-0.487$	&$0.000$	&$0.704$	&$3.652$\\
+  Lineal	&$-1.641$	&$-0.716$	&$ 0.027$	&$-0.087$	&$0.462$	&$1.387$\\
+  Ridge	&$-1.638$	&$-0.680$	&$ 0.028$	&$-0.084$	&$0.459$	&$1.370$\\
+  MLP	&$-0.894$	&$-0.677$	&$-0.323$	&$0.093$	&$0.716$	&$4.084$\\
+  DTR	&$-0.752$	&$-0.752$	&$-0.128$	&$0.138$	&$0.998$	&$2.312$\\
+  KNNR	&$-0.863$	&$-0.699$	&$-0.501$	&$0.099$	&$1.033$	&$2.679$\\
+  SVR	&$-1.021$	&$-0.601$	&$-0.232$	&$-0.147$	&$0.309$	&$1.023$\\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+
+  \par La Tabla \ref{Tab:Summary} revela los siguientes hechos:
+
+    \begin{itemize}
+      \item Las regresiones lineal y \textit{Ridge} exageran los minimos, ya
+        que producen valores que son aproximadamente el doble que los observados.
+      \item El Perceptron Multicapa exagera el máximo por alrededor de un \SI{10}{\percent},
+        mientras que los otros modelos subestiman dicho valor. Notar que el \textit{SVR}
+        aplana el máximo por un factor de aproximadamente 3.6.
+      \item La media y mediana observadas difieren notablemente, sugiriendo que
+        los modelos están significativamente sesgados a la izquierda.
+      \item El valor más cercano al observado, de la mediana, es producido por
+        \textit{KNN}, el cual también conduce a un valor cercado de la media.
+
+    \end{itemize}
+
+
+    \par La Figura \ref{fig:scatter} muestra los datos observados y predichos
+      como un \textit{scatterplot}. Esta figura revela que ninguno de los modelos
+      es capaz de seguir los valores más grandes observados, y que los modelos
+      Lineal, \textit{Ridge} y \textit{SVR} son los menos aptos para esta
+      tarea, mientras que \textit{MLP} es la más adecuada. Además se notó que
+      este último modelo es el más propenso a sobreestimar los datos. Cabe
+      destacar que la subestimación es, para el punto de vista de la aplicación,
+      más peligroso que la sobreestimación, dado que el primero tiende a
+      ser un falso indicador negativo que puede llevar a no disparar medidas
+      de prevención en casos en que efectivamente se necesiten.
+      \begin{figure}[hbt]
+      \centering%
+      \includegraphics[width=0.6\textwidth]{images/scatterplot}%
+      \caption{Scatterplot de los valores observados y predichos}\label{fig:scatter}
+      \end{figure}
+
+
+
+    \par A continuación se analizará los errores. Las Figuras \ref{fig:Histograms}
+    y \ref{fig:Boxplots} muestran, respectivamente, los histogramas y boxplots
+    de los errores producidos por cada modelo. Los errores generados por
+    \textit{KNN} son los más concentrados alrededor de cero, seguidos por el
+    \textit{MLP}. Los dos errores más extendidos son se corresponden con
+    las regresiones lineales. Éste es un indicador de que los modelos
+    obotenidos utilizando simples técnicas lineales son los peores entre los
+    considerados en este trabajo.
+      \begin{figure}
+      \centering
+      \subfigure[Histogramas\label{fig:Histograms}]{\includegraphics[width=.8\linewidth]{images/histogram_error}}
+      \subfigure[Boxplots\label{fig:Boxplots}]{\includegraphics[width=.8\linewidth]{images/boxplot_error}}
+      \caption{Errores}\label{fig:Residuals}
+      \end{figure}
+
+
+  \par La Tabla \ref{Tab:Quality} presenta las medidas de calidad de los modelos
+  aquí considerados: los coeficientes de la correlación de \textit{Pearson}
+  entre los valores observados y ajustados, usando el conjunto de datos
+  completo (Corr11) y sobre el 20\% para la validación (CorrL20); además,
+  el Error Cuadrático Medio sobre el conjunto de datos completo (MSE), y
+  sólo sobre los datos de validación (MSEL20). Siguiendo \cite{dynamics_of_dengue},
+  también se incluyó el \textit{z-score} medio obtenido de la validación
+  cruzada y su desviación estándar (SD del Z-Score).
+
+
+  \begin{table}[hbt]
+  \centering
+  \caption{Medidas de calidad de los modelos}\label{Tab:Quality}
+  \begin{tabular}{*7{r}}
+  \toprule
+  & Corr11
+  & MSE
+  & Z-Score Medio
+  & SD del Z-Score
+  & CorrL20
+  & MSEL20 \\ \midrule
+  Lineal
+  &$0.774$
+  &$0.624$
+  &$1.108$%&\boldmath$1.108$  %CARO: cambio
+  &$0.278$
+  &$0.890$
+  &$0.580$\\
+  Ridge
+  &$0.775$
+  &$0.621$
+  &$1.072$
+  &$0.277$
+  &$0.896$
+  &$0.566$ \\
+  SVR
+  &$0.837$
+  &$0.613$
+  &\boldmath$0.834$   %CARO: cambio
+  &$0.490$
+  &\boldmath$0.967$
+  &\boldmath$0.464$ \\
+  MLP
+  &$0.875$
+  &$0.528$
+  &$1.086$
+  &$0.288$
+  &$0.727$
+  &$1.023$ \\
+  KNN
+  &\boldmath$0.888$
+  &\boldmath$0.494$
+  &$0.981$
+  &$0.362$
+  &$0.797$
+  &$0.936$\\
+  DTR
+  &$0.679$
+  &$0.768$
+  &$1.148$
+  &$0.544$
+  &$0.532$
+  &$1.131$ \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+
 
 \end{document}
