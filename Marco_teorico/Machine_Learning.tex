@@ -68,23 +68,56 @@
     relativamente nuevo y extremádamente prometedor. En particular, ANNs son
     usadas para clasificación y la aplicación en pronósticos
     relativos a series de tiempo.
-    De hecho, una exploración en la base bibliográfica Scopus devuelve más de 4000
-    publicaciones que incluyen \textit{remote sensing} y \textit{neural network},
-    311 de ellas en 2016. De ese total, el 45\% corresponde a
-    \textit{Sciences of the Earth}, el 44\% a \textit{Computer Science} y el 35\% a
-    \textit{Engineering}; con China, Estados Unidos, Italia e India como los paises
-    con mayor producción científica en dichas áreas.
+
+  \par Una exploración en la base bibliográfica \textit{Scopus} (\url{www.scopus.com})
+    devuelve más de 2.000 publicaciones que incluyen \textit{remote sensing} y
+    \textit{machine learning} donde unas 900 fueron publicadas hasta el 2015, y
+    alrededor de 1.200 desde ese año hasta la actualidad. Del total, el 24.5\% se
+    corresponde con el área de \textit{Computer Science}, un 21.3\% a
+    \textit{Earth and Planetary Sciences}, 16.5\% a \textit{Engineering} y el
+    restante 37.7\% se distribuye entre numerosas áreas. Esta búsqueda reflejó
+    que China, Estados Unidos, Alemania e Italia son los países con mayor
+    producción en este sentido.
+
+  \par A su vez, para tener una noción más exhaustiva sobre los esfuerzos académicos
+    al respecto de los tópicos que se tratan en este trabajo, se realizó un búsqueda
+    sobre la relación entre algunas de la herramientas que se han utilizado y
+    el \textit{remote sensing}.
+
+  \par Se encontró que si se cambian las palabras clave por
+    \textit{remote sensing} y \textit{neural network} \textit{Scopus} muestra
+    que existen 4.000 publicaciones con esos tópicos, de las cuales alrededor de
+    1.500 fueron desde el 2015 hasta la actualidad. Del total, un 23.8\% se
+    corresponde con el área de \textit{Computer Science}, un 22.7\% a
+    \textit{Earth and Planetary Sciences}, 17.5\% a \textit{Engineering} y el
+    restante 36\% se distribuye otras áreas; con China,
+    Estados Unidos, Italia e India como los paises con mayor producción
+    científica en dichas áreas.
+    El hecho de que esta búsqueda haya arrojado más resultados que la mencionada
+    anteriormente, indica que es posible que los investigadores que estén trabajando
+    sobre problemáticas de este tipo, quizás, no están explotando las grandes
+    capacidades del área de aprendizaje automático en su extensión y, en vez de
+    eso, se están centrando en utilizar ANNs por su alta popularidad.
+
+  \par Otra exploración, esta vez sobre \textit{remote sensing} y \textit{k nearest},
+    arroja unos 1.100 resultados, de los cuales 310 fueron publicados desde
+    el año 2015 a la actualidad. Esta vez, del total de publicaciones encontradas,
+    un 25.7\% se corresponde con \textit{Earth and Planetary Sciences}, 16.1\%
+    a \textit{Computer Science} y 15\% a \textit{Engineering}. Para este caso,
+    Estados Unidos lidera fuertemente la lista de paises con más producción,
+    con 387 trabajos. China y Alemania lo siguen con 320 publicaciones entre
+    los dos.
 
 
-  \par A continuación, expondremos de manera más detallada cada una de las
-    herramientas y métodos que se utilizaron en el desarrollo del presente
+  \par A continuación, expondremos de manera más detallada
+    herramientas y métodos que motivaron el desarrollo del presente
     trabajo. Enfocaremos en los métodos de regresión, dado que es ésta la clase
     de problema que abordaremos. A su vez, los algoritmos que describiremos son
     los implementados por la librería \textit{Scikit-learn}.
 
 \subsection{Scikit-learn}
 
-  \par \textit{Scikit-learn}\cite{scikit-learn, sklearn_review} es un módulo
+  \par \textit{Scikit-learn}\cite{scikit-learn, sklearn_review} es una librería
     de Python de libre acceso para Aprendizaje Automático
     construido sobre \textit{SciPy}\cite{scipy}. Es una herramienta
     sencilla y efectiva para minería de datos y análisis de datos. Dado que está bajo
@@ -105,25 +138,25 @@
     La librería provee un completo conjunto de tareas que permiten una
     implementación completa de la solución de un problema de ML.
 
-    Por las razones mencionadas es que tiene una muy extensiva utilización.
+  \par Por las razones mencionadas es que tiene una muy extensiva utilización.
     Se está utilizando tanto para uso científico como en
     grandes compañias de diferentes industrias desde streaming de música, hasta
     recomendadores de hoteles, entre otras. Esto da la pauta de que los usuarios pueden
     integrar algoritmos implementados con este módulo a sus propias aplicaciones.
 
-Otra de las grandes bondades de la herramienta es que se asegura que tanto usuarios
-antiguos como nuevos puedan obtener la asistencia que necesitan para integrar
-el módulo de Aprendizaje Automático a sus propias plataformas. Ésta es la razón
-que justifica el alto nivel de detalle en su documentación oficial.
+  \par Otra de las grandes bondades de la herramienta es que se asegura que
+    tanto usuarios experimentados como aquellos que son nuevos puedan obtener
+    la asistencia que necesitan para integrar el módulo de ML a sus propias
+    plataformas, por ello es el alto nivel de detalle en su documentación oficial.
 
 
 
 \subsection{Métodos Lineales}
 
-  \par En éste trabajo utilizamos dos tipos de regresiones lineales. La regresión
+  \par En este trabajo utilizamos dos tipos de regresiones lineales. La regresión
   lineal ordinaria, correspondiente al método de \textit{Mínimos Cuadrados}\cite{least_square}
   y método de regresión \textit{Ridge}\cite{ridge}.
-  Dado su popularidad y simplicidad, no ahondaremos en explicaciones profundas
+  Dada su popularidad y simplicidad, no ahondaremos en explicaciones profundas
   con el fin de evitar detalles tediosos, muy conocidos.
 
 

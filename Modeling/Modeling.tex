@@ -227,11 +227,118 @@
     \subsection{Requerimientos, arquitectura y detalles de código}
 
       \subsubsection{Requerimientos}
+        \par Dado el objetivo de este trabajo, los requerimientos del mismo se
+        basaron en la compatibilidad con lo publicado en \cite{porcasi_operative}.
+        Luego de un análisis del último, se concluyeron que el sistema de
+        modelados debe poseer las siguientes características:
+        \begin{itemize}
+          \item Facilidad de utilización para un usuario no especialista del área de
+            Ciencias de la Computación.
+
+          \item Poseer una herramienta de limpieza del conjuntos de datos
+            dado.
+
+          \item Versatilidad para su uso con otros conjuntos de datos sin necesidad
+            de realizar mayores cambios en la arquitectura del sistema.
+
+          \item Debe poseer una herramienta para la generación de instancias y
+            conjuntos de entrenamiento y validación de los modelos.
+
+          \item Generar modelos que queden dispuestos para su evaluación en
+            nuevos datos.
+
+          \item Dichos modelos deben ser serializados en formato \verb|pickle|
+            para facilitar la puesta en operatividad.
+
+          \item Versatilidad para agregar nuevos modelos que se adecúen a la
+            firma de \verb|scikit-learn| (deben poseer funciones \verb|fit| y
+            \verb|predict|).
+
+          \item Debe poseer una herramienta para la generación de gráficos
+            para la evaluación de modelos.
+
+          \item Debe poseer una herramienta de relativa sencillez de utilización
+            para el ajuste de hiperparámetros de los modelos.
+        \end{itemize}
+
 
       \subsubsection{Arquitectura}
 
+
+
+        \par Como se ve en la Figura \ref{fig:sistema_modelado} El sistema de modelado tiene tres módulos importantes:
+          \verb|data|, \verb|models| y \verb|tunning|.
+
+          \begin{figure}[hbt]
+          \centering%
+          \includegraphics[width=1\textwidth]{images/sistema_modeling_mosquitos}%
+          \caption{Sistema para el ajuste de parámetros y modelado}\label{fig:sistema_modelado}
+          \end{figure}
+
+        \par En el módulo \verb|data|, como se puede deducir de su nombre,
+          es el que encargado de limpiar los conjuntos de datos y generar los
+          bloques de entrenamiento, validación y las instancias para realizar
+          el ajuste de hiperparámetros del cada algoritmo.
+
+        \par \verb|models| es el módulo dedicado a definir los algoritmos y
+          posee los \textit{scripts} para el entrenamiento y
+          evaluación de los mismos. Sumado a ésto, en este modulo se encuentra
+          el archivo donde se deben colocar los modelos que serán utilizados
+          en el modelado.
+
+        \par \verb|tunning| es el módulo encargado del ajuste de hiperparámetros
+          de los modelos. Éste realizará una búsqueda sobre el espacio de
+          parámetros para encontrar los óptimos para cada algoritmo. Este
+          procedimiento utiliza la herramienta \textit{irace} del lenguaje
+          \textit{R} desde una interfaz de \textit{Python}.
+
       \subsubsection{Detalles de código}
-    
+
+        \par Además, el
+        \textit{script} de entrenamiento imprime por linea de comandos
+        un conjunto de estadísticas que resultan de realizar validación
+        cruzada sobre el conjunto de datos brindado por el usuario para
+        dicha tarea. Ésto resulta útil para tener una noción del desempeño
+        del modelo. El \textit{script} de evaluación, además de imprimir
+        por linea de comandos el valor del Error Cuadrático Medio de la
+        evaluación, genera un gráfico con la curva real y la curva predicha
+        por el modelo y lo guarda en un directorio. A su vez, guarda un
+        archivo \verb|csv| con los valores reales y los predichos facilitando
+        así, la posterior manipulación del mismo.
+        \begin{lstlisting}
+        .
+        |-- data
+        |   |-- constants.py
+        |   |-- data_cleaner.py
+        |   |-- raw_data
+        |   `-- scripts
+        |       `-- clean_data.py
+        |-- LICENSE
+        |-- models
+        |   |-- models.py
+        |   `-- scripts
+        |       |-- eval.py
+        |       |-- plotdata.py
+        |       `-- train.py
+        |-- README.md
+        |-- setup.py
+        |-- tunning
+        |   |-- model_tunner.py
+        |   |-- parameters
+        |   |   |-- dtr
+        |   |   |-- knnr
+        |   |   |-- mlpr
+        |   |   |-- pcadtr
+        |   |   |-- pcaknnr
+        |   |   |-- pcardmforest
+        |   |   |-- rdmforest
+        |   |   `-- svr
+        |   |-- target-runner.py
+        |   `-- tune_params.py
+        `-- utils
+            `-- utils.py
+        \end{lstlisting}
+
 
     \subsection{Modelos lineales}
 
