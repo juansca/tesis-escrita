@@ -392,3 +392,91 @@ both the national and provincial levels. It was agreed that the system should:
 (xi) be operative (running) steadily by an expected life time of >5 years;
 (xii) be user friendly in order to interact with non-informatic specalist staff in the provinces; and
 (xiii) aim at eventually involve the whole country.
+
+
+
+
+
+
+
+
+
+
+
+Taking into account all the goodness-of-fit parameters included in Tables 1
+and 2, and the analysis of errors, we may consider that KNN stems as the
+best method for this problem. It has a correlation near to 90 %, considerably
+greater than 75 %, the typical values obtained with linear approaches.
+
+
+The Mean Score value would lead to choose Support Vector Regressor as
+the best technique [49]. It is noteworthy that the standard deviation of this
+measure of quality is so high that is it unlikely that it is able to render a
+good choice by itself. For this reason, we follow a holistic approach in the
+forthcoming Conclusions.
+
+
+
+In this kind of modeling, basically we have three large issues to consider.
+The response variable that we want to represent, in this case number of eggs.
+It is clear that, based in ovitraps measurements, we could consider others
+alternatives like proportion positive traps for example. The second one is the
+independent variables that we choose like predictors (Ndvi, ndwi, etc). And
+finally the method that to use to generate the model (Linear, Generalized
+linear, logistic, neural networks etc.). As we said this paper dont focus on the
+two first issues and then those are based in previous results/publications. Of
+course these are matters of discussion and could be improved. Here, in this
+contribution, we prefer leave these points untouched and focus our attention
+on the possibilities of the different machine learning tools to model those
+variables. In that sense it should be clear that here we are not closing the general problem of modeling vector populations.
+
+
+
+
+An interesting point that appears in the results of all the models here
+presented, is that that models fit well the main pattern but not necessarily
+the large peaks. One hypothesis is that the vector population may disengage
+the macro-environmental/climatic variables when conditions are optimal and,
+again, be restricted when the environmental conditions get poorer. In fact,
+it would be clear that, we can not hope to fit exactly this urban vector
+population only based in large scale macro-environmental variables
+
+
+
+
+An interesting point that appears in the results of all the models here
+presented, is that that models fit well the main pattern but not ne-
+cessarily the large peaks. One hypothesis is that the vector population
+may disengage the macro-environmental/climatic variables when
+conditions are optimal and, again, be restricted when the environ-
+mental conditions get poorer. In fact, it would be clear that, we can not hope to fit exactly this urban vector population only based in large scale macro-environmental variables.
+
+
+
+
+
+We found that K-Nearest Neighbour Regression (KNNR), MLP and
+SVM improve predictive models of vector population based on satellite
+derived environmental variables. The performance of these algorithms
+could be improved substantially using a larger dataset. Although the used period is large in comparison with similar works on vector po- pulation, at the same time the used dataset is very small from the machine learning point of view.
+
+
+
+
+###################### para discusión general
+
+\par En este tipo de modelado, básicamente se tiene tres grandes cuestiones
+  a considerar. La variable objetivo que queremos representar, en este caso
+  el número de huevos. Es claro que, basado en las mediciones de ovitrampas,
+  podríamos considerar otras opciones como, por ejemplo, la proporción de
+  trampas positivas. La segunda es el conjunto de variables independientes
+  que se seleccionan como predictores (NDVI, NDWI, etc). Y, finalmente, el
+  método que se utiliza para generar el modelo (Lineal, Logístico, ANN, etc).
+  Como ya dijimos, en este trabajo no nos concentramos en las primeras dos
+  cuestiones si no que éstas fueron basadas en trabajos previos. Por supuesto
+  que existe camino a discusión en ese sentido y pueden ser muy mejorables.
+  Aquí, en esta contribución, preferimos no tocar estos puntos y enfocar
+  nuestra atención a la capacidad de modelado de estas variables,
+  de diferentes herramientas de Aprendizaje Automático.
+  En ese sentido debería quedar claro que en este trabajo no estamos dando como
+  cerrado el problema de modelado de poblaciones de mosquitos.

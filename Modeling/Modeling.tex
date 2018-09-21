@@ -345,7 +345,7 @@
 
 
         \par Por otro lado, el módulo \verb|models| tiene un archivo llamado
-          \verb|models.py| en el cual es donde se declaran los modelos
+          \verb|models.py| en el cual se declaran los modelos
           que se utilizarán para el modelado. Es importante que estos modelos
           sigan la estructura ahí utilizada para que los demás módulos los
           puedan utilizar correctamente.
@@ -370,8 +370,8 @@
             -i <file>         Train/Val dataset path
             --model <model>   Model you want to train, is mandatory that it was on
                               models.py file.
-            -p <file>         CSV file where are saved the hyperparameters (in case of
-                              tunning module was used).
+            -p <file>         CSV file where are saved the hyperparameters
+                              (in case of tunning module was used).
           \end{lstlisting}
 
         \par Por otra parte, el módulo posee un \textit{script} de evaluación,
@@ -430,7 +430,7 @@
           --help                   show this screen
 
         \end{lstlisting}
-      \par Por último, en la Figura \ref{fig:proyecto_modelado} se puede observar 
+      \par Por último, en la Figura \ref{fig:proyecto_modelado} se puede observar
         la estructura general del proyecto.
 
         \begin{figure}[hbt]
@@ -767,5 +767,42 @@
   \end{tabular}
   \end{table}
 
+  \section{Conlusiones}
+
+    \par Un punto interesante que aparece en los resultados es que todos los
+      modelos aquí presentados ajustan bien en los patrones principales
+      pero no necesariamente en los picos extremos. Una hipótesis es que la población
+      del vector se desconecta de las variables macroambientales/climáticas
+      cuando las condiciones son óptimas y, nuevamente, se restringe cuando las
+      condiciones ambientales son suboptimas. De hecho, es razonable el hecho de
+      que no podemos esperar ajustar exactamente la población urbana del vector
+      sólo basandonos en variables macroambientales a gran escala.
+
+
+    \par Teniendo en cuenta la bondad de ajuste incluida en las Tablas
+      \ref{Tab:Summary} y \ref{Tab:Quality}, y un análisis de errores, podríamos
+      considerar que \textit{KNN} aparenta ser el mejor método para este problema.
+      Tiene una correlación cercana al 90\%, considerablemente mayor al
+      75\%, el valor tipico obtenido por las técnicas lineales.
+
+  \par El valor medio del \textit{z-score} llevaría a elegir el \textit{SVR}
+    como la mejor técnica \cite{ml_rainfall}. Cabe destacar que la desviación
+    estándar de esta medición de calidad es tan alta que es poco probable que
+    sea una buena elección en si misma. Por esta razón, se seguimos un
+    enfoque holístico en las próximas conclusiones.
+
+
+  \par Si tenemos en cuenta las seis métricas de la Tabla \ref{Tab:Quality},
+    es clara la conclusión de que los mejores métodos para modelar la población
+    del vector basada en variables ambientales derivadas de información satelital
+    son: \textit{K-vecinos más cercanos}, \textit{Perceptron
+    Multicapa} y \textit{Support Vector Machine}.
+
+  \par Un problema que encontramos es la escases de datos de campo que existen:
+    el desempeño de estos algoritmos se podría mejorar sustancialmente utilizando
+    conjuntos de datos más grandes.
+    Aunque el período utilizado es grande en comparación con trabajos similares
+    sobre la población vectorial, dicho conjunto sigue siendo
+    muy pequeño desde el punto de vista del aprendizaje automático.
 
 \end{document}
