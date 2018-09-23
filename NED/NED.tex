@@ -6,4 +6,81 @@
 \chapter{Generalización espacial de modelos epidemiológicos basada en el
         concepto de Distancia Ambiental Normalizada NED}
 
+  \par Los modelos temporales descriptos en capitulos anteriores se basan en la
+    generación de relaciones empíricas entre datos ambientales derivados de
+    información satelital y los datos de campo, correspondientes a los del vector
+    propiamente dicho. Esto significa que sólo pueden construirse modelos en
+    lugares donde esté disponible la información de campo, problema que mencionamos
+    al concluir el capitulo anterior.
+
+  \par En ese marco, y con el objetivo final de mejorar la aplicación operativa
+    presentada por Porcasi y colaboradores en 2012 \cite{porcasi_operative},
+    nos planteamos en este capítulo el objetivo específico de generar
+    una metodología para espacializar los datos contruidos siguiendo la
+    metodología de \cite{german_temporal}, basada en el concepto de
+    \textbf{\textit{Distancia Ambiental Normalizada}} (NED).
+
+
+\section{Materiales y Métodos}
+
+\subsection{Problema}
+
+  \par A partir de la disponibilidad de datos de campo en $N$ localidades
+    diferentes, se generan, siguiendo la metodología presentada en \cite{german_temporal}
+    $N$ modelos diferentes que relacionan la oviposición a variables ambientales
+    derivadas de datos satelitales (\textit{lst\_night}, \textit{lst\_day},
+    \textit{ndvi}, \textit{ndwi}, \textit{prec}). Por simplicidad, sin pérdida
+    de generalidad, supongamos que dichos modelos son lineales, por lo tanto
+    son de la forma:
+    \begin{align}
+      ovip_{j} = \beta_{j} + \sum{}{coef_{ji} \times envVar_{i}(j)}
+    \end{align}
+
+  \par Donde $coef_{ji}$ representa los coeficientes del modelo de la
+    ciudad $j$ para la variable $i$, y $envVar_{i}(j)$ representa la variable
+    ambiental $i$ evaluada en la posición correspondiente a la ciudad $j$.
+    Es decir que para cada ciudad $j$, hay un conjunto diferente de
+    coeficientes, que son aquellos que generan un ajuste óptimo de los datos
+    disponibles. Aquí denominamos a estos $N$ modelos $M_{1},\ M_{2},\ \dots,\ M_{N}$.
+
+
+  \par Así, el problema que se plantea es aquel en el que el modelo se
+    debiera utilizar en una nueva ciudad (no incluida en las $N$ anteriores),
+    para obtener una estimación de la abundancia del vector, para cualquier otra
+    ciudad. En particular en este caso, en la región norte de Argentina donde
+    no se disponga de datos de campo.
+
+
+  \par La idea más simple para extrapolar los modelos obtenidos, sería usar,
+    para un punto/pueblo adicional localizado en la posición $x$, un modelo $M_{X}$
+    igual al modelo conocido de la ciudad más cercana geográficamente (vecino más cercano) es
+    decir $M_{X}\ =\ M_{J}$ donde $J$ corresponde a la ciudad más cercana.
+    Una mejora a este enfoque, es utilizar un promedio de los $N$ modelos conocidos
+    ponderados por el inverso de la distancia de este nuevo punto $X$ a cada una
+    de las ciudades $J$ donde se dispone de un modelo. Es decir, el modelo de la
+    ciudad más cercana pesará más y el de la más alejada pesará menos, es decir:
+
+    \begin{align}
+      M_{X} = \sum{}{\frac{M_{j}}{L_{j}}}
+    \end{align}
+
+    donde $L_{j}$ representa la distancia normalizada de la ciudad $J$ a
+    $X$ (la localización geográfica de la nueva ciudad).
+
+
+  \par El problema de las soluciones anteriores, es que realmente es más
+    razonable pensar que el comportamiento de la población del vector/mosquito
+    en una ciudad en el punto $X$ será más coincidente con una que se encuentre
+    en una ciudad que sea más similar \textbf{ambientalmente} y no necesariemente
+    con aquella que está más cerca geográficamente. En ese sentido, se debería
+    utilizar (en el esquema de vecino más cercano) el modelo de la ciudad $J$
+    que posea medio ambiente más similar al del punto $X$. En otras palabras,
+    asi como ``más cerca", significa típicamente coordenadas geográficas (o posiciones)
+    similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca"
+    como que sus variables ambientales son similares. De esta forma aparece
+    naturalmente el concepro de \textbf{\textit{Distancia Ambiental}}.
+
+\subsection{Distancia Ambiental Normalizada (NED)}
+
+
 \end{document}

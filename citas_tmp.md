@@ -783,3 +783,15 @@ tag: irace
 M. López-Ibáñez, J. Dubois-Lacoste, L. Pérez Cáceres, M. Birattari,
 T. Stützle, The irace package: Iterated racing for automatic algorithm
 configuration, Operations Research Perspectives 3 (2016) 43–58.
+
+
+
+@article{scavuzzo2018modeling,
+  title={Modeling Dengue vector population using remotely sensed data and machine learning},
+  author={Scavuzzo, Juan M and Trucco, Francisco and Espinosa, Manuel and Tauro, Carolina B and Abril, Marcelo and Scavuzzo, Carlos M and Frery, Alejandro C},
+  journal={Acta tropica},
+  volume={185},
+  pages={167--175},
+  year={2018},
+  publisher={Elsevier}
+}

@@ -1,1 +1,12 @@
-ned
+Estos modelos temporales antes citados [8], [19], [20] se
+basan en la generación de relaciones empíricas entre datos
+satelitales y los datos de campo (del vector). Esto significa
+que sólo pueden construirse modelos en lugares donde esté
+disponible la información de campo. En este marco, y con
+el objetivo final de mejorar la aplicación operativa
+presentada por Porcasi y colaboradores en 2012 [13], nos
+planteamos en este trabajo el objetivo específico de generar
+una metodología para espacializar los modelos temporales
+generados siguiendo la metodología de German 2018 [20],
+basados en el concepto de Distancia Ambiental
+Normalizada (NED).
