@@ -795,3 +795,40 @@ configuration, Operations Research Perspectives 3 (2016) 43–58.
   year={2018},
   publisher={Elsevier}
 }
+
+
+
+-------------- Distancia Ambiental
+
+tag: hirzel_distance
+A.H. Hirzel, R. Arlettaz. “Modeling Habitat Suitability for Complex Species Distributions by Environmental-Distance Geometric Mean” Environmental Management, 32 (5), 2003,  pp. 614-623.
+
+
+tag: krasnova_similarity
+B.R. Krasnova, D. Mouillotb, G.  I. ShenbrotaIrina,  S. Khokhlovac, M. V. Vinarskid, N. P. Korallo-Vinarskayae, R. Poulinf. “Similarity in ectoparasite faunas of Palaearctic rodents as a function of host phylogenetic, geographic or environmental distances: Which matters the most?”. International Journal for Parasitology, Vol. 40, 7,  2010, pp. 807-817.
+
+
+tag: mendez_distance
+M. Mendez, H.C. Rosenbaum, A. Subramaniam, C. Yackulic, P. Bordino. “Isolation by environmental distance in mobile marine species: molecular ecology of franciscana dolphins at their southern range”. Mol Ecol. 19(11), 2010, pp. 2212-28
+
+
+tag: farber_modeling
+[28] O. Farber, R. Kadmon “Assessment of alternative approaches for bioclimatic modeling with special emphasis on the Mahalanobis distance”. Ecological Modelling 160, 2003, pp. 115-130.
+
+
+tag: montello_cognition
+[29] D.R. Montello. “The perception and cognition of environmental distance: Direct sources of information”. Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 1329, 1997, pp. 297-311.
+
+
+
+tag: tatem_env_coverage
+[30] A.J. Tatem, R.W. Snow, S. Hay. “Mapping the environmental coverage of the INDEPTH demographic surveillance system network in rural Africa”.  Tropical Medicine and International Health, 11 (8), 2006, pp. 1318-1326. 
+
+
+tag: altamirada_genetic
+[31] M. Altamiranda-Saavedra, J.E. Conn, M.M. Correa. “Genetic structure and phenotypic variation of Anopheles darlingi in northwest Colombia Infection”. Genetics and Evolution, 56, 2017, pp. 143-151.
+
+
+
+tag: wordclim
+[32] R.J. Hijmans, S.E.  Cameron, J.L  Parra, P.G.  Jones, A. Jarvis. “Very high resolution interpolated climate surfaces for global land” International Journal of Climatology, 25 (15), 2005, pp. 1965-1978.
