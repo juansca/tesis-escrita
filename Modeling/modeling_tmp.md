@@ -478,5 +478,4 @@ could be improved substantially using a larger dataset. Although the used period
   Aquí, en esta contribución, preferimos no tocar estos puntos y enfocar
   nuestra atención a la capacidad de modelado de estas variables,
   de diferentes herramientas de Aprendizaje Automático.
-  En ese sentido debería quedar claro que en este trabajo no estamos dando como
-  cerrado el problema de modelado de poblaciones de mosquitos.
+  En ese sentido debería quedar claro que en este trabajo no estamos dando como cerrado el problema de modelado de poblaciones de mosquitos.

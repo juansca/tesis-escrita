@@ -1,3 +1,7 @@
+\input{../EncabezadoTesis}
+
+\begin{document}
+
 \justifying
 
 \chapter{Generalización espacial de modelos epidemiológicos basada en el
@@ -227,10 +231,14 @@
     parecidos a Iguazu que a Tartagal o Clorinda o Pampa del Indio.
 
 
+  \par Sólo como ejemplo, la inversa de la distancia normalizada ($\frac{1}{NED}$)
+    de Tucumán, Corrientes y Salta se describen en la \ref{Tab:comparacion_ned}.
+    Estos valores son presentados de una manera diferente en la FIGURA DE CONTRIBUCIÓN
+    donde se intenta graficar con más claridad la contribución que tendrán cada
+    uno de los 4 modelos previamente desarrollados, cuando se intenten modelar
+    estas 3 nuevas ciudades.
 
-
-
-    \par Para el caso de las tres ciudades simuladas, la distancia ambiental
+  \par Para el caso de las tres ciudades simuladas, la distancia ambiental
     realmente tiene una fuerte correlación con la distancia geográfica estándar.
     Estos ejemplos muestran más bien cómo el método funciona, que las ventajas
     que ofrece el mismo. Sin embargo la diferencia entre la distancia ambiental
@@ -270,3 +278,25 @@
     \bottomrule
     \end{tabular}
     \end{table}
+
+\section{Conclusiones}
+  \par En el presente capítulo pretendemos generar una contribución al objetivo de
+    construir pronósticos dinámicos para la población de vectores,
+    utilizando productos satelitales. Se aborda el problema de cómo generalizar
+    espacialmente modelos ajustados para ciertas localidades específicas.
+
+  \par Para ello, se propone una metodología basada en ideas ecológicas
+    incorporando el concepto de distancia ambiental normalizada.
+    Se ha mostrado que el mismo si bien es novedoso es conceptualmente simple.
+    Se describe un método simple para calcularlo y ejemplos de su
+    implementación especifica de la estimación de este parámetro en
+    función de un conjunto de variables ambientales relevantes para la
+    ecología del vector del dengue.
+
+  \par Cabe resaltar que esta idea de interpolación ambiental que se
+    plantea aquí para modelos relacionados a la epidemiologia,
+    podría también ser utilizados a la hora de contar con datos
+    puntuales de otras variables (por ejemplo rendimiento en la producción
+    agrícola) donde la distancia espacial no refleje tan adecuadamente la
+    similaridad entre sitios como lo es la distancia ambiental.
+\end{document}
