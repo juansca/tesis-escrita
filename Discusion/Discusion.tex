@@ -1,2 +1,67 @@
-\chapter{Cap\'{\i}tulo ...}
-Se deben incluir tantos cap\'{\i}tulos como se requieran; sin embargo, se recomienda que la tesis  o trabajo de investigaci\'{o}n tenga un m\'{\i}nimo 3 cap\'{\i}tulos y m\'{a}ximo de 6 cap\'{\i}tulos (incluyendo las conclusiones).\\
+\input{../EncabezadoTesis}
+
+\begin{document}
+
+\justifying
+
+\chapter{Discusión}
+
+  \par Dengue, Chikungunya y Zika son enfermedades virales para las cuales no
+    existe, al día de hoy, vacunas de prevención. Por lo tanto, el control
+    más efectivo proviene de prevenir la propagación del mosquito
+    \textit{Aedes Aegipty} (\textit{Linneaus}) y, por tanto, saber sobre la
+    dinámica de su población es de suma importancia. Éste trabajo presenta un
+    \textit{framework} para el pronóstico de la oviposición utilizando
+    únicamente variables ambientales extraídas de información satelital y
+    herramientas de Aprendizaje Automático de libre acceso. Estas herramientas
+    son una mejora al sistema operacional de riesgo de
+    Argentina \cite{porcasi_operative}.
+
+  \par Utilizamos variables ambientales derivadas de información satelital
+    (temperatura, humedad y precipitación) operacionalmente disponibles para
+    construir modelos temporales capaces de predecir la actividad de oviposición
+    fuera de las casas. En ese sentido, nuestra perspectiva, completamente operativa,
+    implica generar un procedimiento para estimar la actividad del vector
+    y eventualmente independizarse de las mediciones de campo. Esto dado
+    que realizar la medición de oviposición en 50 casas todas las semanas, durante
+    largos períodos de tiempo (como utilizamos para generar los modelos) tiene
+    un costo extremádamente alto.
+
+
+  \par Este estudio resulta ser un avance sobre trabajos previos en el área
+    de la epidemiología, que consideran modelos estadíticos utilizando
+    relaciones lineales \cite{models_predicting, modis_data, ndwi_erffectiveness}.
+    Estas mejorías fueron obtenidas utilizando herramientas de Aprendizaje
+    Automático que, en este caso, no requieren de un esfuerzo adicional de
+    parte del usuario.
+
+  \par La propuesta muestra que algunas herramientas \textit{out-of-the-shelf}
+    son capaces de manejar las complejas relaciones entre variables, proporcionando
+    así una forma de abordar este importante problema. Este enfoque interdisciplinario
+    proporciona nuevas herramientas para los profesionales que se encuentran
+    trabajando en esta área.
+
+  \par A su vez, este trabajo es un ejemplo de cómo el uso de herramientas
+    automáticas para la configuración de algoritmos, como \textit{iRace} pueden
+    reducir la complejidad del ajuste de hiperparámetros y
+    proveer un marco de referencia para la selección de modelos.
+    Adicionalmente, mostramos la importancia de la utilización de la Validación
+    Cruzada (VC), raramente utilizada en usuarios del Sensado Remoto.
+    Utilizamos VC para disminuir la dependencia de los resultados de evaluación
+    sobre una selección particular de los conjuntos de entrenamiento y validacíon
+    en la etapa de elección del modelo. Utilizamos
+    un procedimiento particular de CV para series de tiempo. Todos los modelos
+    aquí discutidos pueden ser ejecutados con \textit{scripts} de Python
+    disponibles libres en \url{https://github.com/juansca/modeling-mosquitos}.
+
+  \par Encontramos que la Regresión por K-Vecinos Cercanos (KNNR), el
+    Perceptron Multicapa (MLP) y la \textit{Support Vector Machine} mejoran
+    considerablemente los modelos predictivos de la población de vectores utilizando
+    variables ambientales extraídas de información satelital como \textit{features}.
+    El desempeño de estos algoritmos puede ser mejorado sustancialmente utilizando
+    conjuntos de datos más grandes, o bien realizando ajustes más finos en los modelos
+    y otras técnicas de mayor complejidad dentro del área del Aprendizaje Automático.
+    A pesar de que el período utilizado es largo en comparación con trabajos similares
+    sobre poblaciones del vector.
+
+\end{document}
