@@ -1,4 +1,4 @@
-\input{../EncabezadoTesis}
+  \input{../EncabezadoTesis}
 
 \begin{document}
 
@@ -149,7 +149,7 @@
 
   \par Cabe mencionar aquí que por \textit{normalizada} entendemos que la
     suma de las inversas (es decir los pesos con los que cada modelo
-    individual interviene) es igual a 1.
+    individual interviene) es igual a 1:
 
   \begin{align}
     1\ =\ \sum{}{\frac{1}{L}}
@@ -186,6 +186,7 @@
 \section{Resultados}
 
   \begin{figure}[hbt]
+    
     \centering%
     \includegraphics[width=0.6\textwidth]{images/ned_clorinda}%
     \caption{Similaridad ambiental ($\frac{1}{NED}$)
@@ -248,13 +249,15 @@
     realmente tiene una fuerte correlación con la distancia geográfica estándar.
     Estos ejemplos muestran más bien cómo el método funciona, que las ventajas
     que ofrece el mismo. Sin embargo la diferencia entre la distancia ambiental
-    y la geográfica puede observarse claramente en las figuras 3 a 6.
+    y la geográfica puede observarse claramente en las figuras \ref{fig:ned_clorinda}
+    a \ref{fig:ned_tartagal}.
     En todas ellas vemos como la distancia ambiental posee bordes abruptos
     (cosa que la distancia geográfica nunca tendrá).
-    Por ejemplo en la Mesopotamia (fig 4) o en las yungas (fig 3) puede verse
-    como pequeñas distancias geográficas tienen asociadas fuertes gradientes en
+    Por ejemplo en la Mesopotamia (fig \ref{fig:ned_iguazu}) o en las yungas
+    (fig \ref{fig:ned_clorinda}) puede verse
+    cómo pequeñas distancias geográficas tienen asociadas fuertes gradientes en
     la distancia ambiental (grandes distancias ambientales) y por ende
-    podríamos suponer que localidades cercanas geográficamente posean patrones
+    podríamos suponer que localidades cercanas geográficamente poseen patrones
     temporales de la población de vectores muy diferentes.
 
     \begin{table}[hbt]
@@ -267,20 +270,20 @@
     & Pampa del Indio
     & Tartagal \\ \midrule
     Tucuman
-    &$0.774$
-    &$0.624$
-    &$1.108$%&\boldmath$1.108$  %CARO: cambio
-    &$0.580$\\
+    &$0.197$
+    &$0.011$
+    &$0.388$%&\boldmath$1.108$  %CARO: cambio
+    &$0.402$\\
     Corrientes
-    &$0.775$
-    &$0.621$
-    &$1.072$
-    &$0.566$ \\
+    &$0.491$
+    &$0.466$
+    &$0.039$
+    &$0.002$ \\
     Salta
-    &$0.837$
-    &$0.613$
-    &$0.834$   %CARO: cambio
-    &$0.464$ \\
+    &$0.112$
+    &$0.005$
+    &$0.133$   %CARO: cambio
+    &$0.749$ \\
     \bottomrule
     \end{tabular}
     \end{table}
