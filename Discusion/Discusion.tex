@@ -4,38 +4,44 @@
 
 \justifying
 
-\chapter{Discusión}
+\chapter{Discusión y Conclusiones}
 
   \par Dengue, Chikungunya y Zika son enfermedades virales para las cuales no
-    existe, al día de hoy, vacunas de prevención. Por lo tanto, el control
+    existen, al día de hoy, vacunas de prevención. Por lo tanto, el control
     más efectivo proviene de prevenir la propagación del mosquito
     \textit{Aedes Aegipty} (\textit{Linneaus}) y, por tanto, saber sobre la
-    dinámica de su población es de suma importancia. Éste trabajo presenta un
-    \textit{framework} para el pronóstico de la oviposición utilizando
+    dinámica de su población es de suma importancia.
+
+  \par Este trabajo, por un lado, presenta un \textit{framework} de simple
+    utilización para el
+    pronóstico de la oviposición utilizando
     únicamente variables ambientales extraídas de información satelital y
     herramientas de Aprendizaje Automático de libre acceso. Estas herramientas
     son una mejora al sistema operacional de riesgo de
-    Argentina \cite{porcasi_operative}.
+    Argentina \cite{porcasi_operative}. A su vez, por la arquitectura del mismo,
+    es posible agregar modelos nuevos y modificar las variables independientes a utilizar como
+    predictores (\textit{features}) de una manera sencilla.
 
-  \par Utilizamos variables ambientales derivadas de información satelital
+  \par En este caso, utilizamos variables ambientales derivadas de información satelital
     (temperatura, humedad y precipitación) operacionalmente disponibles para
     construir modelos temporales capaces de predecir la actividad de oviposición
     fuera de las casas. En ese sentido, nuestra perspectiva, completamente operativa,
     implica generar un procedimiento para estimar la actividad del vector
-    y eventualmente independizarse de las mediciones de campo. Esto dado
-    que realizar la medición de oviposición en 50 casas todas las semanas, durante
+    y eventualmente independizarse de las mediciones de campo. Dicha contribución
+    se considera de alto valor, entre otras cosas, porque realizar la medición
+    de oviposición en 50 casas todas las semanas, durante
     largos períodos de tiempo (como utilizamos para generar los modelos) tiene
     un costo extremádamente alto.
 
-
   \par Este estudio resulta ser un avance sobre trabajos previos en el área
-    de la epidemiología, que consideran modelos estadíticos utilizando
-    relaciones lineales \cite{models_predicting, modis_data, ndwi_erffectiveness}.
-    Estas mejorías fueron obtenidas utilizando herramientas de Aprendizaje
+    de la epidemiología panorámica, donde se consideran modelos estadíticos utilizando
+    relaciones lineales \cite{models_predicting, modis_data, ndwi_erffectiveness}
+    en terminos de la capacidad predictiva de los modelos desarrollados aqui.
+    Estas mejoras fueron obtenidas utilizando herramientas de Aprendizaje
     Automático que, en este caso, no requieren de un esfuerzo adicional de
     parte del usuario.
 
-  \par La propuesta muestra que algunas herramientas \textit{out-of-the-shelf}
+  \par La metodologia implementada muestra que algunas herramientas \textit{out-of-the-shelf}
     son capaces de manejar las complejas relaciones entre variables, proporcionando
     así una forma de abordar este importante problema. Este enfoque interdisciplinario
     proporciona nuevas herramientas para los profesionales que se encuentran
@@ -43,25 +49,84 @@
 
   \par A su vez, este trabajo es un ejemplo de cómo el uso de herramientas
     automáticas para la configuración de algoritmos, como \textit{iRace} pueden
-    reducir la complejidad del ajuste de hiperparámetros y
-    proveer un marco de referencia para la selección de modelos.
-    Adicionalmente, mostramos la importancia de la utilización de la Validación
+    reducir la complejidad del ajuste de hiperparámetros de los modelos y
+    proveer un marco de referencia para la selección de los mismos.
+    Adicionalmente, se mostra la importancia de la utilización de la Validación
     Cruzada (VC), raramente utilizada en usuarios del Sensado Remoto.
     Utilizamos VC para disminuir la dependencia de los resultados de evaluación
     sobre una selección particular de los conjuntos de entrenamiento y validacíon
-    en la etapa de elección del modelo. Utilizamos
+    en la etapa de elección del modelo. Aqui se Utiliza
     un procedimiento particular de CV para series de tiempo. Todos los modelos
     aquí discutidos pueden ser ejecutados con \textit{scripts} de Python
     disponibles libres en \url{https://github.com/juansca/modeling-mosquitos}.
 
-  \par Encontramos que la Regresión por K-Vecinos Cercanos (KNNR), el
-    Perceptron Multicapa (MLP) y la \textit{Support Vector Machine} mejoran
-    considerablemente los modelos predictivos de la población de vectores utilizando
-    variables ambientales extraídas de información satelital como \textit{features}.
-    El desempeño de estos algoritmos puede ser mejorado sustancialmente utilizando
-    conjuntos de datos más grandes, o bien realizando ajustes más finos en los modelos
-    y otras técnicas de mayor complejidad dentro del área del Aprendizaje Automático.
-    A pesar de que el período utilizado es largo en comparación con trabajos similares
-    sobre poblaciones del vector.
+  \par En lo que respecta a la comparacion de algoritmos, se encontro que la Regresión
+  por K-Vecinos Cercanos (KNNR), el
+    Perceptron Multicapa (MLP) y la \textit{Support Vector Machine} resultan ser los
+     modelos predictivos de la población de vectores utilizando
+    variables ambientales extraídas de información satelital como \textit{features}
+    que mejores resultados arrojan.
 
+
+    A pesar de que el período utilizado es largo en comparación con trabajos similares
+    sobre poblaciones del vector, el desempeño de estos algoritmos puede ser
+    mejorado sustancialmente utilizando
+    conjuntos de datos más grandes. Otra manera de mejorarlos seria o bien
+    realizar ajustes más finos en el modelado
+    y/o utilizar otras técnicas de mayor complejidad dentro del área del Aprendizaje Automático.
+
+  \par La otra importante contribución de este trabajo está relacionada con la
+    necesidad de poseer modelos de oviposición para distintas ciudades, evitando
+    el gran costo de la recolección de datos y el entrenamiento para cada uno de
+    las ciudades o puntos para los cuales se quiera poseer datos. Aquí presentamos
+    una forma de establecer relaciones entre los distintos lugares geográficos teniendo
+    en cuenta las características ambientales que poseen. La hipótesis más fuerte que
+    asumimos es la que nos dice que el comportamiento de los vectores está altamente
+    correlacionado (al menos dentro de cierto rango) a las características ambientales
+    del punto en el que que se observa.
+
+  \par Asi se presenta, desarrolla e implementa el concepto de Distancia Ambiental
+    Normalizada, el cual permite
+    llevar a cabo lo mencionado en el párrafo anterior estableciendo una distancia
+    vectorial utilizando el espacio de características ambientales extraídas de
+    información satelital, en vez del espacio geográfico.
+
+  \par En conjunto, ambas contribuciones aportan un muy alto valor de capacidad de
+    mejora al sistema operacional de riesgo de la república Argentina. A su vez,
+    en perspectiva, aporta valor a la proyección de mejora de dichos modelos por
+    su facilidad de uso y extrapolación a distintas zonas.
+
+  \par Otro punto de valor del trabajo es el caracter integrador e
+    interdisciplinario del mismo, demostrando la utilidad y la necesidad
+    de la incersión del Aprendizaje Automático en áreas de impacto social.
+
+  \par A su vez, cabe destacar que lo desarrollado involucra conocimientos de
+  diversas áreas de las Ciencias de la Computación abarcando temáticas, por ejemplo, de
+  Ingeniería del Software, a la hora de realizar el análisis de requerimientos,
+  generación de la arquitectura y establecer la metodología de trabajo.
+  Por otra parte, también se utilizan conocimientos de estadística, modelos y
+  simulación y distintas áreas de matemática para el entendimiento de los
+  distintos algoritmos, tomar decisiones con respecto a
+  ellos y a las hipótesis y conclusiones. Muchos otros conceptos aprendidos
+  a nivel general por las distintas materias han sido aplicados en el desarrollo.
+  Es por esto que me resulta de suma importancia mencionar que lo realizado en
+  este trabajo, con las características interdisciplinarias y la envergadura
+  del mismo, me permitió integrar, de una manera muy contructiva para mi
+  desarrollo profesional, todo lo aprendido y adquirido a lo largo de la carrera.
+
+  \par Es importante rezaltar finalmente  que los resultados y metodologías incluidos en este
+    trabajo de grado han dado lugar a tres publicaciones indexadas en la base de
+    datos scopus, a saber:
+
+    \begin{itemize}
+      \item pooooner las ciiitas
+    \end{itemize}
+    \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
+    Machine Learning} \cite{scavuzzo2018modeling} y
+    \textit{Generalización espacial de modelos epidemiológicos basada en el
+    concepto de Distancia Ambiental Normalizada NED} en
+    en la revista \textit{Acta Tropica}
+    de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica})
+    y \textit{IEEE Xplore Digital Library} (\url{https://ieeexplore.ieee.org/})
+    correspondientemente.
 \end{document}
