@@ -1,12 +1,12 @@
-%\input{../EncabezadoTesis}
-%\begin{document}
+\input{../EncabezadoTesis}
+\begin{document}
 
 \justifying
 \chapter{Modelando la Población del Vector de Dengue Utilizando Datos de Sensado Remoto y Aprendizaje Automático}
 
-  \par Como mencionamos en capitulos anteriores, en un trabajo interinstitutional entre
+  \par Como mencionamos en capitulos anteriores, en un contexto interinstitutional entre
     la Comisión Nacional de Actividades Espaciales (CONAE) y el ministerio de salud
-    de Argentina, hubo iniciativas orientadas a modelar la evolución temporal de
+    de Argentina, se han desarrollado iniciativas orientadas a modelar la evolución temporal de
     las poblaciones de mosquitos usando variables ambientales obtenidas de
     sensores remotos. Estos trabajos utilizaron series de algunos años y fueron
     basadas en un pequeño número de variables satelitales \cite{ndwi_erffectiveness, modis_data}.
@@ -15,17 +15,17 @@
     de varios sensores.
     Aún así, todos estos trabajos asumieron modelos lineales multivariados.
 
-  \par El trabajo presentado en este capítulo representa una mejoría sobre
-    dicho escenario. Comparamos
+  \par El trabajo presentado en este capítulo representa una mejora sobre
+    dicho escenario. En el mismo se comparan algoritmos de
     Support Vector Machines (SVM), Redes Neuronales Artificiales (ANN),
     K-vecinos más cercanos (KNN) y un tipo de árbol de decisión orientado a
     regresión, sumados a dos modelos de regresión lineal. Con ésto, se
-    obtiene una metodología operacional que contribuye al sistema de riesgo
+    obtiene una metodología operacional que podría contribuir al sistema de riesgo
     de Dengue actualmente en operación \cite{porcasi_operative, analisis_cordoba}.
 
-  \par Se explora, en contraste con los trabajos previos mencionados, la habilidad
-    de modelado y predicción de oviposición con algoritmos de Aprendizaje
-    Automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
+  \par Adicionalmente, se explora, en contraste con los trabajos previos mencionados,
+    la habilidad de modelado y predicción de oviposición con algoritmos de Aprendizaje
+    Automático \textit{out-off-the-shelf}, i.e. algoritmos de software libre, ya
     implementados, sin mayores desarrollos sobre lo existente y con un ajuste de
     hiperparámetros minimo. De ésta manera se busca la asimilación de estas
     técnicas a toda la comunidad que se ocupa de problemas similares.
@@ -57,17 +57,17 @@
     cultural, social y economico.
 
   \par La población de vectores es medida monitoreando la actividad de oviposición.
-    Es medida usando ovitrampas colocadas en casas aleatoriamente seleccionadas
+    Para ello se utilizan ovitrampas colocadas en casas aleatoriamente seleccionadas
     en el área urbana de la ciudad. El período de monitoreo utilizado en este
     estudio fue de Agosto de 2012 hasta Julio de 2016 sobre 50 casas. Dos
-    ovitrampas fueron colocadas en cada una: una dentro y otra fuera de la casa,
+    ovitrampas fueron colocadas en cada una: una dentro y otra fuera,
     en el patio trasero en un lugar con sombra y a nivel del suelo, siguiendo
     las instrucciones de la OMS \cite{peridomestic}. Las ovitrampas son contenedores
     de \SI{1000}{\centi\meter\cubed} de plástico negro con \SI{250}{\milli\liter}
     de agua sin ninguna infusión de atracción.
     En este estudio sólo utilizamos los datos de las ovitrampas externas dado
     que ellas tienen una mayor correlación con las variables ambientales
-    derivadas de información satelital. Dichas ovitrampas son reempazadas
+    derivadas de información satelital. Dichas ovitrampas son reemplazadas
     semanalmente y los huevos son contados en un laboratorio de acuerdo al
     \textit{Indice de Densidad de Huevos} \cite{indice_huevos}. Luego, la
     actividad de oviposición del \textit{Aedes Aegipty} es estimada por la suma
@@ -84,15 +84,15 @@
     de \textbf{MODIS} y productos \textbf{TRMM/GPM}.
 
   \par Los índices de vegetación global proveen productos espaciales y
-    temporales consistentes sobre la cobertura verdosa de la vegetación,
+    temporales consistentes sobre la cobertura de la vegetación,
     propiedades del área foliar y el nivel de clorofila. Estos indices son
     derivados de la reflectancia atmosférica
-    corregida en las bandas infrarroja (MIR) e infrarroja cercana (NIR).
-    En este caso se utiliza el \textbf{NDVI} de producto satelital
+    corregida en las bandas infrarroja media (MIR) y cercana (NIR).
+    En este trabajo se utiliza el \textbf{NDVI} del producto satelital
     de MODIS, \textit{MOD13Q1}, (compuesto de 16 días) con una resolución espacial de
     \SI{250}{\meter}.
     Las condiciones de vegetación son incluidas junto con la temperatura,
-    humedad y precipitación, son variables relevantes para la evolución de la
+    humedad y precipitación, las cuales son variables relevantes para la evolución de la
     población de mosquitos \cite{ndwi_erffectiveness, rs_invertebrate}.
 
   \par A su vez, se incluye el Indice de Agua de Diferencia Normalizada
@@ -101,17 +101,17 @@
     Es calculada a partir del mismo producto MODIS usando la definición de
     \textit{Gao} \cite{gao_ndwi} del NDWI desde las bandas provistas por
     el producto \textit{MOD13Q1}, correspondiente a la reflectancia de MIR y NIR:
-    $NDWI =  (\rho_{NIR} - \rho_{MIR}) / (\rho_{NIR}  + \rho_{MIR} ) \times 10^4$
+    $NDWI =  (\rho_{NIR} - \rho_{MIR}) / (\rho_{NIR}  + \rho_{MIR} ) \times 10^4$.
     Los productos MODIS, en general, necesitan el factor $10^{4}$ para ser guardados,
     por eficiencia computacional, como números enteros.
 
   \par En este trabajo, adicionalmente, utilizamos la Temperatura De la Superficie
     Terrestre (\textbf{LST}) de MODIS dado que es una aproximación de la
     temperatura ambiental \cite{infectious_diseases, surface_temp, temp_algorithm}.
-    Para esto, se eligió el producto satelital \textit{MOD11A2}. Tiene una
-    resolución espacial de \SI{1}{\kilo\meter} y un promedio de valores de
-    LST de cielo-abierto durante un periodo de 8 días. Éste producto incluye
-    LST de la noche y el día para así de alguna manera representar
+    Para esto, se eligió el producto satelital \textit{MOD11A2}. Éste tiene una
+    resolución espacial de \SI{1}{\kilo\meter} y es un promedio de valores de
+    LST de cielo-abierto durante un periodo de 8 días. Este producto incluye
+    LST de la noche y del día para así, de alguna manera, representar
     temperaturas mínimas y máximas \cite{lst_surface}.
 
   \par La precipitación local es obtenida de la Misión Tropical de Medida de Lluvia
@@ -119,7 +119,7 @@
     NASA y la Agencia Aeroespacial de Exploración de Japón lanzada en 1997
     para el estudio de las lluvias y así realizar investigaciones sobre el
     clima. Para detectar la lluvia, el satélite utiliza muchos instrumentos
-    incluyendo radar, imagenes de microondas y sensores de rayos. TRMM, a pesar
+    incluyendo radar, imágenes de microondas y sensores de rayos. TRMM, a pesar
     de que se quedó sin combustible en 2014, siguió transmitiendo datos hasta
     Junio del 2015.
     Luego de eso, otros productos basados en una nueva misión espacial llamada
@@ -136,9 +136,10 @@
     (Área Rural). Ésta elección fue tomada bajo la hipótesis de que seleccionar
     una zona fuera de la ciudad representaría bien las condiciones ambientales
     (NDWI, NDVI, LST). La misma idea fue utilizada en estudios previos muy
-    relacionados. Es probable que estas observaciones y los indices de larvas
+    relacionados. Como se explica en dichos trabajos previos, es esperable
+    que estas observaciones y los índices de larvas
     estén estrechamente relacionadas. En ese sentido es que el área rural o
-    externe fue seleccionada aleatoriamente de aquellas con vegetación suficientemente
+    externa fue seleccionada aleatoriamente de aquellas con vegetación suficientemente
     cercana a la ciudad, representando condiciones ambientales naturales.
     En este caso específico esta región rural es seleccionada en el
     noreste de la ciudad; tiene una altitud similar a la ciudad y mayormente
@@ -152,20 +153,20 @@
 
   \par El procedimiento de construir las series temporales a partir de variables
     provenientes del sensado remoto se describen en la Figura \ref{fig:sistema}.
-    Las imagenes son obtenidas de la NASA (\url{http://e4ftl01.cr.usgs.gov}) e
+    Las imágenes son obtenidas de la NASA (\url{http://e4ftl01.cr.usgs.gov}) e
     importadas en \textbf{GRASS 7.1}. Para cada una de las áreas anteriormente
     definidas se calcula la media de cada día. Cada uno de estos valores
-    promedio y sos díás son exportadas a una tabla en el software \textbf{R},
+    promedio y sus fechas son exportadas a una tabla en el software \textbf{R},
     donde es utilizada para construir las series temporales completas.
     Los datos son interpolados para obtener valores para cada uno de los
-    días de muestra (un valor para cada semana epidemiológica).
+    días de muestra (un valor para cada semana epidemiológica) \cite{german_temporal}.
     \begin{figure}[hbt]
     \centering%
     \includegraphics[width=0.6\textwidth]{images/sistema}%
     \caption{Sistema de procesamiento de productos satelitales}\label{fig:sistema}
     \end{figure}
 
-  \par Todas las variables son consideradas con tres semanas de \textit{lag}
+  \par Todas las variables son consideradas con hasta tres semanas de \textit{lag}
     teniendo en cuenta las series temporales originales, para representar las
     influencias asincrónicas, correspondientemente con uno, dos o tres
     lapsos de tiempo.
@@ -174,10 +175,11 @@
     y los huevos recolectados cada semana por medio de una matriz de correlación
     y los valores \textbf{p} que miden su significancia. Ésto llevó a descartar
     treinta y cinco variables. Se prefieren las variables con \textit{lag} dada
-    su potencial habilidad de pronóstico. Las siguiente variables fueron
-    seleccionadas: NDVI rural \textit{lag} 1, NDWI rural \textit{lag} 1, LST rural dia \textit{lag} 3,
-    LST rural noche \textit{lag} 1 y TRMM \textit{lag} 3. Luego, todas las
-    variables fueron normalizadas utilizando el \textbf{\textit{z-score}}.
+    su potencial habilidad de pronóstico \cite{german_temporal}. Las siguiente
+    variables fueron seleccionadas: NDVI rural \textit{lag} 1,
+    NDWI rural \textit{lag} 1, LST rural dia \textit{lag} 3,
+    LST rural noche \textit{lag} 1 y TRMM \textit{lag} 3.
+    Luego, todas las variables fueron normalizadas utilizando el \textbf{\textit{z-score}}.
 
   \par La Figura \ref{fig:heatmap} presenta las variables ambientales junto
     con la oviposición en un mapa de calor (\textit{heatmap}). Este formato
@@ -446,7 +448,7 @@
 
       \par Experiencias previas en aplicaciones epidemiológicas de
         modelado utilizando variables ambientales obtenidas de sensores
-        remotos han reportado buenos resultados con éste
+        remotos han reportado buenos resultados con este
         enfoque \cite{akodon_modeling, multilinear_apli, modis_data}.
         En este caso se utilizó un modelo de regresión lineal tradicional y
         una regresión \textit{Ridge}, esta última con la regularización de
@@ -557,12 +559,6 @@
 
 
   \section{Resultados}
-    \begin{figure}[hbt]
-    \centering%
-    \includegraphics[width=1\textwidth]{images/RidgeVsTime}%
-    \caption{\textit{Z-score} observado, regresiones lineales tradicional y
-             \textit{Ridge}}\label{fig:ridge_vs_time}
-    \end{figure}
 
     \par La Figura \ref{fig:ridge_vs_time} muestra los resultados tanto del
       modelo lineal clásico como el \textit{Ridge}. Estos resultados concuerdan
@@ -811,16 +807,16 @@
     riesgo), es la gran escases de puntos (ciudades) de los cuales se posee información
     de campo (oviposición). Esto resulta un problema dado que si los modelos son
     entrenados con datos de un punto geográfico \textbf{A} (Tartagal, por ejemplo), a
-    priori no podemos aseegurar que serán capaces de ajustar correctamente al
+    priori no podemos asegurar que serán capaces de ajustar correctamente al
     comportamiento de la variable objetivo de un punto \textbf{B} (Córdoba, por ejemplo).
     Pues ni siquiera se poseen datos para validar dicha conducta.
     Esto limita el alcance regional de las herramientas de este tipo.
 
 
-  \par Como comentario final de este capítulo queremos mencionar que el trabajo
-    realizado y descripto aquí ha llevado a la publicación del trabajo
+  \par Como comentario final de este capítulo resulta relevante mencionar que el trabajo
+    realizado y descripto aquí ha dado lugar a la publicación
     \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
     Machine Learning} \cite{scavuzzo2018modeling} en la revista \textit{Acta Tropica}
     de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica}).
 
-%\end{document}
+\end{document}
