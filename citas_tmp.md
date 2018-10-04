@@ -128,7 +128,8 @@ of a Dengue Control Program in Tartagal
 tag: tesis_gonza
 Geomática aplicada a un Sistema de Alerta Temprana
 
-
+----------------------------------------------------
+----------------------------------------------------
 tag: tesis_riesgo_viral
 Diseño y Desarrollo de Tecnología para la estratificación de
 riesgo de circulación viral de dengue a nivel urbano
@@ -669,7 +670,8 @@ M. O. Espinosa, E. Alvarez Di Fino, M. Abril, M. A. Lanfri, M. V.
 Periago, C. M. Scavuzzo, Operational satellite based temporal modeling
 of aedes population, Sent to Geospatial Health 2017.
 
-
+++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++
 tag: peridomestic
 A. Moncayo, Z. Fernandez, D. Ortiz, M. Diallo, A. Sall, S. Hartman,
 C. Davis, L. Coffey, C. Mathiot, R. Tesh, S. Weaver, Dengue emer-
