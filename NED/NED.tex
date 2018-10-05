@@ -1,6 +1,6 @@
-%\input{../EncabezadoTesis}
-%
-%\begin{document}
+\input{../EncabezadoTesis}
+
+\begin{document}
 
 \justifying
 
@@ -18,7 +18,7 @@
     presentada por Porcasi y colaboradores en 2012 \cite{porcasi_operative},
     nos planteamos en este capítulo el objetivo específico de generar
     una metodología para espacializar los datos contruidos siguiendo la
-    metodología de \cite{german_temporal}, basada en el concepto de
+    metodología del capítulo anterior, basada en el concepto de
     \textbf{\textit{Distancia Ambiental Normalizada}} (NED).
 
 
@@ -27,7 +27,7 @@
 \subsection{Problema}
 
   \par A partir de la disponibilidad de datos de campo en $N$ localidades
-    diferentes, se generan, siguiendo la metodología presentada en \cite{german_temporal}
+    diferentes, se generan,
     $N$ modelos que relacionan la oviposición con variables ambientales
     derivadas de datos satelitales (\textit{lst\_night}, \textit{lst\_day},
     \textit{ndvi}, \textit{ndwi}, \textit{prec}). Por simplicidad, sin pérdida
@@ -75,7 +75,7 @@
     en una ciudad que sea más similar \textbf{ambientalmente} y no necesariemente
     con aquella que está más cerca geográficamente. En ese sentido, se debería
     utilizar (en el esquema de vecino más cercano) el modelo de la ciudad $J$
-    que posea medio ambiente más similar al del punto $X$. En otras palabras,
+    que posea el medio ambiente más similar al del punto $X$. En otras palabras,
     asi como ``más cerca", significa típicamente coordenadas geográficas (o posiciones)
     similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca"
     como que sus variables ambientales son similares. De esta forma aparece
@@ -133,11 +133,13 @@
     \textit{NDVI} mensuales medios.
 
   \par De esta manera, finalmente se puede estimar la distancia ambiental de
-    cada ciudad en una ubicación $X$, y nuestras 4 ciudades modeladas
+    cada ciudad en una ubicación $X$, y las 4 ciudades modelables,
     $Js$, y volver a calcular el método de extrapolación de la ecuación \ref{Eq:dist}
     pero ahora usando la distancia ambiental. Aquí se ha tomado $N\ =\ 4$ ya
-    que en la realidad se cuenta sólo con 4 ciudades modeladas:
-    Pampa del Indio, Clorinda, Tartagal y Puerto Iguazú.
+    que en la realidad se cuenta sólo con 4 ciudades con series completas de datos
+    para modelar: Pampa del Indio, Clorinda, Tartagal y Puerto Iguazú
+    (Fundación Mundo Sano, \url{https://www.mundosano.org/}).
+
 
 
   \par Operativamente, para calcular las distancias, definimos una región de
@@ -152,7 +154,7 @@
     individual interviene) es igual a 1:
 
   \begin{align}
-    1\ =\ \sum{}{\frac{1}{L}}
+    1\ =\ \sum{}{\frac{1}{L_{j}}}
   \end{align}
 
 
@@ -314,7 +316,7 @@
     \textit{Congreso Bienal de IEEE Argentina} (ARGENCON) durante la primer semana de Junio
     de 2018. La presentación fue realizada bajo el título
     \textit{Generalización espacial de modelos epidemiológicos basada en el
-    concepto de Distancia Ambiental Normalizada NED} y
+    concepto de Distancia Ambiental Normalizada NED} [PONEEER CITAA!!] y
     se podrá encontrar
     en la \textit{IEEE Xplore Digital Library} (\url{https://ieeexplore.ieee.org/}).
-%\end{document}
+\end{document}
