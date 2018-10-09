@@ -40,7 +40,7 @@
   entomológicos\footnote{De insectos}, debido a que ellos proveen gran cantidad
   y diversidad de información sobre la cobertura de la Tierra: características
   de la vegetación, cuerpos de agua, temperaturas, entre otras. Ésta, también es
-  información sobre el hábitat de insectos y artrópodos vectores \cite{estallo_ndwi, data_driven_prediction},
+  información sobre el hábitat de insectos y artrópodos vectores \cite{ndwi_erffectiveness, data_driven_prediction},
   y, por lo tanto, de acuerdo a la teoría de Pavlovsky \cite{nidality} en la que
   expone la correlación entre el hábitat y enfermedades transmitidas por vectores,
   los datos de los SR se pueden utilizar como fuente de información sobre la
@@ -66,10 +66,10 @@
 
 \par El uso de técnicas de Teledetección para mapear la distribución de vectores y el riesgo
   de enfermedades ha tenido una gran evolución durante las últimas dos
-  décadas (13). La complejidad de las técnicas va desde el uso de simples
+  décadas. La complejidad de las técnicas va desde el uso de simples
   correlaciones entre las firmas espectrales de diferentes coberturas, usos del
-  suelo y abundancia de especies (26,27) hasta técnicas complejas que integran variables
-  ambientales obtenidas de satélites con la biología de los vectores (13).
+  suelo y abundancia de especies hasta técnicas complejas que integran variables
+  ambientales obtenidas de satélites con la biología de los vectores.
   Estas técnicas se usan para desarrollar modelos predictivos de riesgo,
   los cuales principalmente se realizan a través de técnicas estadísticas de
   regresión logística y análisis discriminante, que dilucidan las asociaciones
@@ -97,11 +97,11 @@
   vectores, el movimiento del insecto) o abióticamente (e.j: flujos de viento o agua).
   Por ejemplo, rios y corrientes pueden actuar como corredores de disperción que
   fomentan la propagación de la infección a través de paisajes heterogéneos
-  para patógenos de plantas transmitidos por el agua (53), mientras que en otros
+  para patógenos de plantas transmitidos por el agua, mientras que en otros
   sistemas, como las enfermedades zoonóticas de mamíferos terrestres, estos mismos
   cuerpos de agua pueden funcionar como barreras impidiendo el movimiento
-  del huesped o del vector (97). Éstas condiciones se ven reflejadas en la
-  Figura \ref{fig:paisajes_h} de \cite{Landscape Epidemiology of Emerging Infectious...}.
+  del huesped o del vector. Éstas condiciones se ven reflejadas en la
+  Figura \ref{fig:paisajes_h} de \cite{landscape_epidemiology}.
   Notemos que en el caso de \textbf{a)}, la
   conectividad entre los sitios azules es mayor que la que se da entre éstos y
   los amarillos, y también entre ellos y los rojos, siendo que la distancia
@@ -121,7 +121,7 @@
   \par La \textbf{\textit{Epidemiología Panorámica}}\cite{nidality, ostfeld_re_emerging}
   (EP) está estrechamente relacionada a su paralela ecológica, la Ecología
   Panorámica, una ciencia con inicios en los años 1930s que se dedica a estudiar
-  las interacciones entre los ambientes y la vegetación (122).
+  las interacciones entre los ambientes y la vegetación.
   Sin embargo, los paisajes son espacial y temporalmente dinámicos.
   En simultáneo con el nacimiento de la ecología panorámica como una ciencia,
   Pavlosky estipula el concepto de \textit{nidalidad}\footnote{Se define como
@@ -157,13 +157,14 @@
   individuos susceptibles e infectados.
 
 \par La EP ha sido aplicada en gran variedad de estudios sobre vectores de
-  enfermedades (28-37). A nivel global, se pueden encontrar contribuciones en esta área
-  [32, 33, 34] también con algunas experiencias de herramientas operativas [35].
+  enfermedades. A nivel global, se pueden encontrar contribuciones en esta área
+  \cite{herbreteau, kalluri_surveillance, data_driven_prediction} también con
+  algunas experiencias de herramientas operativas \cite{bowman_alarm}.
   A su vez, muchos estudios interdisciplinarios fueron llevados a cabo en
   latinoamérica enfocados en la generación de modelos predictivos de riesgo,
   espaciales y temporales, basados en condiciones ambientales derivadas de
-  información satelital [24, 25, 26, 27].
-  Por ejemplo, en México, Dumonteil y Gourbiere (38)
+  información satelital \cite{enao_gis_y_sr, fuller_costa_rica, madrin_correlating, arboleda_colombia}.
+  Por ejemplo, en México, Dumonteil y Gourbiere \cite{mexico}
   estudiaron la relación entre la distribución de la especie Triatoma dimidiata
   y factores bioclimáticos, para de esta forma desarrollar un modelo predictivo de
   la abundancia domiciliaria por esta especie y las tasas de infección
@@ -172,8 +173,8 @@
   dimidiata se asocia de forma positiva (por análisis de regresión de Poisson)
   con los cultivos, pastos, precipitación, humedad relativa y la temperatura
   máxima. En particular, en Argentina existen varias experiencias en esta
-  dirección, [28, 29, 30] abordan el problema de la epidemia del Dengue dando
-  herramientas operacionales [31].
+  dirección, \cite{rotela_space_time, estallo_prevention, espinosa_temporal} abordan el problema de la epidemia del Dengue dando
+  herramientas operacionales \cite{porcasi_operative}.
 
 \par Por ejemplo, en 2011, Argentina comenzó a desarrollar un proyecto operacional
   (Sistema de Alerta Temprana de Salud, HEWS), útil tanto para las autoridades de
@@ -182,7 +183,7 @@
   ciudades del país. En este producto, cada ciudad es representada por un punto
   al que se le asigna un valor de riesgo para cada año, basado en tecnología
   geoespacial. El trabajo fue realizado en un contexto interdisciplinario e
-  interinstitucional. En este sistema [13], el riesgo se evalúa en cuatro componentes que son: el
+  interinstitucional. En este sistema \cite{porcasi_operative}, el riesgo se evalúa en cuatro componentes que son: el
   entomológico, el viral, el componente relacionado con las actividades de
   control y finalmente el ambiental. Mientras que los tres primeros componentes
   se generan con el aporte de información de los agentes de salud que trabajan en cada
@@ -210,12 +211,13 @@
   Específicamente, los productos de vegetación (índice de vegetación de diferencia
   normalizada) y temperatura (temperatura de la superficie terrestre) derivados
   de MODIS son ejemplos de variables de percepción remota utilizadas
-  en aplicaciones de epidemiologia [13], [22] incorporadas en [20]. Otra variable
+  en aplicaciones de epidemiologia \cite{porcasi_operative, butt_use_modis}
+  incorporadas en \cite{german_temporal}. Otra variable
   ambiental obtenida de satélite que es relevante e incorporada, es el
   \textit{Índice de Agua de Diferencia Normalizada} (NDWI) que evalúa de alguna
   forma el contenido de agua de la cubierta. Adicionalmente el trabajo de German
   incorpora una estimación de la precipitación desde el espacio a partir de las
-  misiones (TRMM) y (GPM) [23].
+  misiones (TRMM) y (GPM) \cite{trmm_mision}.
   Utilizando los datos mencionados como variables independientes,
   desarrollaron modelos temporales de pronóstico de oviposición de \textit{Aedes Aegypti}
   usando un método lineal multivariado. En su trabajo, mencionan que
@@ -607,7 +609,7 @@
       como mínimo, una capa oculta\footnote{Una capa de neuronas artificiales que toman un conjunto
       de entradas ponderadas y producen una salida a través de una función de activación.};
       la vista gráfica de una arquitectura simple se puede observar en la
-      Figura \ref{fig:mlp}.
+      Figura \ref{fig:mlp_ejemplo}.
 
     \par Una descripción matemática simplificada del algoritmo en cuestión es la
       que se menciona a continuación.
@@ -655,7 +657,7 @@
       \centering%
       \includegraphics[width=0.7\textwidth]{images/ejemplo_mlp}%
       \caption{Arquitectura de una MLP de cuatro variables de entrada, una capa
-              oculta de cinco neuronas y un sólo valor de salida}\label{fig:mlp}
+              oculta de cinco neuronas y un sólo valor de salida}\label{fig:mlp_ejemplo}
       \end{figure}
 
 %\end{document}

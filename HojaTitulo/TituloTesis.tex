@@ -45,7 +45,7 @@ Córdoba, Argentina\\
 \begin{minipage}{8cm}
     \noindent
         \small
-        Su uso es opcional y cada autor podr\'{a} determinar la distribuci\'{o}n del texto en la p\'{a}gina, se sugiere esta presentaci\'{o}n. En ella el autor dedica su trabajo en forma especial a personas y/o entidades.\\[1.0cm]\\
+        Aca va algun lema o algo asi
         Por ejemplo:\\[1.0cm]
         A mis padres\\[1.0cm]\\
         o\\[1.0cm]
@@ -63,7 +63,7 @@ Córdoba, Argentina\\
 \\\\\\%
 \textbf{\LARGE Agradecimientos}
 \addcontentsline{toc}{chapter}{\numberline{}Agradecimientos}\\\\
-Esta secci\'{o}n es opcional, en ella el autor agradece a las personas o instituciones que colaboraron en la realizaci\'{o}n de la tesis  o trabajo de investigaci\'{o}n. Si se incluye esta secci\'{o}n, deben aparecer los nombres completos, los cargos y su aporte al documento.\\
+insertar agradecimientos
 
 \newpage{\pagestyle{empty}\cleardoublepage}
 
@@ -71,8 +71,45 @@ Esta secci\'{o}n es opcional, en ella el autor agradece a las personas o institu
 \textbf{\LARGE Resumen}
 \addcontentsline{toc}{chapter}{\numberline{}Resumen}\\\\
 
-\textbf{\small Palabras clave: (m\'{a}ximo 10 palabras, preferiblemente seleccionadas de las listas internacionales que permitan el indizado cruzado)}.\\
+\textbf{\small Palabras clave: Computer Science, Machine Learning, Python,
+      Landscape Epidemiology, Remote Sensing, Dengue, Zika, Chikungunya, Public Health}.\\
+\justifying
+  \par El Dengue, Zika y Chikungunya son enfermedades virales cuya vacuna para
+    prevención aún no existe y que, en los últimos años, han tenido un incremento
+    e impacto en la población de la región argentina y latinoamericana que ha
+    sido de gran preocupación para los organismos gubernamentales de salud.
 
-\textbf{\LARGE Abstract}\\\\
-Es el mismo resumen pero traducido al ingl\'{e}s. Se debe usar una extensi\'{o}n m\'{a}xima de 12 renglones. Al final del Abstract se deben traducir las anteriores palabras claves tomadas del texto (m\'{\i}nimo 3 y m\'{a}ximo 7 palabras), llamadas keywords. Es posible incluir el resumen en otro idioma diferente al espa\~{n}ol o al ingl\'{e}s, si se considera como importante dentro del tema tratado en la investigaci\'{o}n, por ejemplo: un trabajo dedicado a problemas ling\"{u}\'{\i}sticos del mandar\'{\i}n seguramente estar\'{\i}a mejor con un resumen en mandar\'{\i}n.\\[2.0cm]
-\textbf{\small Keywords: palabras clave en ingl\'{e}s(m\'{a}ximo 10 palabras, preferiblemente seleccionadas de las listas internacionales que permitan el indizado cruzado)}\\
+  \par En los últimos años se han generado sistemas de riesgo de transmisión
+    de enfermedades virales basados en información de sensores remotos,
+    estableciendo relaciones entre las condiciones ambientales de las distintas
+    zonas con la abundancia del vector en las mismas. A dicha área de estudio
+    se la denomina Epidemiología Panorámica.
+
+ \par En el presente trabajo se desarrolla un \textit{framework} para la generación
+    de modelos \textit{out-off-the-shelf} de aprendizaje automático (ML) con el objetivo
+    de estimar la abundancia de
+    vectores de Dengue, Zika y Chikungunya para, así, mejorar los resultados
+    previos y aportar valor a los profesionales que actualmente están trabajando
+    sobre los modelos de riesgo de la región.
+    Se utilizan algoritmos de ML implementados por la librería \textit{scikit-learn} de Python.
+    Para el ajuste de hiperparámetros de los modelos se usa la herramienta
+    \textit{irace} de R. A su vez, se aplican técnicas de ingeniería del software para
+    extraer los requerimientos y aplicar una metodología de desarrollo acorde a la
+    situación. Estos aportes fueron publicados en
+    \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
+    Machine Learning} \cite{scavuzzo2018modeling} en la revista \textit{Acta Tropica}
+    de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica}).
+
+  \par Claramente, un modelo entrenado con información de una sola ciudad no es capaz,
+    en principio, de estimar correctamente la abudancia en otras zonas del país.
+ En este trabajo
+    se propone resolver la cuestión a traves de un concepto novedoso en el campo de la epidemiología, que establece
+    relaciones de "cercanía" entre regiones teniendo en cuenta sus características
+    ambientales: la Distancia Ambiental Normalizada. Utilizando este enfoque es que
+    ahora se puede pensar que el modelo que predice la abundancia de una nueva ciudad es
+    la suma de las contribuciones de cada modelo entrenado pesado por su similaridad ambiental.
+    Este aporte fue publicado en el
+    \textit{Congreso Bienal de IEEE Argentina} (ARGENCON) durante la primer semana de Junio
+    de 2018. La presentación fue realizada bajo el título
+    \textit{Generalización espacial de modelos epidemiológicos basada en el
+    concepto de Distancia Ambiental Normalizada NED} \cite{ned_scavuzzo}.
