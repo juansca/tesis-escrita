@@ -58,7 +58,7 @@
   A su vez, el deterioro de las condiciones de salud en el mundo, el avance significativo
   en el procesamiento de computadoras, la mejora en la adquisición de datos,
   la reducción de los costos de hardware y software y el desarrollo de tecnología
-  GIS\footnote{Sistema de Información Geográfica} han llevado al lanzamiento
+  GIS\footnote{Sistema de Información Geográfica}(por sus siglas en inglés) han llevado al lanzamiento
   de programas que apuntan a integrar SR / GIS en aplicaciones de salud
   \cite{tesis_riesgo_viral, tesis_gonza, espinosa_temporal, rs_public_health}.
 
@@ -100,12 +100,12 @@
   para patógenos de plantas transmitidos por el agua, mientras que en otros
   sistemas, como las enfermedades zoonóticas de mamíferos terrestres, estos mismos
   cuerpos de agua pueden funcionar como barreras impidiendo el movimiento
-  del huesped o del vector. Éstas condiciones se ven reflejadas en la
+  del huésped o del vector. Estas condiciones se ven reflejadas en la
   Figura \ref{fig:paisajes_h} de \cite{landscape_epidemiology}.
   Notemos que en el caso de \textbf{a)}, la
   conectividad entre los sitios azules es mayor que la que se da entre éstos y
   los amarillos, y también entre ellos y los rojos, siendo que la distancia
-  Euclidea entre los azules es mayor. Ésto ocurre porque el sitio rojo está del otro lado
+  euclídea entre los azules es mayor. Ésto ocurre porque el sitio rojo está del otro lado
   de la cordillera, la cual funciona como una barrera geográfica para la
   inoculación\footnote{Introducción de microorganismos vivos, muertos o atenuados,
   en un organismo de forma accidental o voluntaria.}, el huésped y/o la disperción
@@ -115,7 +115,7 @@
   un patógeno virulento y un ambiente predispuesto a la enfermedad} acuático, en
   donde la inoculación sucede a través del agua: los dos sitios amarillos son los
   más estrechamente conectados, a pesar de que están separados por una mayor
-  distancia Euclidea que con otros, porque el sitio amarillo de abajo está localizado
+  distancia euclídea que con otros, porque el sitio amarillo de abajo está localizado
   bajo una corriente que va desde el sitio amarillo de arriba.
 % con un así se pega acá
   \par La \textbf{\textit{Epidemiología Panorámica}}\cite{nidality, ostfeld_re_emerging}
@@ -245,7 +245,7 @@
       automático se refiere a la cuestión de cómo construir programas
       que mejoren automáticamente con experiencia.
       En ese marco, luego de muchos avances en el área, podemos decir que el
-      \textit{Aprendizaje Automático} (ML) es un
+      \textit{Aprendizaje Automático} (ML, por sus siglas en inglés) es un
       enfoque empírico efectivo para regresiones y/o clasificaciones de sistemas
       lineales y no lineales, que pueden involucrar desde unos pocos hasta varios
       cientos de variables.
@@ -287,7 +287,9 @@
       Algunos de los algoritmos de ML más usados en aplicaciones relativas a
       Geociencias y Sensado Remoto (GRS) son las Redes Neuronales Artificiales (ANN),
       Support Vector Machines (SVM), Mapas Auto-organizados (SOM), Árboles de Decisión (DT),
-      Random Forests y Algoritmos Genéticos. Su aplicación en problemas de GRS es
+      Random Forests y Algoritmos Genéticos. Los cinco acrónimos previamente mencionados
+      se extraen por las correspondientes siglas en inglés.
+      Por otra parte, su aplicación en problemas de GRS es
       relativamente nuevo y extremádamente prometedor. En particular, ANNs son
       usadas para clasificación y la aplicación en pronósticos
       relativos a series de tiempo.
@@ -313,7 +315,7 @@
       1.500 fueron desde el 2015 hasta la actualidad. Del total, un 23.8\% se
       corresponde con el área de \textit{Computer Science}, un 22.7\% a
       \textit{Earth and Planetary Sciences}, 17.5\% a \textit{Engineering} y el
-      restante 36\% se distribuye otras áreas; con China,
+      restante 36\% se distribuye entre otras áreas; con China,
       Estados Unidos, Italia e India como los paises con mayor producción
       científica en dichas áreas.
       El hecho de que esta búsqueda haya arrojado más resultados que la mencionada
@@ -338,41 +340,6 @@
       de problema que abordaremos. A su vez, los algoritmos que describiremos son
       los implementados por la librería \textit{Scikit-learn}.
 
-  \subsection{Scikit-learn}
-
-    \par \textit{Scikit-learn}\cite{scikit-learn, sklearn_review} es una librería
-      de Python de libre acceso para Aprendizaje Automático
-      construido sobre \textit{SciPy}\cite{scipy}. Es una herramienta
-      sencilla y efectiva para minería de datos y análisis de datos. Dado que está bajo
-      licencia \textit{BSD}, esta librería puede ser utilizada tanto
-      para uso personal como comercial.
-
-    \par Este proyecto inició en el 2007 como un proyecto del \textit{Google Summer Scool} por David
-      Cournapeau. Más tarde ese año, Matthieu Brucher comenzó a trabajar en éste proyecto
-      como parte de su tesis. En 2010 Fabian Pedrafosa, Gael Varoquaux, Alexandre
-      Gramfort y Vincent Michel del INRIA \footnote{Institut National de Recherche
-      en Informatique et en Automatique} tomaron el liderazgo del proyecto y lo liberaron
-      al público por primera vez, el 1ro de Febrero de 2010. Desde entonces, salieron muchos
-      \textit{releases} siguiendo ciclos de 3 meses, y una gran comunidad internacional
-      ha estado liderando el desarrollo desde entonces.
-
-    \par Con scikit-learn, los usuarios pueden realizar una gran variedad de tareas
-      que van desde selección de modelos, clustering, y preprocesamiento de datos, entre otras.
-      La librería provee un completo conjunto de tareas que permiten una
-      implementación completa de la solución de un problema de ML.
-
-    \par Por las razones mencionadas es que tiene una muy extensiva utilización.
-      Se está utilizando tanto para uso científico como en
-      grandes compañias de diferentes industrias desde streaming de música, hasta
-      recomendadores de hoteles, entre otras. Esto da la pauta de que los usuarios pueden
-      integrar algoritmos implementados con este módulo a sus propias aplicaciones.
-
-    \par Otra de las grandes bondades de la herramienta es que se asegura que
-      tanto usuarios experimentados como aquellos que son nuevos puedan obtener
-      la asistencia que necesitan para integrar el módulo de ML a sus propias
-      plataformas, por ello es el alto nivel de detalle en su documentación oficial.
-
-
 
   \subsection{Métodos Lineales}
 
@@ -384,7 +351,7 @@
 
 
   \subsection{Árboles de Decisión}
-    \par Los \textit{Árboles de Decisión} (DTs)\cite{decision_tree_regression}
+    \par Los \textit{Árboles de Decisión} (DTs, por sus siglas en inglés)\cite{decision_tree_regression}
       son métodos no paramétricos de aprendizaje supervisado
       utilizados tanto para problemas de clasificación como de regresión.
       La meta es crear un modelo que prediga el valor de una variable objetivo aprendiendo
@@ -597,7 +564,7 @@
 
   \subsection{Perceptron Multicapa (MLP)}
 
-    \par Un \textbf{Perceptron Multicapa} (MLP)\cite{mlp_intro1, mlp_intro2} es un tipo
+    \par Un \textbf{Perceptron Multicapa} (MLP, por sus siglas en inglés)\cite{mlp_intro1, mlp_intro2} es un tipo
       de red neuronal artificial (ANN) \textit{feedforward}.
       Éste es un algoritmo de aprendizaje supervisado que logra distinguir
       relaciones entre datos que no sean linealmente separables, aprende una función

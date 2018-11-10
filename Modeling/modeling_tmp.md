@@ -479,3 +479,41 @@ could be improved substantially using a larger dataset. Although the used period
   nuestra atención a la capacidad de modelado de estas variables,
   de diferentes herramientas de Aprendizaje Automático.
   En ese sentido debería quedar claro que en este trabajo no estamos dando como cerrado el problema de modelado de poblaciones de mosquitos.
+
+
+
+-----------------------------------
+
+\subsection{Scikit-learn}
+
+  \par \textit{Scikit-learn}\cite{scikit-learn, sklearn_review} es una librería
+    de Python de libre acceso para Aprendizaje Automático
+    construido sobre \textit{SciPy}\cite{scipy}. Es una herramienta
+    sencilla y efectiva para minería de datos y análisis de datos. Dado que está bajo
+    licencia \textit{BSD}, esta librería puede ser utilizada tanto
+    para uso personal como comercial.
+
+  \par Este proyecto inició en el 2007 como un proyecto del \textit{Google Summer Scool} por David
+    Cournapeau. Más tarde ese año, Matthieu Brucher comenzó a trabajar en éste proyecto
+    como parte de su tesis. En 2010 Fabian Pedrafosa, Gael Varoquaux, Alexandre
+    Gramfort y Vincent Michel del INRIA \footnote{Institut National de Recherche
+    en Informatique et en Automatique} tomaron el liderazgo del proyecto y lo liberaron
+    al público por primera vez, el 1ro de Febrero de 2010. Desde entonces, salieron muchos
+    \textit{releases} siguiendo ciclos de 3 meses, y una gran comunidad internacional
+    ha estado liderando el desarrollo desde entonces.
+
+  \par Con scikit-learn, los usuarios pueden realizar una gran variedad de tareas
+    que van desde selección de modelos, clustering, y preprocesamiento de datos, entre otras.
+    La librería provee un completo conjunto de tareas que permiten una
+    implementación completa de la solución de un problema de ML.
+
+  \par Por las razones mencionadas es que tiene una muy extensiva utilización.
+    Se está utilizando tanto para uso científico como en
+    grandes compañias de diferentes industrias desde streaming de música, hasta
+    recomendadores de hoteles, entre otras. Esto da la pauta de que los usuarios pueden
+    integrar algoritmos implementados con este módulo a sus propias aplicaciones.
+
+  \par Otra de las grandes bondades de la herramienta es que se asegura que
+    tanto usuarios experimentados como aquellos que son nuevos puedan obtener
+    la asistencia que necesitan para integrar el módulo de ML a sus propias
+    plataformas, por ello es el alto nivel de detalle en su documentación oficial.

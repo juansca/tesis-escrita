@@ -25,7 +25,7 @@
 
   \par Adicionalmente, se explora, en contraste con los trabajos previos mencionados,
     la habilidad de modelado y predicción de oviposición con algoritmos de Aprendizaje
-    Automático \textit{out-off-the-shelf}, i.e. algoritmos de software libre, ya
+    Automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
     implementados, sin mayores desarrollos sobre lo existente y con un ajuste de
     hiperparámetros minimo. De ésta manera se busca la asimilación de estas
     técnicas a toda la comunidad que se ocupa de problemas similares.
@@ -105,8 +105,8 @@
     Los productos MODIS, en general, necesitan el factor $10^{4}$ para ser guardados,
     por eficiencia computacional, como números enteros.
 
-  \par En este trabajo, adicionalmente, utilizamos la Temperatura De la Superficie
-    Terrestre (\textbf{LST}) de MODIS dado que es una aproximación de la
+  \par En este trabajo, adicionalmente, utilizamos la temperatura De la superficie
+    terrestre (\textbf{LST}) de MODIS dado que es una aproximación de la
     temperatura ambiental \cite{infectious_diseases, surface_temp, temp_algorithm}.
     Para esto, se eligió el producto satelital \textit{MOD11A2}. Éste tiene una
     resolución espacial de \SI{1}{\kilo\meter} y es un promedio de valores de
@@ -206,7 +206,7 @@
   \par En todos los casos se entrenaron los modelos con 80\% del conjunto de
     datos y se utilizó el 20\% restante de la serie temporal (alrededor de un año)
     como un conjunto independiente para validar la capacidad de predicción temporal
-    de las herramientas (se usó el 20\% más "nuevo" del conjunto). Ésta elección
+    de las herramientas (se usó el 20\% más "nuevo" del conjunto). Esta elección
     de porcentajes de división es la más utilizada en la literatura de ML \cite{ml_rainfall}.
 
   \par Se utilizó \textbf{Validación Cruzada}
@@ -223,8 +223,15 @@
     \par A continuación se describiran las técnicas utilizadas para modelar
     el \textit{z-score} de la oviposición como una función variables ambientales
     extraidas de sensores remotos. Todos los modelos fueron implementados utilizando
-    funciones de la librería \textbf{\textit{scikit-learn}}, disponible
-    gratuitamente para el lenguaje \textbf{Python}.
+    funciones de la librería \textbf{\textit{scikit-learn}}.
+
+    \par La última, es una librería del lenguaje de programación Python, de libre
+    acceso, para Aprendizaje Automático contruida sobre \textit{SciPy}\cite{scipy}.
+    Es una herramienta sencilla y efectiva para minería y análisis de datos que
+    proporciona un conjunto de utilidades que permiten una implementación
+    completa de la solución de un problema de ML.
+    Dado que está bajo licencia \textit{BSD}, esta librería puede ser utilizada
+    tanto para uso personal como comercial.
 
 
     \subsection{Sistema de Modelado}
@@ -286,7 +293,7 @@
           \end{figure}
 
         \par En el módulo \verb|data|, como se puede deducir de su nombre,
-          es el que encargado de limpiar los conjuntos de datos y generar los
+          es el encargado de limpiar los conjuntos de datos y generar los
           bloques de entrenamiento, validación y las instancias para realizar
           el ajuste de hiperparámetros de cada algoritmo.
 
@@ -302,145 +309,7 @@
           procedimiento utiliza la herramienta \textit{irace} del lenguaje
           \textit{R} desde una interfaz de \textit{Python}.
 
-      \subsubsection{Detalles de código}
-
-        \par Se decidió realizar todo el desarrollo en el lenguaje de programación
-          \textit{Python} por su simplicidad, buen desempeño y su extensa
-          comunidad activa. Esto facilita el desarrollo, incrementa la velocidad
-          de producción y, como un factor muy importante, también permite
-          una usabilidad amena de usuario final. El proyecto está disponible
-          en \url{https://github.com/juansca/modeling-mosquitos} y en su sección
-          inicial se pueden encontrar instrucciones para su instalación.
-          A continuación se describirán
-          algunos detalles que se consideran importante de los distintos módulos,
-          sin entrar en cuestiones irrelevantes.
-
-        \par El módulo \verb|data| por un lado tiene un archivo llamado
-          \verb|constants.py| en donde se definen algunas constantes que
-          son dependientes del conjunto de datos que se utilizará. Es importante
-          dado que es allí en donde se especifican los \textit{features} (o
-          columnas) que se utilizarán como input para predicción.
-          A su vez, en dicho módulo, el archivo \verb|data_cleaner.py|
-          posee una clase llamada \verb|DataCleaner| que es la encargada de
-          realizar la limpieza de los datos. Para realizar la limpieza de los
-          datos se debe ejecutar el script \verb|scripts/clean_data.py|, el
-          cual arroja el siguiente instructivo:
-
-          \begin{lstlisting}
-          $ python data/scripts/clean_data.py --help
-
-          Clean Data.
-
-          Usage:
-            ./clean_data.py -i <file> -o <dir> [--p_eval <float>] [--instances <n>] [--overlap <f>]
-
-          Options:
-            -i <file>              Evaluate dataset path
-            -o <dir>               Directory where the evaluation plot result will be
-                                   saved
-            --p_eval <float>       Percentage to evaluation dataset. [default: 0.2]
-            --instances <n>        Number of instances to generate from data
-                                   [default: 1]
-            --overlap <f>          Percentage of overlapping between the instances.
-                                   [default: 0]
-
-          \end{lstlisting}
-
-
-        \par Por otro lado, el módulo \verb|models| tiene un archivo llamado
-          \verb|models.py| en el cual se declaran los modelos
-          que se utilizarán para el modelado. Es importante que estos modelos
-          sigan la estructura ahí utilizada para que los demás módulos los
-          puedan utilizar correctamente.
-
-        \par Además, allí se encuentra el \textit{script} de entrenamiento,
-          \verb|scripts/train.py|, que entrena el modelo elegido con el conjunto
-          de datos dado e imprime por linea de comandos un conjunto de
-          estadísticas que resultan de realizar validación cruzada sobre
-          los datos brindados por el usuario para dicha tarea. Ésto resulta útil
-          para tener una noción del desempeño del modelo.
-          Éste script devuelve la siguiente documentación de uso:
-          \begin{lstlisting}
-          $ python models/scripts/train.py --help
-
-          Train a model
-
-          Usage:
-            ./train.py -i <file> --model <model> [-p <file>]
-            ./train.py -h | --help
-
-          Options:
-            -i <file>         Train/Val dataset path
-            --model <model>   Model you want to train, is mandatory that it was on
-                              models.py file.
-            -p <file>         CSV file where are saved the hyperparameters
-                              (in case of tunning module was used).
-          \end{lstlisting}
-
-        \par Por otra parte, el módulo posee un \textit{script} de evaluación,
-        que, además de imprimir por linea de comandos el valor del Error Cuadrático Medio de la
-        evaluación, genera un gráfico con la curva real y la curva predicha
-        por el modelo y lo guarda en un directorio. A su vez, guarda un
-        archivo \verb|csv| con los valores reales y los generados por el modelo
-        facilitando así, la posterior manipulación del mismo.
-        La documentación de ayuda para su utilización es:
-        \begin{lstlisting}
-        $ python models/scripts/eval.py --help
-
-        Evaluate a model
-
-        Usage:
-          ./eval.py -i <file> -m <model> [-o <file>]
-
-        Options:
-          -i <file>         Evaluate dataset path
-          -m <model>        Model you want to evaluate as pickle format
-          -o <dir>          Directory where the evaluation plot result will be saved
-
-        \end{lstlisting}
-
-      \par Finalmente, el sistema desarrollado posee el módulo \verb|tunning|.
-        Allí se realiza el ajuste de hiperparámetros de los modelos.
-        Existe varios archivos en ese módulo que son los que hacen de interfaz
-        con la herramienta \textit{irace}. Algo que cabe destacar aquí es el
-        directorio \verb|parameters|. Allí se colocan los posibles
-        (o intervalos de) valores que generan el espacio de hiperparámetros
-        donde la herramienta buscará los óptimos para cada modelo. Además,
-        \textit{irace}, usará las instancias de datos en \verb|instances|
-        para realizar dicha tarea. Algo de suma importancia es que
-        los datos utilizados para generar los últimos conjutos deben ser distintos
-        a los que se usarán posteriormente en el entrenamiento o validación de
-        los modelos. Esto se debe a que si no, se puede generar una dependencia
-        de los datos y podría llevar al sobre-ajuste (\textit{overfitting})\footnote{Una
-        analogía clara es que el modelo aprende "de memoria" los datos en vez de
-        comprenderlos. Esto lleva a una muy pobre capacidad de generalización.}.
-        El \textit{script} que se debe ejecutar para hacerlo es \verb|tune_params.py|.
-        Su documentación de uso es:
-        \begin{lstlisting}
-        $ python tunning/tune_params.py --help
-
-        Tune parameters for given models.
-
-        Usage:
-          tune_params.py --model <name>
-
-        Options:
-          --model <name>           model name to tune params.
-                                   Options: svr, rdmforest, pcardmforest, dtr, knnr,
-                                   mlpr, svr, pcaknnr, pcadtr.
-                                   If you want to tune all the models together, just
-                                   put on this parameter 'all'.
-          --help                   show this screen
-
-        \end{lstlisting}
-      \par Por último, en la Figura \ref{fig:proyecto_modelado} se puede observar
-        la estructura general del proyecto.
-
-        \begin{figure}[hbt]
-        \centering%
-        \includegraphics[width=0.6\textwidth]{images/proyecto_modeling}%
-        \caption{Sistema para el ajuste de parámetros y modelado}\label{fig:proyecto_modelado}
-        \end{figure}
+        \par Más detalles de código se encuentran en el Anexo \ref{Anexo_codigo}.
 
 
 
@@ -477,12 +346,12 @@
               medir el desempeño del modelo para generalizar a nuevos datos.
         \item Utilizar el modelo con datos nuevos.
       \end{itemize}
-      Éstos pasos se implementaron utiliizando, mayormente, funciones disponibles
+      Estos pasos se implementaron utiliizando, mayormente, funciones disponibles
       en la librería \textit{scikit-learn} ya mencionada.
 
     \par La configuración o selección del conjunto óptimo de hiperparámetros
       en este tipo de modelos no-lineales es un problema complejo. Ésto
-      podría realizarse a mano utilizando herramientas semi automáticas. Lo primero
+      podría realizarse a mano o utilizando herramientas semi automáticas. Lo primero
       no es buena práctica dado que podría generar un sesgo sobre los valores
       obtenidos y, además, el gran número de posibles combinaciones requeriría
       mucho tiempo del usuario en ésta tarea, aún así hay ocasiones en las
@@ -503,7 +372,7 @@
 
 
     \subsubsection{\textit{Support Vector Regressor} (SVR)}
-      \par Las \textit{Support Vector MAchines} son una clase de técnica supervisada
+      \par Las \textit{Support Vector Machines} son una clase de técnica supervisada
         que construyen tanto reglas de decisiones lineales como no-lineales
         y modelos de regresión. En este caso se utilizó el algoritmo \verb|SVR|
         del módulo \verb|SVM|. Éste método implementa una regresión
@@ -576,7 +445,7 @@
     observados, y tienden a subestimar los valor más pequeños.
 
     \par La Figura \ref{fig:svr} muestra los datos observados y el resultado
-      del procedimiento de regresión por \textit{SVR}. Éste último no modela los
+      del procedimiento de regresión por \textit{SVR}. Este último no modela los
       picos de los primeros, pero si produce un ajuste relativamente bueno
       en la mayor parte de los datos.
       \begin{figure}[hbt]

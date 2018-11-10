@@ -1,33 +1,142 @@
 \begin{appendix}
-\chapter{Anexo: Nombrar el anexo A de acuerdo con su contenido}\label{AnexoA}
-Los Anexos son documentos o elementos que complementan el cuerpo de la tesis o trabajo de investigaci\'{o}n y que se relacionan, directa o indirectamente, con la investigaci\'{o}n, tales como acetatos, cd, normas, etc.\\
+\chapter{Anexo: Detalles del código}\label{Anexo_codigo}
 
-\chapter{Anexo: Nombrar el anexo B de acuerdo con su contenido}
-A final del documento es opcional incluir \'{\i}ndices o glosarios. \'{E}stos son listas detalladas y especializadas de los t\'{e}rminos, nombres, autores, temas, etc., que aparecen en el mismo. Sirven para facilitar su localizaci\'{o}n en el texto. Los \'{\i}ndices pueden ser alfab\'{e}ticos, cronol\'{o}gicos, num\'{e}ricos, anal\'{\i}ticos, entre otros. Luego de cada palabra, t\'{e}rmino, etc., se pone coma y el n\'{u}mero de la p\'{a}gina donde aparece esta informaci\'{o}n.\\
+  \par Se decidió realizar todo el desarrollo en el lenguaje de programación
+    \textit{Python} por su simplicidad, buen desempeño y su extensa
+    comunidad activa. Esto facilita el desarrollo, incrementa la velocidad
+    de producción y, como un factor muy importante, también permite
+    una usabilidad amena de usuario final. El proyecto está disponible
+    en \url{https://github.com/juansca/modeling-mosquitos} y en su sección
+    inicial se pueden encontrar instrucciones para su instalación.
+    A continuación se describirán
+    algunos detalles que se consideran importante de los distintos módulos,
+    sin entrar en cuestiones irrelevantes.
 
-\chapter{Anexo: Nombrar el anexo C de acuerdo con su contenido}
-MANEJO DE LA BIBLIOGRAF\'{I}A: la bibliograf\'{\i}a es la relaci\'{o}n de las fuentes documentales consultadas por el investigador para sustentar sus trabajos. Su inclusi\'{o}n es obligatoria en todo trabajo de investigaci\'{o}n. Cada referencia bibliogr\'{a}fica se inicia contra el margen izquierdo.\\
+  \par El módulo \verb|data| por un lado tiene un archivo llamado
+    \verb|constants.py| en donde se definen algunas constantes que
+    son dependientes del conjunto de datos que se utilizará. Es importante
+    dado que es allí en donde se especifican los \textit{features} (o
+    columnas) que se utilizarán como input para predicción.
+    A su vez, en dicho módulo, el archivo \verb|data_cleaner.py|
+    posee una clase llamada \verb|DataCleaner| que es la encargada de
+    realizar la limpieza de los datos. Para realizar la limpieza de los
+    datos se debe ejecutar el script \verb|scripts/clean_data.py|, el
+    cual arroja el siguiente instructivo:
 
-La NTC 5613 establece los requisitos para la presentaci\'{o}n de referencias bibliogr\'{a}ficas citas y notas de pie de p\'{a}gina. Sin embargo, se tiene la libertad de usar cualquier norma bibliogr\'{a}fica de acuerdo con lo acostumbrado por cada disciplina del conocimiento. En esta medida es necesario que la norma seleccionada se aplique con rigurosidad.\\
+    \begin{lstlisting}
+    $ python data/scripts/clean_data.py --help
 
-Es necesario tener en cuenta que la norma ISO 690:1987 (en Espa\~{n}a, UNE 50-104-94) es el marco internacional que da las pautas m\'{\i}nimas para las citas bibliogr\'{a}ficas de documentos impresos y publicados. A continuaci\'{o}n se lista algunas instituciones que brindan par\'{a}metros para el manejo de las referencias bibliogr\'{a}ficas:\\
+    Clean Data.
 
-\begin{center}
-\centering%
-\begin{tabular}{|p {7.5 cm}|p {7.5 cm}|}\hline
-\arr{Instituci\'{o}n}&Disciplina de aplicaci\'{o}n\\\hline%
-Modern Language Association (MLA)&Literatura, artes y humanidades\\\hline%
-American Psychological Association (APA)&Ambito de la salud (psicolog\'{\i}a, medicina) y en general en todas las ciencias sociales\\\hline
-Universidad de Chicago/Turabian &Periodismo, historia y humanidades.\\\hline
-AMA (Asociaci\'{o}n M\'{e}dica de los Estados Unidos)&Ambito de la salud (psicolog\'{\i}a, medicina)\\\hline
-Vancouver &Todas las disciplinas\\\hline
-Council of Science Editors (CSE)&En la actualidad abarca diversas ciencias\\\hline
-National Library of Medicine (NLM) (Biblioteca Nacional de Medicina)&En el \'{a}mbito m\'{e}dico y, por extensi\'{o}n, en ciencias.\\\hline
-Harvard System of Referencing Guide &Todas las disciplinas\\\hline
-JabRef y KBibTeX &Todas las disciplinas\\\hline
-\end{tabular}
-\end{center}
+    Usage:
+      ./clean_data.py -i <file> -o <dir> [--p_eval <float>] [--instances <n>] [--overlap <f>]
 
-Para incluir las referencias dentro del texto y realizar lista de la bibliograf\'{\i}a en la respectiva secci\'{o}n, puede utilizar las herramientas que Latex suministra o, revisar el instructivo desarrollado por el Sistema de Bibliotecas de la Universidad Nacional de Colombia\footnote{Ver: www.sinab.unal.edu.co}, disponible en la secci\'{o}n "Servicios", opci\'{o}n "Tr\'{a}mites" y enlace "Entrega de tesis".
+    Options:
+      -i <file>              Evaluate dataset path
+      -o <dir>               Directory where the evaluation plot result will be
+                             saved
+      --p_eval <float>       Percentage to evaluation dataset. [default: 0.2]
+      --instances <n>        Number of instances to generate from data
+                             [default: 1]
+      --overlap <f>          Percentage of overlapping between the instances.
+                             [default: 0]
+
+    \end{lstlisting}
+
+
+  \par Por otro lado, el módulo \verb|models| tiene un archivo llamado
+    \verb|models.py| en el cual se declaran los modelos
+    que se utilizarán para el modelado. Es importante que estos modelos
+    sigan la estructura ahí utilizada para que los demás módulos los
+    puedan utilizar correctamente.
+
+  \par Además, allí se encuentra el \textit{script} de entrenamiento,
+    \verb|scripts/train.py|, que entrena el modelo elegido con el conjunto
+    de datos dado e imprime por linea de comandos un conjunto de
+    estadísticas que resultan de realizar validación cruzada sobre
+    los datos brindados por el usuario para dicha tarea. Ésto resulta útil
+    para tener una noción del desempeño del modelo.
+    Éste script devuelve la siguiente documentación de uso:
+    \begin{lstlisting}
+    $ python models/scripts/train.py --help
+
+    Train a model
+
+    Usage:
+      ./train.py -i <file> --model <model> [-p <file>]
+      ./train.py -h | --help
+
+    Options:
+      -i <file>         Train/Val dataset path
+      --model <model>   Model you want to train, is mandatory that it was on
+                        models.py file.
+      -p <file>         CSV file where are saved the hyperparameters
+                        (in case of tunning module was used).
+    \end{lstlisting}
+
+  \par Por otra parte, el módulo posee un \textit{script} de evaluación,
+  que, además de imprimir por linea de comandos el valor del Error Cuadrático Medio de la
+  evaluación, genera un gráfico con la curva real y la curva predicha
+  por el modelo y lo guarda en un directorio. A su vez, guarda un
+  archivo \verb|csv| con los valores reales y los generados por el modelo
+  facilitando así, la posterior manipulación del mismo.
+  La documentación de ayuda para su utilización es:
+  \begin{lstlisting}
+  $ python models/scripts/eval.py --help
+
+  Evaluate a model
+
+  Usage:
+    ./eval.py -i <file> -m <model> [-o <file>]
+
+  Options:
+    -i <file>         Evaluate dataset path
+    -m <model>        Model you want to evaluate as pickle format
+    -o <dir>          Directory where the evaluation plot result will be saved
+
+  \end{lstlisting}
+
+\par Finalmente, el sistema desarrollado posee el módulo \verb|tunning|.
+  Allí se realiza el ajuste de hiperparámetros de los modelos.
+  Existe varios archivos en ese módulo que son los que hacen de interfaz
+  con la herramienta \textit{irace}. Algo que cabe destacar aquí es el
+  directorio \verb|parameters|. Allí se colocan los posibles
+  (o intervalos de) valores que generan el espacio de hiperparámetros
+  donde la herramienta buscará los óptimos para cada modelo. Además,
+  \textit{irace}, usará las instancias de datos en \verb|instances|
+  para realizar dicha tarea. Algo de suma importancia es que
+  los datos utilizados para generar los últimos conjutos deben ser distintos
+  a los que se usarán posteriormente en el entrenamiento o validación de
+  los modelos. Esto se debe a que si no, se puede generar una dependencia
+  de los datos y podría llevar al sobre-ajuste (\textit{overfitting})\footnote{Una
+  analogía clara es que el modelo aprende "de memoria" los datos en vez de
+  comprenderlos. Esto lleva a una muy pobre capacidad de generalización.}.
+  El \textit{script} que se debe ejecutar para hacerlo es \verb|tune_params.py|.
+  Su documentación de uso es:
+  \begin{lstlisting}
+  $ python tunning/tune_params.py --help
+
+  Tune parameters for given models.
+
+  Usage:
+    tune_params.py --model <name>
+
+  Options:
+    --model <name>           model name to tune params.
+                             Options: svr, rdmforest, pcardmforest, dtr, knnr,
+                             mlpr, svr, pcaknnr, pcadtr.
+                             If you want to tune all the models together, just
+                             put on this parameter 'all'.
+    --help                   show this screen
+
+  \end{lstlisting}
+\par Por último, en la Figura \ref{fig:proyecto_modelado} se puede observar
+  la estructura general del proyecto.
+
+  \begin{figure}[hbt]
+  \centering%
+  \includegraphics[width=0.6\textwidth]{images/proyecto_modeling}%
+  \caption{Sistema para el ajuste de parámetros y modelado}\label{fig:proyecto_modelado}
+  \end{figure}
 
 \end{appendix}
