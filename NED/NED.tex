@@ -11,21 +11,17 @@
     generación de relaciones empíricas entre datos ambientales derivados de
     información satelital y los datos de campo, correspondientes a los del vector
     propiamente dicho. Esto significa que sólo pueden construirse modelos en
-    lugares donde esté disponible la información de campo, problema que mencionamos
-    al concluir el capitulo anterior.
+    lugares donde esté disponible la información de campo, problema que se
+    menciona al concluir el capitulo anterior.
 
   \par En ese marco, y con el objetivo final de mejorar la aplicación operativa
     presentada por Porcasi y colaboradores en 2012 \cite{porcasi_operative},
-    nos planteamos en este capítulo el objetivo específico de generar
+    en este capítulo se plantea el objetivo específico de generar
     una metodología para espacializar los datos contruidos siguiendo la
     metodología del capítulo anterior, basada en el concepto de
     \textbf{\textit{Distancia Ambiental Normalizada}} (NED).
 
-
-\section{Materiales y Métodos}
-
-\subsection{Problema}
-
+\section{Descripción del problema}
   \par A partir de la disponibilidad de datos de campo en $N$ localidades
     diferentes, se generan,
     $N$ modelos que relacionan la oviposición con variables ambientales
@@ -41,7 +37,7 @@
     ambiental $i$ evaluada en la posición correspondiente a la ciudad $j$.
     Es decir que para cada ciudad $j$, hay un conjunto diferente de
     coeficientes, que son aquellos que generan un ajuste óptimo de los datos
-    disponibles. Aquí denominamos a estos $N$ modelos $M_{1},\ M_{2},\ \dots,\ M_{N}$.
+    disponibles. Aquí se denominan a estos $N$ modelos: $M_{1},\ M_{2},\ \dots,\ M_{N}$.
 
 
   \par Así, el problema que se plantea es aquel en el que el modelo se
@@ -81,7 +77,8 @@
     como que sus variables ambientales son similares. De esta forma aparece
     naturalmente el concepto de \textbf{\textit{Distancia Ambiental}}.
 
-\subsection{Distancia Ambiental Normalizada (NED)}
+
+\section{Distancia Ambiental Normalizada (NED)}
 
   \par El concepto de \textbf{Distancia Ambiental}, si bien no es completamente nuevo,
     no ha sido utilizado en el contexto de la epidemiología. Una revisión
@@ -111,7 +108,7 @@
     eco-epidemiología y la distribución de especies vectores de malaria,
     las ideas de ``Distancia Ambiental” con la problemática epidemiológica.
 
-\subsection{Solución Propuesta}
+\subsection{Solución propuesta}
   \par Para poder aplicar las ideas ya discutidas, que biológicamente aparecen
     como razonables, es necesario definir las variables involucradas en el
     concepto ``similitud ambiental” y luego definir una \textbf{distancia} ambiental.
@@ -185,7 +182,7 @@
       \textit{NDVI} de \textit{MODIS} promedio de Enero, \textit{NDVI} de
       \textit{MODIS} promedio de Julio y el \textit{DEM}.
 
-\section{Resultados}
+\section{Evaluación de solución propuesta}
 
   \begin{figure}[hbt]
 
@@ -251,12 +248,12 @@
     realmente tiene una fuerte correlación con la distancia geográfica estándar.
     Estos ejemplos muestran más bien cómo el método funciona, que las ventajas
     que ofrece el mismo. Sin embargo la diferencia entre la distancia ambiental
-    y la geográfica puede observarse claramente en las figuras \ref{fig:ned_clorinda}
+    y la geográfica puede observarse claramente en las Figuras \ref{fig:ned_clorinda}
     a \ref{fig:ned_tartagal}.
     En todas ellas vemos como la distancia ambiental posee bordes abruptos
     (cosa que la distancia geográfica nunca tendrá).
-    Por ejemplo en la Mesopotamia (fig \ref{fig:ned_iguazu}) o en las yungas
-    (fig \ref{fig:ned_clorinda}) puede verse
+    Por ejemplo en la Mesopotamia (Figura \ref{fig:ned_iguazu}) o en las yungas
+    (Figura \ref{fig:ned_clorinda}) puede verse
     cómo pequeñas distancias geográficas tienen asociadas fuertes gradientes en
     la distancia ambiental (grandes distancias ambientales) y por ende
     podríamos suponer que localidades cercanas geográficamente poseen patrones
@@ -290,7 +287,7 @@
     \end{tabular}
     \end{table}
 
-\section{Conclusiones}
+\section{Discusión y propuesta futura}
   \par En el presente capítulo pretendemos generar una contribución al objetivo de
     construir pronósticos dinámicos para la población de vectores,
     utilizando productos satelitales. Se aborda el problema de cómo generalizar

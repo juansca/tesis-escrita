@@ -2,7 +2,8 @@
 %\begin{document}
 
 \justifying
-\chapter{Modelando la Población del Vector de Dengue Utilizando Datos de Sensado Remoto y Aprendizaje Automático}
+\chapter{Modelando la población del vector de Dengue utilizando datos de sensado
+        remoto y aprendizaje automático}
 
   \par Como mencionamos en capitulos anteriores, en un contexto interinstitutional entre
     la Comisión Nacional de Actividades Espaciales (CONAE) y el ministerio de salud
@@ -10,28 +11,44 @@
     las poblaciones de mosquitos usando variables ambientales obtenidas de
     sensores remotos. Estos trabajos utilizaron series de algunos años y fueron
     basadas en un pequeño número de variables satelitales \cite{ndwi_erffectiveness, modis_data}.
-    En un esfuerzo para mejorar esto, \cite{temporal_modeling}, construyeron modelos
+    En un esfuerzo para mejorar esto, construyeron modelos
     de series temporales de cuatro años, basados en una gran cantidad de variables
-    de varios sensores.
+    de varios sensores\cite{temporal_modeling}.
     Aún así, todos estos trabajos asumieron modelos lineales multivariados.
 
-  \par El trabajo presentado en este capítulo representa una mejora sobre
-    dicho escenario. En el mismo se comparan algoritmos de
-    Support Vector Machines (SVM), Redes Neuronales Artificiales (ANN),
-    K-vecinos más cercanos (KNN) y un tipo de árbol de decisión orientado a
-    regresión, sumados a dos modelos de regresión lineal. Con ésto, se
+  \par Como parte del trabajo presentado en este capítulo se desarrolló un
+    sistema
+    para la generación y evaluación de modelos basados en aprendizaje automático.
+    Ésto brinda a la comunidad de profesionales que
+    aborda las problemáticas relacionadas con la epidemiología, una herramienta
+    de alto valor dado que les permite realizar,
+    modelos de evolución de población de mosquitos.
+
+  \par A su vez, este trabajo representa una
+    mejora en la capacidad de modelado con respecto a los esfuerzos previos ya
+    mencionados. En éste se comparan distintos algoritmos de
+    aprendizaje automático: Support Vector Machines (SVM),
+    Redes Neuronales Artificiales (ANN), K-vecinos más cercanos (KNN) y un tipo
+    de árbol de decisión orientado a regresión.
+    Se suman a la comparación dos modelos de regresión lineal.
+    Con ésto, se
     obtiene una metodología operacional que podría contribuir al sistema de riesgo
     de Dengue actualmente en operación \cite{porcasi_operative, analisis_cordoba}.
 
   \par Adicionalmente, se explora, en contraste con los trabajos previos mencionados,
-    la habilidad de modelado y predicción de oviposición con algoritmos de Aprendizaje
-    Automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
+    la habilidad de modelado y predicción de oviposición con algoritmos de aprendizaje
+    automático \textit{off-the-shelf}, i.e. algoritmos de software libre, ya
     implementados, sin mayores desarrollos sobre lo existente y con un ajuste de
     hiperparámetros minimo. De ésta manera se busca la asimilación de estas
     técnicas a toda la comunidad que se ocupa de problemas similares.
 
+  \par Finalmente, resulta relevante mencionar que el trabajo
+    realizado y descripto aquí ha dado lugar a la publicación
+    \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
+    Machine Learning} \cite{scavuzzo2018modeling} en la revista \textit{Acta Tropica}
+    de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica}).
 
-\section{Materiales}
+\section{Obtención, análisis y selección de datos a utilizar}
 
 \subsection{Datos de estudio y Datos de Campo}
   \begin{figure}[hbt]
@@ -75,11 +92,11 @@
 
 
 
-\subsection{Variables Ambientales}
+\subsection{De productos satelitales a variables ambientales: conjunto de datos para el modelado}
 
   \par Siguiendo la idea de construir modelos predictivos de la población de
     vectores basados en variables ambientales derivadas de satelites, pero con una
-    perspectiva operacional basada en trabajos previos, se obtuvieron representaciones
+    perspectiva operacional basada en trabajos previos, se generaron representaciones
     de vegetación, humedad, temperatura y lluvia operacionalmente disponibles
     de \textbf{MODIS} y productos \textbf{TRMM/GPM}.
 
@@ -87,7 +104,8 @@
     temporales consistentes sobre la cobertura de la vegetación,
     propiedades del área foliar y el nivel de clorofila. Estos indices son
     derivados de la reflectancia atmosférica
-    corregida en las bandas infrarroja media (MIR) y cercana (NIR).
+    corregida en las bandas infrarroja media (MIR, por sus siglas en inglés) y
+    cercana (NIR, por sus siglas en inglés).
     En este trabajo se utiliza el \textbf{NDVI} del producto satelital
     de MODIS, \textit{MOD13Q1}, (compuesto de 16 días) con una resolución espacial de
     \SI{250}{\meter}.
@@ -105,7 +123,7 @@
     Los productos MODIS, en general, necesitan el factor $10^{4}$ para ser guardados,
     por eficiencia computacional, como números enteros.
 
-  \par En este trabajo, adicionalmente, utilizamos la temperatura De la superficie
+  \par Por su parte, utilizamos la temperatura de la superficie
     terrestre (\textbf{LST}) de MODIS dado que es una aproximación de la
     temperatura ambiental \cite{infectious_diseases, surface_temp, temp_algorithm}.
     Para esto, se eligió el producto satelital \textit{MOD11A2}. Éste tiene una
@@ -114,7 +132,8 @@
     LST de la noche y del día para así, de alguna manera, representar
     temperaturas mínimas y máximas \cite{lst_surface}.
 
-  \par La precipitación local es obtenida de la Misión Tropical de Medida de Lluvia
+  \par Finalmente, la precipitación local es obtenida de la
+    \textit{Misión Tropical de Medida de Lluvia}
     (\textbf{TRMM}) \cite{trmm_mision}. Ésta es una misión conjunta entre la
     NASA y la Agencia Aeroespacial de Exploración de Japón lanzada en 1997
     para el estudio de las lluvias y así realizar investigaciones sobre el
@@ -166,7 +185,10 @@
     \caption{Sistema de procesamiento de productos satelitales}\label{fig:sistema}
     \end{figure}
 
-  \par Todas las variables son consideradas con hasta tres semanas de \textit{lag}
+  \par Todas las variables son consideradas con hasta tres semanas de
+  \textit{lag}\footnote{Para un punto en el tiempo $t$, el valor de la variable
+  $v_{1 lag_{1}}(t)$ es igual al valor de la variable $v_{1}(t-1)$ correspondiente
+  al punto en el tiempo de una semana anterior.}
     teniendo en cuenta las series temporales originales, para representar las
     influencias asincrónicas, correspondientemente con uno, dos o tres
     lapsos de tiempo.
@@ -179,7 +201,9 @@
     variables fueron seleccionadas: NDVI rural \textit{lag} 1,
     NDWI rural \textit{lag} 1, LST rural dia \textit{lag} 3,
     LST rural noche \textit{lag} 1 y TRMM \textit{lag} 3.
-    Luego, todas las variables fueron normalizadas utilizando el \textbf{\textit{z-score}}.
+    Luego, todas las variables fueron normalizadas utilizando el
+    \textbf{\textit{z-score}}\footnote{Técnica para normalizar datos en función de
+    la media y desviación estándar muestrales}.
 
   \par La Figura \ref{fig:heatmap} presenta las variables ambientales junto
     con la oviposición en un mapa de calor (\textit{heatmap}). Este formato
@@ -220,7 +244,7 @@
     adecuadas para los datos que se corresponden con series temporales, i.e,
     cuando el orden en el conjunto de datos es importante.
 
-    \par A continuación se describiran las técnicas utilizadas para modelar
+    \par A continuación se describirán las técnicas utilizadas para modelar
     el \textit{z-score} de la oviposición como una función variables ambientales
     extraidas de sensores remotos. Todos los modelos fueron implementados utilizando
     funciones de la librería \textbf{\textit{scikit-learn}}.
@@ -246,26 +270,28 @@
               Ciencias de la Computación.
 
             \item Poseer una herramienta de limpieza del conjuntos de datos
-              dado.
+              dado, para construir automáticamente los datos que luego
+              utilizarán los distintos algoritmos.
 
             \item Versatilidad para su uso con otros conjuntos de datos sin necesidad
               de realizar mayores cambios en la arquitectura del sistema.
 
-            \item Debe poseer una herramienta para la generación de instancias y
+            \item Debe poseer una herramienta para la generación de instancias
+              de datos para el ajuste de hiperparámetros y
               conjuntos de entrenamiento y validación de los modelos.
 
             \item Generar modelos que queden dispuestos para su evaluación en
               nuevos datos.
 
-            \item Dichos modelos deben ser serializados en formato \verb|pickle|
-              para facilitar la puesta en operatividad.
+            \item Dichos modelos deben ser serializados para facilitar la puesta
+            en operatividad.
 
-            \item Versatilidad para agregar nuevos modelos que se adecúen a la
-              firma de \verb|scikit-learn| (deben poseer funciones \verb|fit| y
-              \verb|predict|).
+            \item Versatilidad para agregar nuevos modelos. Éstos deben
+              poseer funciones \verb|fit| y \verb|predict| para entrenar el
+              modelo y realizar inferencias, correspondientemente.
 
-            \item Debe poseer una herramienta para la generación de gráficos
-              para la evaluación de modelos.
+            \item Debe poseer una herramienta que permita evaluar la
+              capacidad de predicción de un modelo a través de gráficos.
 
             \item Debe poseer una herramienta de relativa sencillez de utilización
               para el ajuste de hiperparámetros de los modelos.
@@ -427,13 +453,14 @@
       subconjunto más pequeño que produzca buenos resultados.
 
 
-  \section{Resultados}
+  \section{Evaluación y análisis de los modelos generados}
 
     \par La Figura \ref{fig:ridge_vs_time} muestra los resultados tanto del
       modelo lineal clásico como el \textit{Ridge}. Estos resultados concuerdan
       con estudios previos. Ambos regresores lineales producen resultados muy
       similares, por lo que resulta evidente que es preferible utilizar el
       primero debido al menor costo computacional que requiere.
+
       \begin{figure}[hbt]
       \centering%
       \includegraphics[width=0.9\textwidth]{images/RidgeVsTime}%
@@ -550,7 +577,7 @@
 
 
 
-    \par A continuación se analizará los errores. Las Figuras \ref{fig:Histograms}
+    \par A continuación se analizarán los errores. Las Figuras \ref{fig:Histograms}
     y \ref{fig:Boxplots} muestran, respectivamente, los histogramas y boxplots
     de los errores producidos por cada modelo. Los errores generados por
     \textit{KNN} son los más concentrados alrededor de cero, seguidos por el
@@ -633,7 +660,7 @@
   \end{tabular}
   \end{table}
 
-  \section{Conlusiones}
+  \section{Discusión de resultados obtenidos}
 
     \par Un punto interesante que aparece en los resultados es que todos los
       modelos aquí presentados ajustan bien en los patrones principales
@@ -664,7 +691,14 @@
     son: \textit{K-vecinos más cercanos}, \textit{Perceptron
     Multicapa} y \textit{Support Vector Machine}.
 
-  \par Un problema que encontramos es la escases de datos de campo que existen:
+
+\section{Problemáticas de un sistema regional de modelado de poblaciones de mosquito}
+
+  \par La tarea de modelar la población de mosquitos a nivel regional
+    trae consigo numerosas problemáticas, algunas de las cuales ya fueron
+    mencionadas en la sección de Motivación y Marco Teórico.
+
+  \par En este trabajo, un problema que encontramos es la escases de datos de campo que existen:
     el desempeño de estos algoritmos se podría mejorar sustancialmente utilizando
     conjuntos de datos más grandes.
     Aunque el período utilizado es grande en comparación con trabajos similares
@@ -680,12 +714,5 @@
     comportamiento de la variable objetivo de un punto \textbf{B} (Córdoba, por ejemplo).
     Pues ni siquiera se poseen datos para validar dicha conducta.
     Esto limita el alcance regional de las herramientas de este tipo.
-
-
-  \par Como comentario final de este capítulo resulta relevante mencionar que el trabajo
-    realizado y descripto aquí ha dado lugar a la publicación
-    \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
-    Machine Learning} \cite{scavuzzo2018modeling} en la revista \textit{Acta Tropica}
-    de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica}).
 
 %\end{document}

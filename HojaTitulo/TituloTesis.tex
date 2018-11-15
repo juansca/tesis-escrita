@@ -85,31 +85,23 @@ insertar agradecimientos
     zonas con la abundancia del vector en las mismas. A dicha área de estudio
     se la denomina Epidemiología Panorámica.
 
- \par En el presente trabajo se desarrolla un \textit{framework} para la generación
-    de modelos \textit{off-the-shelf} de aprendizaje automático (ML) con el objetivo
-    de estimar la abundancia de
-    vectores de Dengue, Zika y Chikungunya para, así, mejorar los resultados
-    previos y aportar valor a los profesionales que actualmente están trabajando
-    sobre los modelos de riesgo de la región.
-    Se utilizan algoritmos de ML implementados por la librería \textit{scikit-learn} de Python.
-    Para el ajuste de hiperparámetros de los modelos se usa la herramienta
-    \textit{irace} de R. A su vez, se aplican técnicas de ingeniería del software para
-    extraer los requerimientos y aplicar una metodología de desarrollo acorde a la
-    situación. Estos aportes fueron publicados en
-    \textit{Modeling Dengue Vector Population Using Remotely Sensed Data and
-    Machine Learning} \cite{scavuzzo2018modeling} en la revista \textit{Acta Tropica}
-    de \textit{Elsevier} (\url{https://www.journals.elsevier.com/acta-tropica}).
+ \par En el presente trabajo, por un lado, utilizando técnicas de
+    ingeniería del software para extraer los requerimientos y aplicar una metodología
+    de desarrollo acorde a las necesidades,
+    se implementa un \textit{framework} para la generación de modelos de
+    aprendizaje automático (ML) con el objetivo
+    de estimar la abundancia de vectores de Dengue, Zika y Chikungunya.
+    A su vez, se entrenan y evalúan modelos no lineales que poseen mayor
+    capacidad de generalización a la hora de modelar las poblaciones del
+    mosquito, en comparación con los modelos que actualmente se utilizan
+    para tal fin.
 
-  \par Claramente, un modelo entrenado con información de una sola ciudad no es capaz,
+  \par Se presenta, además, un enfoque que resuelve el problema de que
+    un modelo entrenado con información de una sola ciudad no es capaz,
     en principio, de estimar correctamente la abudancia en otras zonas del país.
- En este trabajo
-    se propone resolver la cuestión a traves de un concepto novedoso en el campo de la epidemiología, que establece
-    relaciones de "cercanía" entre regiones teniendo en cuenta sus características
-    ambientales: la Distancia Ambiental Normalizada. Utilizando este enfoque es que
-    ahora se puede pensar que el modelo que predice la abundancia de una nueva ciudad es
-    la suma de las contribuciones de cada modelo entrenado pesado por su similaridad ambiental.
-    Este aporte fue publicado en el
-    \textit{Congreso Bienal de IEEE Argentina} (ARGENCON) durante la primer semana de Junio
-    de 2018. La presentación fue realizada bajo el título
-    \textit{Generalización espacial de modelos epidemiológicos basada en el
-    concepto de Distancia Ambiental Normalizada NED} \cite{ned_scavuzzo}.
+    En este trabajo
+    se propone resolver la cuestión a traves de un concepto novedoso en el campo
+    de la epidemiología, que establece
+    relaciones de ``cercanía``
+    entre regiones teniendo en cuenta sus características
+    ambientales: la Distancia Ambiental Normalizada.

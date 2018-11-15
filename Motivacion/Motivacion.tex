@@ -2,9 +2,12 @@
 %
 %\begin{document}
 
-\chapter{Motivación}
+\chapter{Motivación y objetivos}
+
 
 \justifying
+\section{Motivación}
+
   \par El mosquito es uno de los vectores de enfermedades humanas más importantes
     en el mundo. En particular, el \textit{Aedes aegypti} es el principal vector
     de Dengue, Chikungunya, Zika y Fiebre Amarilla urbana \cite{dengue_principal}.
@@ -13,10 +16,10 @@
     unos 20 mil mueren. Además, calculan que más de 2.500 millones de personas corren
     riesgo de contraer la enfermedad y más de 100 países tienen transmisión endémica
     \cite{directices_ministerio}.
-    Algo que cabe aclarar es que en el caso de la Fiebre Amarilla, para la
-    prevencion, existe una vacuna de virus atenuado que se considera eficaz, segura
-    y se la utiliza hace más de 60 años para la inmunización activa de niños y
-    adultos. No es así el caso del Dengue, Chikungunya y Zika, para las cuales
+    Cabe aclarar que en el caso de la Fiebre Amarilla existe una vacuna de virus
+    atenuado que se considera eficaz para la prevención, segura
+    y se la utiliza hace más de 60 años en la inmunización activa de niños y
+    adultos. Para el Dengue, Chikungunya y Zika,
     no existe tal herramienta de previsión.
 
   \par \textit{Médicos del Mundo} (http://www.mdm.org.ar), en su nota
@@ -28,20 +31,24 @@
     muy favorables para la transmisión.
 
 
-  \par En el caso de Argentina, ya para las primeras semanas del 2018, hubo casos confirmados
-    de Dengue en Chaco, y durante el 2017, en base a las notificaciones al
-    \textbf{Sistema Nacional de Vigilancia de Salud} del Ministerio de Salud de la Nación
-    recibidas hasta el 30 de diciembre, se registraron, en el primer semestre del año, brotes de
-    Dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
-    (Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
-    por virus del Zika en 3 provincias (Chaco, Formosa y Salta). Para el 2016,
-    podemos observar la taza de Dengue en Argentina a nivel provincia \cite{analisis_cordoba}
-    en la Figura \ref{fig:dengue}\footnote{Figura brindada por Rotela y
-    colaboradores de su trabajo \cite{analisis_cordoba}}, a su vez desde la emergencia del virus del Zika en
-    nuestro país en el mismo año (Tucumán), y hasta
-    la [SE 47 REVISAR] de 2017 se registraron además un total de 7 casos confirmados de
-    síndrome congénito asociados a virus del Zika en mujeres embarazadas
-    (microcefalia en recién nacidos).
+
+  \par En el caso de Argentina, para el año 2016, podemos observar la taza de
+  Dengue a nivel
+  provincia \cite{analisis_cordoba} en la
+  Figura \ref{fig:dengue}\footnote{Figura brindada por Rotela y
+  colaboradores de su trabajo \cite{analisis_cordoba}}, a su vez desde la
+  emergencia del virus del Zika en nuestro país en el mismo año (Tucumán),
+  y hasta el 2017 se registraron además un total de 7 casos confirmados de
+  síndrome congénito asociados a virus del Zika en mujeres embarazadas
+  (microcefalia en recién nacidos).
+  Durante el 2017, en base a las notificaciones al
+  \textbf{Sistema Nacional de Vigilancia de Salud} del Ministerio de Salud de la Nación
+  recibidas hasta el 30 de diciembre, se registraron, en el primer semestre del año, brotes de
+  Dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
+  (Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
+  por virus del Zika en 3 provincias (Chaco, Formosa y Salta).
+  Incluso ya para las primeras semanas del 2018, hubo casos confirmados
+  de Dengue en Chaco
 
 
 
@@ -85,8 +92,8 @@
     riesgo de ocurrencia de casos de las enfermedades mencionadas.
     Dado que la cantidad de vectores, el virus circulante y la susceptibilidad
     humana dependen directa o indirectamente de variables climáticas y ambientales
-    tales como la temperatura, la lluvia, la vegetación, entre otras, es razonable
-    suponer que el cambio climático es, también, un factor de riesgo para el desarrollo
+    tales como la temperatura, la lluvia, la vegetación, entre otras,
+    el cambio climático es, también, un factor de riesgo para el desarrollo
     de las enfermedades en cuestión. Por otra parte, se le suma la capacidad adaptativa del
     \textit{Aedes aegypti} y la aparición de resistencia del mismo debido al uso intensivo de
     insecticidas.
@@ -99,7 +106,7 @@
             todos los casos confirmados y probables hasta la semana 20}\label{fig:dengue}
     \end{figure}
 
-  \par Por otro lado, como mencionamos anteriormente, dado que no hay vacunas para la
+  \par Por otro lado, como se menciona anteriormente, dado que no hay vacunas para la
     mayoría de estos virus, y existe la posibilidad de introducción de otros \cite{emergencia_viral},
     el control de vectores es la principal herramienta para mitigar la
     propagación de enfermedades.
@@ -117,18 +124,23 @@
     En ese contexto, la introducción de herramientas científico/tecnológicas orientadas
     a contribuir en esos aspectos resulta fundamental.
 
-  \par El uso de información satelital, como uno de los métodos para atacar el
-    problema mencionado, se ha estado utilizando desde hace algunos años.
+  \par El uso de información satelital se ha estado utilizando desde hace
+    algunos años, como uno de los métodos para atacar el problema mencionado.
     Ésta técnica permite modelar la evolución temporal y geográfica de las
     poblaciones del vector utilizando variables ambientales obtenidas de los
     sensores remotos. Aunque hasta ahora, estos trabajos utilizaban fuertes asunciones
     al utilizar modelos lineales para relacionar las distintas variables, y por más
-    que los resultados obtenidos hasta el momento han sido bastante
-    favorables, es simple notar que éstos se podrían mejorar sin asumir dichas relaciones.
-    Una de la maneras de evitarlo es la utilización de modelos no-lineales de
-    Aprendizaje Automático.
+    que los resultados obtenidos hasta el momento han sido
+    favorables, no existen resultados que prueben el hecho de que las
+    relaciones que se establecen entre el desarrollo
+    del mosquito y las variables ambientales del entorno son de tipo lineal.
+    Esto nos permite generar la hipótesis de que modelos no-lineales son
+    capaces de modelar relaciones que se adapten mejor a la realidad.
+    Una de las formas de probarla es utilizar modelos no-lineales de
+    aprendizaje automático para llevar a cabo esa tarea.
 
-  \par Desarrollar un Modelo de Aprendizaje Automático puede resultar extremadamente
+
+  \par Desarrollar un modelo de aprendizaje automático puede resultar extremadamente
     complejo y costoso en términos computacionales y de experiencia de quien lo lleve
     a cabo. Pero uno de los objetivos de este trabajo es mostrar la accesibilidad,
     en términos de simpleza y costos, de algunas de estas herramientas, sin dejar
@@ -139,5 +151,27 @@
     propone una técnica para atenuar dicho problema estableciendo una relación
     entre los distintos puntos geográficos, en función de sus características ambientales.
 
+\section{Objetivos}
+
+  \par Los objetivos de este trabajo apuntan a aportar conocimientos y
+    herramientas a los profesionales dedicados al desarrollo de sistemas de
+    prevención y mitigación del Dengue, Zika, Chikungunya y enfermedades
+    vectoriales en general. Para ello, se establecen los siguientes puntos
+    a desarrollar:
+    \begin{itemize}
+      \item Implementación de una herramienta para la generación de nuevos modelos
+        predictivos a partir de variables ambientales. Dadas las
+        características interdisciplinarias de la
+        problemática en la epidemiología, dicha herramienta
+        debe ser utilizable por profesionales que no sean expertos en
+        informática o en aprendizaje automático.
+      \item Validar la hipótesis de que modelos no-lineales son mejores
+        para predecir y ajustar la oviposición de mosquitos que los modelos
+        lineales utilizados hasta el momento.
+      \item Proponer una solución a la problemática de la
+        escases de puntos con datos de campo para entrenar los modelos,
+        dada la naturaleza regional de un sistema de riesgo que aporte a
+        valor los existentes.
+    \end{itemize}
 
 %\end{document}
