@@ -61,7 +61,7 @@
     (con 79.900 habitantes) en el noroeste de Argentina
     (\ang{22;32;}~S, \ang{63;49;}~O, \SI{450}{\meter} sobre el nivel del mar),
     en la provincia de Salta. El sitio está entre 50 y 100 kms de la frontera
-    entre Argentina y Bolivia, como se puede apreciar en la Figura \ref{fig:tartagal}
+    entre Argentina y Bolivia, como se puede apreciar en la Figura \ref{fig:tartagal}.
 
   \par Este lugar tiene una temperatura media anual de unos \SI{23}{\degreeCelsius}
     (máximo promedio de verano de \SI{39}{\degreeCelsius} y minimo promedio en
@@ -262,14 +262,15 @@
 
       \subsubsection{Requerimientos}
         \par Dado el objetivo de este trabajo, los requerimientos del mismo se
-          basaron en la compatibilidad con lo publicado en \cite{porcasi_operative}.
-          Luego de un análisis del último, se concluyó que el sistema de
+          basaron en la compatibilidad con lo publicado en el artículo ``\textit{An operative dengue risk stratification system in
+argentina based on geospatial technology}" \cite{porcasi_operative}.
+          Luego de un análisis del mismo, se concluyó que el sistema de
           modelado debe poseer las siguientes características:
           \begin{itemize}
             \item Facilidad de utilización para un usuario no especialista del área de
               Ciencias de la Computación.
 
-            \item Poseer una herramienta de limpieza del conjuntos de datos
+            \item Poseer una herramienta de limpieza del conjunto de datos
               dado, para construir automáticamente los datos que luego
               utilizarán los distintos algoritmos.
 
@@ -301,14 +302,14 @@
         \par A su vez, el desarrollo se llevó a cabo utilizando una metodología
           en cascada. Ésto quiere decir que primero se establecieron los
           requerimientos, luego se realizó una investigación de las
-          herramientas que potencialmente se utilizarían para luego generar
+          herramientas que potencialmente se utilizarían para generar
           un diseño y establecer la arquitectura del proyecto. Posteriormente se codificó y se
           realizaron las pruebas de usuario necesarias.
 
       \subsubsection{Arquitectura}
 
 
-        \par Como se ve en la Figura \ref{fig:sistema_modelado} El sistema de
+        \par Como se ve en la Figura \ref{fig:sistema_modelado} el sistema de
           modelado tiene tres módulos importantes: \verb|data|, \verb|models| y
           \verb|tunning|.
 
@@ -410,7 +411,7 @@
 
     \subsubsection{\textit{Perceptron Multicapa} (MLP)}
       \par Las redes neuronales son contruidas a partir de una gran cantidad
-        de unidades sencillas altamente conectadas entre si. Ellas pueden
+        de unidades sencillas altamente conectadas entre sí. Ellas pueden
         ser entrenadas para generar aproximadores universales de funciones.
         Se utilizó la clase \verb|MLPRegressor| del módulo \verb|neural\_network|.
         Ésta clase implementa una técnica de regresión utilizando un MLP. Para
@@ -430,7 +431,7 @@
         en el entorno de vecinos del conjunto de datos de entrenamiento.
         El cojunto de datos original se descompuso utilizando componentes
         principales (\textit{PCA}), sólo cinco fueron usados. Luego de la etapa
-        de ajuste, se obtuvo que el número de vecinos sea $n\_neighbors = 4$,
+        de ajuste, se obtuvo que el número de vecinos $n\_neighbors = 4$,
         la función de pesos utilizada en predicción que resultó generar mejor
         desempeño fue $weights = uniform$, la métrica utilizada para medir la
         distancia fue $metric = Chebyshev$ y el algoritmo que nuestro modelo
@@ -522,7 +523,7 @@
 
 
   \par La tabla \ref{Tab:Summary} presenta un resumen de los datos obsevados
-    y los ajustados: los valores minimos (Min) y los máximos (Max), el
+    y los ajustados: los valores minimos (Mín) y los máximos (Máx), el
     primer ($q_{1/4}$) y tercer cuartil ($q_{3/4}$), la mediana ($q_{2/4}$)
     y la media.
 
@@ -531,7 +532,7 @@
   \caption{Resumen de los datos observados y los ajustados}\label{Tab:Summary}
   \begin{tabular}{*7{r}}
   \toprule
-  &Min	&$q_{1/4}$	&$q_{1/2}$	&Media	&$q_{3/4}$	&Max\\ \cmidrule(lr){2-7}
+  &Mín	&$q_{1/4}$	&$q_{1/2}$	&Media	&$q_{3/4}$	&Máx\\ \cmidrule(lr){2-7}
   Observado	&$-0.863$	&$-0.742$	&$-0.487$	&$0.000$	&$0.704$	&$3.652$\\
   Lineal	&$-1.641$	&$-0.716$	&$ 0.027$	&$-0.087$	&$0.462$	&$1.387$\\
   Ridge	&$-1.638$	&$-0.680$	&$ 0.028$	&$-0.084$	&$0.459$	&$1.370$\\
@@ -660,7 +661,7 @@
   \end{tabular}
   \end{table}
 
-  \section{Discusión de resultados obtenidos}
+  \section{Discusión de resultados obtenidos en la primer etapa}
 
     \par Un punto interesante que aparece en los resultados es que todos los
       modelos aquí presentados ajustan bien en los patrones principales
@@ -669,19 +670,19 @@
       cuando las condiciones son óptimas y, nuevamente, se restringe cuando las
       condiciones ambientales son suboptimas. De hecho, es razonable el hecho de
       que no podemos esperar ajustar exactamente la población urbana del vector
-      sólo basandonos en variables macroambientales a gran escala.
+      sólo basándonos en variables macroambientales a gran escala.
 
 
     \par Teniendo en cuenta la bondad de ajuste incluida en las Tablas
       \ref{Tab:Summary} y \ref{Tab:Quality}, y un análisis de errores, podríamos
       considerar que \textit{KNN} aparenta ser el mejor método para este problema.
       Tiene una correlación cercana al 90\%, considerablemente mayor al
-      75\%, el valor tipico obtenido por las técnicas lineales.
+      75\%, el valor típico obtenido por las técnicas lineales.
 
   \par El valor medio del \textit{z-score} llevaría a elegir el \textit{SVR}
     como la mejor técnica \cite{ml_rainfall}. Cabe destacar que la desviación
     estándar de esta medición de calidad es tan alta que es poco probable que
-    sea una buena elección en si misma. Por esta razón, se seguimos un
+    sea una buena elección en sí misma. Por esta razón, si seguimos un
     enfoque holístico en las próximas conclusiones.
 
 

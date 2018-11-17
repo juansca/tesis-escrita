@@ -404,7 +404,9 @@
       máxima permitida del árbol, $N_{m} < min_{muestras}$ o bien $N_{m} = 1$
 
 
-  \subsection{Random Forest}
+  \subsection[Random Forest]{Random Forest\footnote{Dentro de la comunidad técnica, algunos
+  algoritmos se referencian utilizando los términos en inglés
+  aunque el idioma en el cual se expresen sea el castellano.}}
 
     \par \textit{Random Forest} (RF) es un método de aprendizaje que utiliza ensamblado y se
       usa para llevar a cabo tareas tanto de clasificación como de regresión.
@@ -516,11 +518,10 @@
 
       Daremos una idea más detallada de los fundamentos matemáticos detrás de una
       SVR \cite{svr_tutorial}:
-
       Dados los vectores de entrenamiento $x_{i} \in \mathbb{R}^{p}$ con $i = 1, \dots ,n$
       y un vector $y \in \mathbb{R}$ el $\epsilon$-SVR resuelve el siguiente problema
       primario:
-
+      \pagebreak
       \begin{align}
         \min\limits_{w, b, \zeta, \zeta^{*}} \frac{1}{2} w^{T} w + C \sum_{i = 1}^{n} \zeta_{i}
       \end{align}
@@ -577,6 +578,12 @@
       de entradas ponderadas y producen una salida a través de una función de activación.};
       la vista gráfica de una arquitectura simple se puede observar en la
       Figura \ref{fig:mlp_ejemplo}.
+      \begin{figure}
+      \centering%
+      \includegraphics[width=0.7\textwidth]{images/ejemplo_mlp}%
+      \caption{Arquitectura de una MLP de cuatro variables de entrada, una capa
+              oculta de cinco neuronas y un sólo valor de salida}\label{fig:mlp_ejemplo}
+      \end{figure}
 
     \par Una descripción matemática simplificada del algoritmo en cuestión es la
       que se menciona a continuación.
@@ -620,11 +627,5 @@
       En general el algoritmo termina cuando se alcanza cierto número definido por el
       usuario de iteraciones o se cruza un humbral para la pérdida.
 
-      \begin{figure}
-      \centering%
-      \includegraphics[width=0.7\textwidth]{images/ejemplo_mlp}%
-      \caption{Arquitectura de una MLP de cuatro variables de entrada, una capa
-              oculta de cinco neuronas y un sólo valor de salida}\label{fig:mlp_ejemplo}
-      \end{figure}
 
 %\end{document}

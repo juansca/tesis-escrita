@@ -7,12 +7,12 @@
 \chapter{Generalización espacial de modelos epidemiológicos basada en el
         concepto de Distancia Ambiental Normalizada NED}
 
-  \par Los modelos temporales descriptos en capitulos anteriores se basan en la
+  \par Los modelos temporales descriptos en capítulos anteriores se basan en la
     generación de relaciones empíricas entre datos ambientales derivados de
     información satelital y los datos de campo, correspondientes a los del vector
     propiamente dicho. Esto significa que sólo pueden construirse modelos en
     lugares donde esté disponible la información de campo, problema que se
-    menciona al concluir el capitulo anterior.
+    menciona al concluir el capítulo anterior.
 
   \par En ese marco, y con el objetivo final de mejorar la aplicación operativa
     presentada por Porcasi y colaboradores en 2012 \cite{porcasi_operative},
@@ -23,7 +23,7 @@
 
 \section{Descripción del problema}
   \par A partir de la disponibilidad de datos de campo en $N$ localidades
-    diferentes, se generan,
+    diferentes, se generan
     $N$ modelos que relacionan la oviposición con variables ambientales
     derivadas de datos satelitales (\textit{lst\_night}, \textit{lst\_day},
     \textit{ndvi}, \textit{ndwi}, \textit{prec}). Por simplicidad, sin pérdida
@@ -42,8 +42,8 @@
 
   \par Así, el problema que se plantea es aquel en el que el modelo se
     debiera utilizar en una nueva ciudad (no incluida en las $N$ anteriores) en
-    donde se quiere obtener una estimación de la abundancia del vector.
-    Para, de esa manera, obtener la estimación mencionada, para cualquier otra
+    donde se quiere obtener una estimación de la abundancia del vector; para
+    de esa manera, obtener la estimación mencionada para cualquier otra
     ciudad. En particular en este caso, en la región norte de Argentina donde
     no se disponga de datos de campo.
 
@@ -72,9 +72,9 @@
     con aquella que está más cerca geográficamente. En ese sentido, se debería
     utilizar (en el esquema de vecino más cercano) el modelo de la ciudad $J$
     que posea el medio ambiente más similar al del punto $X$. En otras palabras,
-    asi como ``más cerca", significa típicamente coordenadas geográficas (o posiciones)
-    similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca"
-    como que sus variables ambientales son similares. De esta forma aparece
+    así como ``más cerca", significa típicamente coordenadas geográficas (o posiciones)
+    similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca" como
+    que sus variables ambientales son similares. De esta forma aparece
     naturalmente el concepto de \textbf{\textit{Distancia Ambiental}}.
 
 
@@ -182,7 +182,7 @@
       \textit{NDVI} de \textit{MODIS} promedio de Enero, \textit{NDVI} de
       \textit{MODIS} promedio de Julio y el \textit{DEM}.
 
-\section{Evaluación de solución propuesta}
+\section{Evaluación de la solución propuesta}
 
   \begin{figure}[hbt]
 
@@ -237,7 +237,7 @@
     donde se intenta graficar con más claridad la contribución que tendrán cada
     uno de los 4 modelos previamente desarrollados, cuando se intenten modelar
     estas 3 nuevas ciudades.
-    \begin{figure}[hbt]
+    \begin{figure}[hbt][H]
       \centering%
       \includegraphics[width=0.6\textwidth]{images/ned_contrib}%
       \caption{Contribución que poseen los modelos para Salta, Corrientes y
