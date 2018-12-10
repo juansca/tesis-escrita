@@ -175,7 +175,7 @@
     Las imágenes son obtenidas de la NASA\footnote{\url{http://e4ftl01.cr.usgs.gov}} e
     importadas en \textbf{GRASS 7.1}. Para cada una de las áreas anteriormente
     definidas se calcula la media de cada día. Cada uno de estos valores
-    promedio y sus fechas son exportadas a una tabla en el software \textbf{R},
+    promedio y sus fechas son exportadas a una tabla en el software \textbf{R}\cite{r_language},
     donde es utilizada para construir las series temporales completas.
     Los datos son interpolados para obtener valores para cada uno de los
     días de muestra (un valor para cada semana epidemiológica) \cite{german_temporal}.
@@ -349,7 +349,7 @@ argentina based on geospatial technology}" \cite{porcasi_operative}.
         una regresión \textit{Ridge}, esta última con la regularización de
         \textit{Tikhonov} y validación cruzada. Cabe destacar que la
         regresión \textit{Ridge}, en la literatura de ML, se la suele denominar
-        como "decaimiento de peso" (\textit{weight decay}).
+        como "decaimiento de peso" (\textit{weight decay}\cite{weight_decay}).
 
   \subsection{Modelos no-lineales}
 
@@ -429,7 +429,7 @@ argentina based on geospatial technology}" \cite{porcasi_operative}.
         objetivo es predicho por una interpolación local de los objetivos
         en el entorno de vecinos del conjunto de datos de entrenamiento.
         El conjunto de datos original se descompuso utilizando componentes
-        principales (\textit{PCAs}), sólo cinco fueron usados. Luego de la etapa
+        principales (\textit{PCAs}\cite{pca}), sólo cinco fueron usados. Luego de la etapa
         de ajuste, se obtuvo que el número de vecinos $n\_neighbors = 4$,
         la función de pesos utilizada en predicción que resultó generar mejor
         desempeño fue $weights = uniform$, la métrica utilizada para medir la
@@ -595,7 +595,7 @@ argentina based on geospatial technology}" \cite{porcasi_operative}.
 
 
   \par La Tabla \ref{Tab:Quality} presenta las medidas de calidad de los modelos
-  aquí considerados: los coeficientes de la correlación de \textit{Pearson}
+  aquí considerados: los coeficientes de la correlación de \textit{Pearson}\cite{pearson}
   entre los valores observados y ajustados, usando el conjunto de datos
   completo (Corr11) y sobre el 20\% para la validación (CorrL20); además,
   el Error Cuadrático Medio sobre el conjunto de datos completo (MSE), y

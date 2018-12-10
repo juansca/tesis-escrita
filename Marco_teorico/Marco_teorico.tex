@@ -382,15 +382,17 @@
         Q_{izq}(\theta) &= (x, y) | x_{j} \leq t_m \\
         Q_{der}(\theta) &= Q - Q_{izq}(\theta)
       \end{align}
-      La impureza en $m$ es calculada usando la función de impureza $H$, la elección
+
+
+      La impureza en $m$ es calculada usando la función de impureza $H$. La elección
       de ésta depende de la tarea que se quiera realizar.
-      En el caso de una regresión, para el nodo $m$, representando una
-      región $R_{m}$ con una cantidad $N_{m}$ observaciones, los criterios
-      para minimizar en cuanto a la determinación de ubicaciones para divisiones
-      futuras suelen ser el \textbf{Error Cuadrático Medio}, que minimiza el error $L2$ usando
+      En el caso de una regresión, los criterios
+      para minimizar en cuanto a la determinación de ubicaciones para las divisiones
+      suelen ser el \textbf{Error Cuadrático Medio}, que minimiza el error $L2$\cite{l2_l1_reg} usando
       valores promedios en los nodos terminales, y el \textbf{Error Absoluto Medio}, que minimiza
-      el error $L1$ usando el valor de la mediana estadística en los nodos terminales.
-      Luego, la función de impureza es
+      el error $L1$\cite{l2_l1_reg} usando el valor de la mediana estadística en los nodos terminales.
+      Y así, una vez seleccionada la función de impureza, para el nodo $m$, representando una región $R_{m}$ con una cantidad $N_{m}$ observaciones
+      se define la función $G$ de la siguiente manera:
       \begin{align}
         G(Q, \theta) = \frac{n_{izq}}{N_{m}} \ H(Q_{izq}(\theta)) + \frac{n_{der}}{N_{m}} \ H(Q_{der}(\theta))
       \end{align}
