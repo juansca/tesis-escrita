@@ -9,7 +9,7 @@
   \par Dengue, Chikungunya y Zika son enfermedades virales para las cuales no
     existen, al día de hoy, vacunas de prevención. Por lo tanto, el control
     más efectivo proviene de prevenir la propagación del mosquito
-    \textit{Aedes Aegipty} (\textit{Linneaus}) y, por tanto, saber sobre la
+    \textit{Aedes Aegipty} (\textit{Linneaus}). Lo que lleva a la necesidad de saber sobre la
     dinámica de su población es de suma importancia.
 
   \par Este trabajo, por un lado, presenta un \textit{framework} de simple
@@ -18,7 +18,7 @@
     únicamente variables ambientales extraídas de información satelital y
     herramientas de Aprendizaje Automático de libre acceso. Y por el otro,
     establece un concepto novedoso en el área de la epidemiología panorámica
-    cuyo fin es lograr utilizar información de modelado de ciertos puntos grográficos
+    cuyo fin es lograr utilizar información de modelado de ciertos puntos geográficos
     para estimar la abundancia en muchos otros para los cuales no se posee
     información de campo. Este concepto es el de \textit{Distancia Ambiental Normalizada}.
 
@@ -40,16 +40,16 @@
     un costo extremádamente alto.
 
   \par Este estudio resulta ser un avance sobre trabajos previos en el área
-    de la epidemiología panorámica, donde se consideran modelos estadíticos utilizando
+    de la epidemiología panorámica, donde se consideran modelos estadísticos utilizando
     relaciones lineales \cite{models_predicting, modis_data, ndwi_erffectiveness}
-    en terminos de la capacidad predictiva de los modelos desarrollados aquí.
+    en términos de la capacidad predictiva de los modelos desarrollados aquí.
     Estas mejoras fueron obtenidas utilizando herramientas de aprendizaje
     automático que, en este caso, no requieren de un esfuerzo adicional de
     parte del usuario.
 
-  \par La metodologia implementada muestra que algunas herramientas \textit{out-of-the-shelf}
+  \par La metodología implementada muestra que algunas herramientas \textit{off-the-shelf}
     son capaces de manejar las complejas relaciones entre variables, proporcionando
-    así una forma de abordar este importante problema. Este enfoque interdisciplinario
+    así una forma de abordar el importante problema planteado. El mencionado enfoque interdisciplinario
     proporciona nuevas herramientas para los profesionales que se encuentran
     trabajando en esta área.
 
@@ -60,11 +60,11 @@
     Adicionalmente, se muestra la importancia de la utilización de la Validación
     Cruzada (VC), raramente utilizada en usuarios del Sensado Remoto.
     Utilizamos VC para disminuir la dependencia de los resultados de evaluación
-    sobre una selección particular de los conjuntos de entrenamiento y validacíon
-    en la etapa de elección del modelo. Aqui se Utiliza
+    sobre una selección particular de los conjuntos de entrenamiento y validación
+    en la etapa de elección del modelo. Aqui se utiliza
     un procedimiento particular de VC para series de tiempo. Todos los modelos
     aquí discutidos pueden ser ejecutados con \textit{scripts} de Python
-    disponibles libres en \url{https://github.com/juansca/modeling-mosquitos}.
+    disponibles libremente\footnote{\url{https://github.com/juansca/modeling-mosquitos}}.
 
   \par En lo que respecta a la comparacion de algoritmos, se encontró que la Regresión
     por K-Vecinos Cercanos (KNNR), el Perceptron Multicapa (MLP) y la
@@ -79,7 +79,7 @@
     y/o bien utilizar otras técnicas de mayor complejidad dentro del área del
     Aprendizaje Automático.
 
-  \par La otra importante contribución de este trabajo está relacionada con la
+  \par La otra contribución importante de este trabajo está relacionada con la
     necesidad de poseer modelos de oviposición para distintas ciudades, evitando
     el gran costo de la recolección de datos y el entrenamiento para cada una de
     las ciudades o puntos para los cuales se quiera poseer datos. Aquí presentamos
@@ -89,7 +89,7 @@
     correlacionado (al menos dentro de cierto rango) a las características ambientales
     del punto en el que que se observa.
 
-  \par Asi se presenta, desarrolla e implementa el concepto de Distancia Ambiental
+  \par Así se presenta, desarrolla e implementa el concepto de Distancia Ambiental
     Normalizada, el cual permite
     llevar a cabo lo mencionado en el párrafo anterior estableciendo una distancia
     vectorial utilizando el espacio de características ambientales extraídas de
@@ -102,7 +102,7 @@
 
   \par Otro punto de valor del trabajo es el caracter integrador e
     interdisciplinario del mismo, demostrando la utilidad y la necesidad
-    de la incersión del Aprendizaje Automático en áreas de impacto social.
+    de la inserción del Aprendizaje Automático en áreas de impacto social.
 
   \par A su vez, cabe destacar que lo desarrollado involucra conocimientos de
     diversas áreas de las Ciencias de la Computación abarcando temáticas, por ejemplo, de
@@ -119,7 +119,7 @@
     desarrollo profesional, todo lo aprendido y adquirido a lo largo de la carrera.
 
   \par Es importante resaltar finalmente que los resultados y metodologías
-    incluidos en este trabajo de grado han dado lugar a tres publicaciones
+    incluídos en este trabajo de grado han dado lugar a tres publicaciones
     indexadas en la base de datos scopus, a saber:
 
     \begin{itemize}

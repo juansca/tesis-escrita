@@ -22,9 +22,9 @@
     adultos. Para el Dengue, Chikungunya y Zika,
     no existe tal herramienta de previsión.
 
-  \par \textit{Médicos del Mundo} (http://www.mdm.org.ar), en su nota
+  \par \textit{Médicos del Mundo}\footnote{http://www.mdm.org.ar}, en su nota
     \textbf{"Médicos del Mundo alerta sobre riesgos de fiebre amarilla en Brasil y escenarios de Dengue-Zika en Argentina"}
-    explican que entre 1985 y 2012, si tenemos en cuenta las 4 enfermedades
+    explican que entre 1985 y 2012, si tenemos en cuenta las cuatro enfermedades
     mencionadas en el párrafo anterior, en las Américas el 95\% de los casos se concentraron en
     4 países: Perú (54\% de los casos), Bolivia (18\%), Brasil (16\%) y Colombia (7\%).
     También dicen que, aún así, Argentina, Ecuador, Panamá y Venezuela también tienen condiciones
@@ -36,7 +36,7 @@
   Dengue a nivel
   provincia \cite{analisis_cordoba} en la
   Figura \ref{fig:dengue}\footnote{Figura brindada por Rotela y
-  colaboradores de su trabajo \cite{analisis_cordoba}}, a su vez desde la
+  colaboradores de su trabajo \cite{analisis_cordoba}.}, a su vez desde la
   emergencia del virus del Zika en nuestro país en el mismo año (Tucumán),
   y hasta el 2017 se registraron además un total de 7 casos confirmados de
   síndrome congénito asociados a virus del Zika en mujeres embarazadas
@@ -44,18 +44,25 @@
   Durante el 2017, en base a las notificaciones al
   \textbf{Sistema Nacional de Vigilancia de Salud} del Ministerio de Salud de la Nación
   recibidas hasta el 30 de diciembre, se registraron, en el primer semestre del año, brotes de
-  Dengue serotipo DEN-1 con 646 casos confirmados en 5 provincias
+  Dengue serotipo DEN-1 con 646 casos confirmados en cinco provincias
   (Buenos Aires, Chaco, Corrientes, Formosa y Santa Fe) y 253 casos de enfermedad
-  por virus del Zika en 3 provincias (Chaco, Formosa y Salta).
+  por virus del Zika en tres provincias (Chaco, Formosa y Salta).
   Incluso ya para las primeras semanas del 2018, hubo casos confirmados
-  de Dengue en Chaco
+  de Dengue en Chaco.
 
+  \begin{figure}
+  \centering%
+  \includegraphics[width=0.4\textwidth]{images/dengue}%
+  \caption{La taza de Dengue en Argentina a nivel provincia en 2016.
+          Dicha taza es expresada cada 100.000 habitantes; se tienen en cuenta
+          todos los casos confirmados y probables hasta la semana 20}\label{fig:dengue}
+  \end{figure}
 
 
   \par El Dr. Gonzalo Basile \footnote{Presidente Honor y Director General para
                    América Latina y Caribe de Médicos del Mundo, e investigador de institutos de
                    investigación en salud pública del Caribe y coordinación regional del Programa
-                   de Salud Internacional de CLACSO y de FLACSO República Dominicana}
+                   de Salud Internacional de CLACSO y de FLACSO República Dominicana.}
        se refiere al incremento del riesgo de crecimiento
        en la cantidad de casos positivos en nuestro país, teniendo en cuenta
        el contexto epidemiológico en la región:
@@ -98,13 +105,6 @@
     \textit{Aedes aegypti} y la aparición de resistencia del mismo debido al uso intensivo de
     insecticidas.
 
-    \begin{figure}
-    \centering%
-    \includegraphics[width=0.4\textwidth]{images/dengue}%
-    \caption{La taza de Dengue en Argentina a nivel provincia en 2016.
-            Dicha taza es expresada por 100.000 habitantes; se tienen en cuenta
-            todos los casos confirmados y probables hasta la semana 20}\label{fig:dengue}
-    \end{figure}
 
   \par Por otro lado, como se menciona anteriormente, dado que no hay vacunas para la
     mayoría de estos virus, y existe la posibilidad de introducción de otros \cite{emergencia_viral},
@@ -115,7 +115,7 @@
   \par Es claro que el escenario epidémico planteado es una realidad en Argentina
     que hay que atacar. Ésto deriva en la necesidad de enfocar esfuerzos en el
     desarrollo de estrategias contundentes dirigidas a evitar, limitar y controlar
-    las poblaciones de \textit{Aedes aegyti}, lo que implica repensar y diseñar
+    las poblaciones de \textit{Aedes aegypti}, lo que implica repensar y diseñar
     nuevos sistemas de alerta temprana, vigilancia epidemiológica y respuesta
     rápida desde lo local, integrando un espacio interinstitutional e
     intersectorial de coordinación, planificación e intervención pública. Ésto debe
@@ -128,7 +128,7 @@
     algunos años, como uno de los métodos para atacar el problema mencionado.
     Ésta técnica permite modelar la evolución temporal y geográfica de las
     poblaciones del vector utilizando variables ambientales obtenidas de los
-    sensores remotos. Aunque hasta ahora, estos trabajos utilizaban fuertes asunciones
+    sensores remotos. Aunque hasta ahora, estos trabajos utilizaban fuertes suposiciones
     al utilizar modelos lineales para relacionar las distintas variables, y por más
     que los resultados obtenidos hasta el momento han sido
     favorables, no existen resultados que prueben el hecho de que las
@@ -142,10 +142,10 @@
 
   \par Desarrollar un modelo de aprendizaje automático puede resultar extremadamente
     complejo y costoso en términos computacionales y de experiencia de quien lo lleve
-    a cabo. Pero uno de los objetivos de este trabajo es mostrar la accesibilidad,
+    a cabo. Uno de los objetivos de este trabajo es mostrar la accesibilidad,
     en términos de simpleza y costos, de algunas de estas herramientas, sin dejar
     de lado el desempeño en la tarea concreta. A su vez, también existe el importante problema
-    de la escases de datos de campo para utilizarlos en la construcción de los modelos.
+    de la escasez de datos de campo para utilizarlos en la construcción de los modelos.
     Hasta ahora, era un gran limitante ya que no se tienen datos vitales
     para el desarrollo de este tipo de herramientas. En este trabajo, además, se
     propone una técnica para atenuar dicho problema estableciendo una relación
@@ -153,7 +153,7 @@
 
 \section{Objetivos}
 
-  \par Los objetivos de este trabajo apuntan a aportar conocimientos y
+  \par Los objetivos del trabajo apuntan a aportar conocimientos y
     herramientas a los profesionales dedicados al desarrollo de sistemas de
     prevención y mitigación del Dengue, Zika, Chikungunya y enfermedades
     vectoriales en general. Para ello, se establecen los siguientes puntos
@@ -169,8 +169,8 @@
         para predecir y ajustar la oviposición de mosquitos que los modelos
         lineales utilizados hasta el momento.
       \item Proponer una solución a la problemática de la
-        escases de puntos con datos de campo para entrenar los modelos,
-        dada la naturaleza regional de un sistema de riesgo que aporte a
+        escasez de puntos con datos de campo para entrenar los modelos,
+        dada la naturaleza regional de un sistema de riesgo, que aporte a
         valor los existentes.
     \end{itemize}
 

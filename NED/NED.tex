@@ -31,8 +31,7 @@
     \begin{align}
       ovip_{j} = \beta_{j} + \sum{}{coef_{ji} \times envVar_{i}(j)}
     \end{align}
-
-  \par Donde $coef_{ji}$ representa los coeficientes del modelo de la
+    donde $coef_{ji}$ representa los coeficientes del modelo de la
     ciudad $j$ para la variable $i$, y $envVar_{i}(j)$ representa la variable
     ambiental $i$ evaluada en la posición correspondiente a la ciudad $j$.
     Es decir que para cada ciudad $j$, hay un conjunto diferente de
@@ -44,7 +43,7 @@
     debiera utilizar en una nueva ciudad (no incluida en las $N$ anteriores) en
     donde se quiere obtener una estimación de la abundancia del vector; para
     de esa manera, obtener la estimación mencionada para cualquier otra
-    ciudad. En particular en este caso, en la región norte de Argentina donde
+    ciudad. En particular, en este caso, en la región norte de Argentina donde
     no se disponga de datos de campo.
 
 
@@ -60,7 +59,6 @@
     \begin{align}
       M_{X} = \sum{}{\frac{M_{j}}{L_{j}}} \label{Eq:dist}
     \end{align}
-
     donde $L_{j}$ representa la distancia normalizada de la ciudad $J$ a
     $X$ (en términos de la localización geográfica de la nueva ciudad).
 
@@ -68,12 +66,13 @@
   \par El problema de las soluciones anteriores, es que en realidad es más
     razonable pensar que el comportamiento de la población del vector/mosquito
     en una ciudad en el punto $X$ será más coincidente con una que se encuentre
-    en una ciudad que sea más similar \textbf{ambientalmente} y no necesariemente
+    en una ciudad que sea más similar \textbf{ambientalmente} y no necesariamente
     con aquella que está más cerca geográficamente. En ese sentido, se debería
     utilizar (en el esquema de vecino más cercano) el modelo de la ciudad $J$
     que posea el medio ambiente más similar al del punto $X$. En otras palabras,
     así como ``más cerca", significa típicamente coordenadas geográficas (o posiciones)
-    similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca" como
+    similares; en el sentido ecológico/ambiental, podemos pensar ``más cerca"
+    como
     que sus variables ambientales son similares. De esta forma aparece
     naturalmente el concepto de \textbf{\textit{Distancia Ambiental}}.
 
@@ -135,12 +134,12 @@
     pero ahora usando la distancia ambiental. Aquí se ha tomado $N\ =\ 4$ ya
     que en la realidad se cuenta sólo con 4 ciudades con series completas de datos
     para modelar: Pampa del Indio, Clorinda, Tartagal y Puerto Iguazú
-    (Fundación Mundo Sano, \url{https://www.mundosano.org/}).
+    (Fundación Mundo Sano\footnote{\url{https://www.mundosano.org/}}.
 
 
 
   \par Operativamente, para calcular las distancias, definimos una región de
-    \SI{20}{\kilo\meter} alrededor de cada ciudad $J$, para caracterizar las
+    \SI{20}{\kilo\meter} alrededor de cada ciudad $J$ para caracterizar las
     variables de estas ciudades (como una media de los píxeles en este buffer).
     Luego, utilizamos la probabilidad de pertenencia (clasificación supervisada)
     a cada clase utilizando software \textit{ENVI} para calcular la NED de cada píxel
@@ -168,14 +167,14 @@
       \centering%
       \includegraphics[width=0.6\textwidth]{images/temp_prec}%
       \caption{RGB: BIO1 = temperatura media anual, BIO7 = rango anual de
-              temperatura (BIO5-BIO6) y BIO12 = precipitación anual}\label{fig:temp_prec}
+              temperatura (BIO5-BIO6) y BIO12 = precipitación anual, correspondientemente.}\label{fig:temp_prec}
     \end{figure}
 
     \begin{figure}[hbt]
       \centering%
       \includegraphics[width=0.6\textwidth]{images/ndvi_dem}%
       \caption{RGB: \textit{NDVI} de \textit{MODIS} promedio Enero, \textit{NDVI} de
-               \textit{MODIS} promedio de Julio y DEM}\label{fig:ndvi_dem}
+               \textit{MODIS} promedio de Julio y DEM, correspondientemente.}\label{fig:ndvi_dem}
     \end{figure}
 
     \par De una manera similar, la Figura \ref{fig:ndvi_dem} presenta en RGB el
@@ -250,7 +249,7 @@
     que ofrece el mismo. Sin embargo la diferencia entre la distancia ambiental
     y la geográfica puede observarse claramente en las Figuras \ref{fig:ned_clorinda}
     a \ref{fig:ned_tartagal}.
-    En todas ellas vemos como la distancia ambiental posee bordes abruptos
+    En todas ellas vemos cómo la distancia ambiental posee bordes abruptos
     (cosa que la distancia geográfica nunca tendrá).
     Por ejemplo en la Mesopotamia (Figura \ref{fig:ned_iguazu}) o en las yungas
     (Figura \ref{fig:ned_clorinda}) puede verse
@@ -314,5 +313,5 @@
     de 2018. La presentación fue realizada bajo el título
     \textit{Generalización espacial de modelos epidemiológicos basada en el
     concepto de Distancia Ambiental Normalizada NED} \cite{ned_scavuzzo} y
-    se podrá encontrar en la \textit{IEEE Xplore Digital Library} (\url{https://ieeexplore.ieee.org/}).
+    se podrá encontrar en la \textit{IEEE Xplore Digital Library}\footnote{\url{https://ieeexplore.ieee.org/}}.
 %\end{document}
